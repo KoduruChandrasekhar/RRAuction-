@@ -116,7 +116,7 @@ for k, v in G.items():
     text(s, 0.55, y, 12.2, 0.35, k.upper(), 12, PINK, True)
     text(s, 0.55, y + 0.33, 12.2, 0.7, ', '.join(v), 16, NAVY, True)
     y += 1.1
-text(s, 0.55, 6.15, 12.2, 0.8, 'Strategy: power and finishing in the middle order to support Ferreira, backup pace (Coetzee as pace all-rounder), spin and top-order backups. Sri Lanka options and young players to groom are on slide 12.', 13, MUTED)
+text(s, 0.55, 6.15, 12.2, 0.8, 'Strategy: power and finishing in the middle order to support Ferreira, backup pace (Coetzee as pace all-rounder), spin and top-order backups. How each pick strengthens RR is on slide 12.', 13, MUTED)
 
 # 3. approach
 s = base('From 200,000 balls to an auction shortlist', 'Methodology overview')
@@ -216,13 +216,11 @@ lo = sum(PR['players'].get(x['name'], {'lo': 0.3})['lo'] for x in plan); hi = su
 text(s, 0.55, 5.35, 12.2, 0.5, f"Estimated spend ₹{lo:.1f}–{hi:.1f} cr of ₹{I['purse']['available']:.2f} cr: most of it on back-end muscle, the rest on pace cover. LSG, KKR, SRH and DC hold ₹39–47 cr, so set ceilings early.", 13, NAVY, True)
 text(s, 0.55, 5.95, 12.2, 1.0, 'Alternatives: ' + ' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()), 12, MUTED)
 
-# 12. Sri Lanka + groom
-s = base('Sri Lanka options and ones to groom', '8 · More options')
-table(s, 0.55, 1.55, 6.0, 4.6, ['Sri Lanka options', 'Role', 'Status'], [list(x) for x in PR.get('sri_lanka', [])], [1.9, 2.6, 1.5], 10)
-table(s, 6.8, 1.55, 6.0, 4.0, ['Ones to groom (not a priority)', 'Profile', 'Status'], [list(x) for x in PR.get('groom', [])], [1.8, 2.7, 1.5], 10)
-text(s, 6.8, 5.7, 6.0, 0.9, 'U19 players are not in the data pack and must appear on the 3 Dec auction list to be eligible.', 11, MUTED)
-SC = I.get('radar_scorecard', {})
-text(s, 0.55, 6.3, 12.2, 0.6, f"Release Radar: our 16 Nov calls matched the official lists - {SC.get('low_retained', 0)}/{SC.get('low_n', 0)} predicted retentions held, and the biggest release calls (Pathirana, Boult) were released.", 12, NAVY, True)
+# 12. how each pick strengthens RR
+s = base('How each pick strengthens RR', '8 · Every pick')
+table(s, 0.55, 1.5, 6.0, 5.0, ['Batter', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:90]] for _, r in top_b.iterrows()], [1.7, 4.3], 9)
+table(s, 6.8, 1.5, 6.0, 5.0, ['Bowler', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:90]] for _, r in top_w.iterrows()], [1.7, 4.3], 9)
+text(s, 0.55, 6.55, 12.2, 0.4, 'Young players to keep an eye on (not a priority): ' + ', '.join(x[0] for x in PR.get('groom', [])) + '.', 11, MUTED)
 
 # 13. limitations
 s = base('Where the model is less certain, and what comes next', '9 · Reliability and limitations')

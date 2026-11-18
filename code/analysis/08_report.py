@@ -367,7 +367,7 @@ li_w = glist(['Pace', 'Spin'])
 rrk = I['rr_ranks']
 rrc = next(x for x in I['close_record'] if x['team'] == 'Rajasthan Royals')
 body = f'''<div class="g3"><div class="box"><h3>Batters to buy</h3><div class="glist">{li_b}</div></div>
-<div class="box"><h3>Bowlers to buy</h3><div class="glist">{li_w}</div><p class="small muted" style="margin-top:10px">Sri Lanka options and young players to groom: section 10.</p></div>
+<div class="box"><h3>Bowlers to buy</h3><div class="glist">{li_w}</div><p class="small muted" style="margin-top:10px">How each pick strengthens RR: section 10.</p></div>
 <div class="box soft"><h3>What we found</h3><ul class="find">
 <li><b>Our pressure zone is where matches are decided.</b> It holds {pct(WS['pressure_balls_share'])} of balls but {pct(WS['pressure_wpa_share'])} of all win-probability movement.</li>
 <li><b>RR lose the close ones.</b> RR played the most close IPL games in 2025–26 ({rrc['close']}) and won only {rrc['close_won']}. Under pressure they rank {rrk['bat']['Death']}th of 10 for death batting and {rrk['bowl']['Death']}th for death bowling.</li>
@@ -538,14 +538,15 @@ P.append(page('9 · Bowlers: evidence', 'Proven pressure bowlers are rare, but t
 # ---- 16-17 player cards
 P.append(page('10 · Scouting cards: batters', 'How each top batter would strengthen RR', '<div class="cards">' + ''.join(card(pid, bat, 'bat') for pid in top_b.index[:4]) + '</div>'))
 P.append(page('10 · Scouting cards: bowlers', 'How each top bowler would strengthen RR', '<div class="cards">' + ''.join(card(pid, bowl, 'bowl') for pid in top_w.index[:4]) + '</div>'))
-slr = ''.join(f'<tr><td><b>{E(x[0])}</b></td><td class="small">{E(x[1])}</td><td class="small muted">{E(x[2])}</td></tr>' for x in PR.get('sri_lanka', []))
-grr = ''.join(f'<tr><td><b>{E(x[0])}</b></td><td class="small">{E(x[1])}</td><td class="small muted">{E(x[2])}</td></tr>' for x in PR.get('groom', []))
-gems = ', '.join(dict.fromkeys(list(ris_b['name']) + list(ris_w['name'])))
-body = f'''<div class="g2"><div><h3>Sri Lanka options <span class="muted small">(Sangakkara knows these players well)</span></h3><table class="mini"><tbody>{slr}</tbody></table></div>
-<div><h3>Ones to groom <span class="muted small">(young and U19 - not a priority)</span></h3><table class="mini"><tbody>{grr}</tbody></table>
-<p class="small muted" style="margin-top:8px">U19 players are not in the data pack and must appear on the 3 Dec auction list to be eligible.</p>
-<h3 style="margin-top:10px">Hidden gems</h3><p class="small">Strong pressure records outside the release lists: {E(gems)}.</p></div></div>'''
-P.append(page('10 · Sri Lanka options and ones to groom', 'More options: Sri Lankan picks and young players to develop', body))
+def fit_rows(T):
+    return ''.join(f'<tr><td><b>{E(r["name"])}</b><div class="tiny muted">{E(NOTES.get(r["name"], {}).get("role", ""))}</div></td><td class="small">{E(NOTES.get(r["name"], {}).get("fit", ""))}</td></tr>' for _, r in T.iterrows())
+
+
+groom = ', '.join(x[0] for x in PR.get('groom', []))
+body = f'''<div class="g2"><div><h3>Batters</h3><table class="mini fit"><tbody>{fit_rows(top_b)}</tbody></table></div>
+<div><h3>Bowlers</h3><table class="mini fit"><tbody>{fit_rows(top_w)}</tbody></table></div></div>
+<p class="note">Young players to keep an eye on (not a priority): {E(groom)}. The U19 players must appear on the 3 Dec auction list to be eligible.</p>'''
+P.append(page('10 · How each pick strengthens RR', 'Every pick, and what it adds to the RR squad', body))
 
 # ---- 18 release radar scorecard
 SCd = I.get('radar_scorecard', {})
@@ -694,7 +695,7 @@ h3 {{ font-size: 11pt; font-weight: 700; color: {NAVY}; margin: 0 0 6px }}
 footer {{ position: absolute; left: .55in; right: .55in; bottom: .2in; display: flex; justify-content: space-between; font-size: 7pt; color: #9A9EAF; border-top: 1px solid {LINE}; padding-top: 5px }}
 .g2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 26px }} .g3 {{ display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 20px }}
 .g4 {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px }} .g2w {{ display: grid; grid-template-columns: 1.35fr 1fr; gap: 22px }}
-.g21r {{ display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px }} .g3p {{ display: grid; grid-template-columns: 1fr 2fr; gap: 22px }} .g2s {{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px }}
+.g21r {{ display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px }} .g3p {{ display: grid; grid-template-columns: 1fr 2fr; gap: 22px }} .fit td {{ vertical-align: top; padding: 3px 6px !important; text-align: left !important }} .fit td:first-child {{ width: 38% }} .g2s {{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px }}
 .box {{ border: 1px solid {LINE}; border-radius: 12px; padding: 12px 14px; background: #fff }} .box.soft {{ background: #FFF5FA; border-color: #F8D3E6 }}
 .olist {{ margin: 0; padding-left: 0; list-style: none; counter-reset: i }}
 .olist li {{ counter-increment: i; display: flex; gap: 8px; align-items: baseline; padding: 4px 0; border-bottom: 1px solid #F1F2F6; font-size: 10pt }}

@@ -8,7 +8,7 @@ Batsman 5: Mitchell Owen
 Batsman 6: Prashant Veer
 Batsman 7: Dian Forrester
 Batsman 8: Kamindu Mendis
-Batsman 9: Matthew Breetzke
+Batsman 9: Dunith Wellalage
 Batsman 10: Karun Nair
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)

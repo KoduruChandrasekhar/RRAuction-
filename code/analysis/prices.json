@@ -326,6 +326,11 @@
    "lo": 0.5,
    "hi": 1.5,
    "basis": "CSK 2026; released"
+  },
+  "Dunith Wellalage": {
+   "lo": 0.5,
+   "hi": 1.5,
+   "basis": "No IPL contract history; young Sri Lankan all-rounder"
   }
  },
  "market": {
@@ -399,7 +404,7 @@
    "Prashant Veer",
    "Dian Forrester",
    "Kamindu Mendis",
-   "Matthew Breetzke",
+   "Dunith Wellalage",
    "Karun Nair"
   ],
   "bowl": [
@@ -541,7 +546,7 @@
    "Kamindu Mendis",
    "Prashant Veer",
    "Dian Forrester",
-   "Matthew Breetzke"
+   "Dunith Wellalage"
   ],
   "Top-order backup": [
    "Karun Nair"
@@ -561,58 +566,11 @@
    "Allah Ghazanfar"
   ]
  },
- "sri_lanka": [
-  [
-   "Kamindu Mendis",
-   "Middle-order batter + two-arm spin",
-   "Released by SRH"
-  ],
-  [
-   "Bhanuka Rajapaksa",
-   "Left-handed power hitter (ex-PBKS)",
-   "Auction pool (if registered)"
-  ],
-  [
-   "Charith Asalanka",
-   "Middle-order batter / finisher, SL T20I leader",
-   "Auction pool (if registered)"
-  ],
-  [
-   "Kusal Mendis",
-   "Keeper-batter, top or middle order",
-   "Auction pool (if registered)"
-  ],
-  [
-   "Matheesha Pathirana",
-   "Death-overs fast bowler",
-   "Released by KKR"
-  ],
-  [
-   "Wanindu Hasaranga",
-   "Leg-spin all-rounder (ex-RR)",
-   "Released by LSG"
-  ],
-  [
-   "Maheesh Theekshana",
-   "Mystery spin (ex-RR)",
-   "Auction pool (unsold 2026)"
-  ],
-  [
-   "Dushmantha Chameera",
-   "Fast bowler",
-   "Released by DC"
-  ]
- ],
  "groom": [
   [
    "Prashant Veer",
    "Uncapped Indian batting all-rounder (left-arm spin)",
    "Released by CSK"
-  ],
-  [
-   "Dunith Wellalage",
-   "Sri Lankan spin all-rounder (age 23)",
-   "Auction pool (if registered)"
   ],
   [
    "Kamil Mishara",
