@@ -3,13 +3,13 @@
 Batsman 1: M Shahrukh Khan
 Batsman 2: Daryl Mitchell
 Batsman 3: Kamindu Mendis
-Batsman 4: Matthew Short
-Batsman 5: Mahipal Lomror
-Batsman 6: Nehal Wadhera
-Batsman 7: Nitish Rana
-Batsman 8: Abhinav Manohar
-Batsman 9: Rahul Tripathi
-Batsman 10: Matthew Breetzke
+Batsman 4: Mahipal Lomror
+Batsman 5: Nehal Wadhera
+Batsman 6: Nitish Rana
+Batsman 7: Abhinav Manohar
+Batsman 8: Matthew Breetzke
+Batsman 9: Wanindu Hasaranga
+Batsman 10: Abishek Porel
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)
 

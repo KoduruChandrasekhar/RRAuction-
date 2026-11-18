@@ -518,20 +518,17 @@
   {
    "name": "Slot 6: probables",
    "slot": "Open",
-   "why": "Decided on the day by price: Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (overseas power hitter, max \u20b93.5 cr) or Zak Foulkes (young overseas pace all-rounder, max \u20b91.5 cr)",
+  "why": "Decided on the day by price: Abhinav Manohar (Indian middle-order finisher, max \u20b91.5 cr), Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (overseas power hitter, max \u20b93.5 cr) or Zak Foulkes (young overseas pace all-rounder, max \u20b91.5 cr)",
    "target": 3,
    "max": 4.5
   }
  ],
  "plan_alternatives": {
   "Slot 6 probables": [
+   "Abhinav Manohar (max \u20b91.5 cr)",
    "Deepak Chahar (max \u20b94.5 cr)",
    "Mitchell Owen (max \u20b93.5 cr)",
-   "Zak Foulkes (max \u20b91.5 cr)",
-   "Sikandar Raza (max \u20b92.5 cr)",
-   "Dian Forrester (capped at \u20b91.5 cr)",
-   "Dunith Wellalage (capped at \u20b91.5 cr)",
-   "Prashant Veer (subject to verification)"
+   "Zak Foulkes (max \u20b91.5 cr)"
   ],
   "Pace ladder (if Coetzee goes past \u20b98.5 cr)": [
    "Matt Henry (max \u20b97.5 cr)",
@@ -747,7 +744,7 @@
    ],
    [
     "Keep slot 6 open. ",
-    "The sixth buy is decided by price on the day: Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (power hitter, max \u20b93.5 cr) or Zak Foulkes (young pace all-rounder, max \u20b91.5 cr). About \u20b94.5 cr is held back for it."
+    "The sixth buy is decided by price on the day: Abhinav Manohar (Indian finisher, max \u20b91.5 cr), Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (power hitter, max \u20b93.5 cr) or Zak Foulkes (young pace all-rounder, max \u20b91.5 cr). About \u20b94.5 cr is held back for it."
    ],
    [
     "Cede the marquee names. ",
