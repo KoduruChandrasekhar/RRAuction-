@@ -346,6 +346,11 @@
    "lo": 0.75,
    "hi": 2,
    "basis": "CSK Rs 75 L (2026); released"
+  },
+  "Abhinav Manohar": {
+   "lo": 0.5,
+   "hi": 1.5,
+   "basis": "Uncapped Indian finisher; IPL 2023-25"
   }
  },
  "market": {
@@ -411,28 +416,28 @@
  },
  "final_lists": {
   "bat": [
-   "Nehal Wadhera",
-   "Mahipal Lomror",
    "Daryl Mitchell",
-   "Mitchell Owen",
    "Kamindu Mendis",
-   "Matthew Breetzke",
+   "Mitchell Owen",
    "Dian Forrester",
+   "Mahipal Lomror",
+   "Nehal Wadhera",
    "Dunith Wellalage",
+   "Abhinav Manohar",
    "Prashant Veer",
-   "M Shahrukh Khan"
+   "Matthew Breetzke"
   ],
   "bowl": [
-   "Gerald Coetzee",
-   "Matt Henry",
-   "Trent Boult",
-   "Deepak Chahar",
    "Lockie Ferguson",
-   "Avesh Khan",
-   "Wanindu Hasaranga",
+   "Gerald Coetzee",
    "Matheesha Pathirana",
+   "Wanindu Hasaranga",
+   "Allah Ghazanfar",
    "Mayank Markande",
-   "Allah Ghazanfar"
+   "Avesh Khan",
+   "Deepak Chahar",
+   "Trent Boult",
+   "Matt Henry"
   ],
   "exclude": [
    "Abishek Porel",
@@ -450,17 +455,11 @@
    "Tushar Deshpande",
    "Vignesh Puthur",
    "Yudhvir Singh",
-   "Nitish Rana"
+   "Nitish Rana",
+   "M Shahrukh Khan"
   ]
  },
  "plan": [
-  {
-   "name": "Gerald Coetzee",
-   "slot": "Overseas",
-   "why": "The one premium overseas pace buy: pace for the middle and death overs plus lower-order hitting",
-   "target": 7,
-   "max": 8.5
-  },
   {
    "name": "Nehal Wadhera",
    "slot": "Indian",
@@ -469,16 +468,16 @@
    "max": 8
   },
   {
-   "name": "Deepak Chahar",
-   "slot": "Indian",
-   "why": "Indian new-ball cover for Shami and Archer; swing in the powerplay, runs at No.8-9",
-   "target": 3.5,
-   "max": 4.5
+   "name": "Gerald Coetzee",
+   "slot": "Overseas",
+   "why": "The one premium overseas pace buy: pace for the middle and death overs plus lower-order hitting",
+   "target": 7,
+   "max": 8.5
   },
   {
    "name": "Daryl Mitchell",
    "slot": "Overseas",
-   "why": "Value buy: overs 12-20 engine, unsold at a \u20b92 cr base in 2026, in top 2026 form",
+   "why": "Value buy: overs 12-20 engine, the highest-rated batter on our list; unsold at a \u20b92 cr base in 2026",
    "target": 2.5,
    "max": 3.5
   },
@@ -495,23 +494,30 @@
    "why": "Young uncapped all-rounder: 20-ball fifty at RR trials (Sep 2026), off-spin option; unsold at \u20b930 L in 2026",
    "target": 0.5,
    "max": 1
+  },
+  {
+   "name": "Slot 6: probables",
+   "slot": "Open",
+   "why": "Decided on the day by price: Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (overseas power hitter, max \u20b93.5 cr) or Zak Foulkes (young overseas pace all-rounder, max \u20b91.5 cr)",
+   "target": 3,
+   "max": 4.5
   }
  ],
  "plan_alternatives": {
+  "Slot 6 probables": [
+   "Deepak Chahar (max \u20b94.5 cr)",
+   "Mitchell Owen (max \u20b93.5 cr)",
+   "Zak Foulkes (max \u20b91.5 cr)",
+   "Avesh Khan (max \u20b94.5 cr)"
+  ],
   "Pace ladder (if Coetzee goes past \u20b98.5 cr)": [
    "Matt Henry (max \u20b97.5 cr)",
-   "Trent Boult (max \u20b96 cr)",
-   "Avesh Khan (max \u20b95 cr, Indian)"
+   "Trent Boult (max \u20b96 cr)"
   ],
   "Young and uncapped value": [
-   "Zak Foulkes (max \u20b91.5 cr, overseas)",
    "Raj Limbani (max \u20b90.75 cr)",
-   "Ayush Doseja (max \u20b90.75 cr)"
-  ],
-  "Finisher (death-overs power)": [
-   "Mitchell Owen (max \u20b93.5 cr)",
-   "M Shahrukh Khan (max \u20b92.5 cr)",
-   "Dian Forrester (max \u20b91 cr)"
+   "Ayush Doseja (max \u20b90.75 cr)",
+   "Abhinav Manohar (max \u20b91.5 cr)"
   ],
   "Backup top order / opener if Jaiswal is traded": [
    "Matthew Breetzke (max \u20b92 cr)"
@@ -561,37 +567,37 @@
   [
    "9-11",
    "Attack",
-   "Archer, Shami, Bishnoi, Burger/Shanaka; pace cover Coetzee and Chahar (buy)"
+   "Archer, Shami, Bishnoi, Burger/Shanaka; pace cover Coetzee (buy) + slot 6"
   ]
  ],
  "groups": {
   "Middle-order power and finishers (primary gap)": [
    "Nehal Wadhera",
-   "Mahipal Lomror",
    "Daryl Mitchell",
-   "Mitchell Owen",
+   "Mahipal Lomror",
    "Kamindu Mendis",
+   "Mitchell Owen",
    "Dian Forrester",
+   "Abhinav Manohar",
    "Dunith Wellalage",
-   "Prashant Veer",
-   "M Shahrukh Khan"
+   "Prashant Veer"
   ],
   "Top-order backup": [
    "Matthew Breetzke"
   ],
   "Pace": [
    "Gerald Coetzee",
-   "Matt Henry",
-   "Trent Boult",
-   "Deepak Chahar",
    "Lockie Ferguson",
+   "Matheesha Pathirana",
    "Avesh Khan",
-   "Matheesha Pathirana"
+   "Deepak Chahar",
+   "Trent Boult",
+   "Matt Henry"
   ],
   "Spin": [
    "Wanindu Hasaranga",
-   "Mayank Markande",
-   "Allah Ghazanfar"
+   "Allah Ghazanfar",
+   "Mayank Markande"
   ]
  },
  "groom": [
@@ -712,11 +718,11 @@
    ],
    [
     "Fill the rest with value and youth. ",
-    "Daryl Mitchell (unsold at \u20b92 cr last year), Lomror (uncapped) and Karan Lal (unsold at \u20b930 L in 2026, 20-ball fifty at RR trials) cost \u20b94-6 cr together. Rich teams spend early on stars; uncapped and young sets come later, when their purses are thinner."
+    "Daryl Mitchell (unsold at \u20b92 cr last year), Lomror (uncapped) and Karan Lal (unsold at \u20b930 L in 2026, 20-ball fifty at RR trials) cost about \u20b94-6 cr together. Rich teams spend early on stars; uncapped and young sets come later, when their purses are thinner."
    ],
    [
-    "Indian pace cover at an Indian price. ",
-    "Deepak Chahar (max \u20b94.5 cr) covers the new ball without using an overseas slot; Avesh is the fallback."
+    "Keep slot 6 open. ",
+    "The sixth buy is decided by price on the day: Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (power hitter, max \u20b93.5 cr) or Zak Foulkes (young pace all-rounder, max \u20b91.5 cr). About \u20b94.5 cr is held back for it."
    ],
    [
     "Cede the marquee names. ",
@@ -724,7 +730,7 @@
    ],
    [
     "Running budget. ",
-    "Targets total \u20b921 cr of \u20b927.05 cr. The ceilings are not all spent at once: any overspend on an early buy comes off the ceilings of later ones, so RR can always fill all 6 slots (minimum \u20b930 L each)."
+    "Targets total \u20b920.5 cr of \u20b927.05 cr. The ceilings are not all spent at once: any overspend on an early buy comes off the ceilings of later ones, so RR can always fill all 6 slots (minimum \u20b930 L each)."
    ]
   ]
  },
@@ -818,8 +824,8 @@
   ],
   [
    "Top 10 batters and top 10 bowlers",
-   "Ranked from the official 17 Nov release pool plus unsold players: only players RR can actually buy.",
-   "Sections 7-9"
+   "Ranked by NeRRve score (rank 1 = highest-rated) among players RR can buy at the 16 Dec auction and who fit RR roles.",
+   "Sections 8-9"
   ],
   [
    "How each pick strengthens RR",
@@ -841,5 +847,9 @@
    "A dashboard with leaderboard weight sliders, player deep-dives, a pressure calculator and an auction basket.",
    "Dashboard link"
   ]
- ]
+ ],
+ "core_text": {
+  "bat": "Nehal Wadhera, Daryl Mitchell, Mahipal Lomror",
+  "bowl": "Gerald Coetzee, with slot 6 kept for Deepak Chahar or a value buy"
+ }
 }

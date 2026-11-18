@@ -279,5 +279,10 @@
   "role": "Batting all-rounder (Indian, uncapped, young)",
   "fit": "Lower-middle-order hitter with off-spin: 113 off 50 in domestic T20; 20-ball fifty at RR trials (Sep 2026).",
   "risk": "Not in the data pack: domestic evidence only."
+ },
+ "Abhinav Manohar": {
+  "role": "Middle-order finisher (Indian, uncapped)",
+  "fit": "Uncapped Indian finisher with IPL experience: boundary power for overs 15-20 against pace and spin.",
+  "risk": "-"
  }
 }

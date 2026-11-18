@@ -80,7 +80,7 @@ def table(s, x, y, w, h, header, rows, widths=None, size=11):
             for p in c.text_frame.paragraphs:
                 for r in p.runs:
                     r.font.size = Pt(size); r.font.color.rgb = INK; r.font.name = 'Segoe UI'
-                    r.font.bold = (j == 0)
+                    r.font.bold = (j == (1 if header[0] == '#' else 0))
     if widths:
         for j, wd in enumerate(widths):
             t.columns[j].width = Inches(wd)
@@ -205,11 +205,11 @@ bullets(s, 0.55, 4.0, 6.0, 3, [('1. Overs 12–20 boundary power: ', '2–3 hitt
 table(s, 6.8, 1.6, 6.0, 4.9, ['Bat', 'Role', 'Player'], [[a, b, c] for a, b, c in PR.get('xi_fit', [])], [0.7, 2.1, 3.2], 11)
 
 # 9-10. lists
-for R, ttl, kick in [(top_b, 'Batters to buy: middle-order power and finishing', '5 · Batters'), (top_w, 'Bowlers to buy: pace and spin backups', '6 · Bowlers')]:
+for R, ttl, kick in [(top_b, 'Top 10 batters, ranked by NeRRve', '5 · Batters (rank 1 = highest-rated)'), (top_w, 'Top 10 bowlers, ranked by NeRRve', '6 · Bowlers (rank 1 = highest-rated)')]:
     s = base(ttl, kick)
-    table(s, 0.55, 1.55, 12.2, 5.2, ['Player', 'Country', 'Role', 'Why RR', 'Price band'],
-          [[r['name'], str(r.country), role(r['name']), NOTES.get(r['name'], {}).get('fit', '')[:100], price(r['name'])] for _, r in R.iterrows()],
-          [2.2, 1.6, 2.7, 4.4, 1.3], 10)
+    table(s, 0.55, 1.55, 12.2, 5.2, ['#', 'Player', 'NeRRve', 'Role', 'Why RR', 'Price band'],
+          [[int(r.pool_rank), r['name'], f"{r.RUPI:.0f}", role(r['name']), NOTES.get(r['name'], {}).get('fit', '')[:100], price(r['name'])] for _, r in R.iterrows()],
+          [0.45, 2.0, 0.9, 2.4, 5.0, 1.45], 10)
 
 # 11. plan
 s = base(f"Who to buy with ₹{I['purse']['available']:.2f} cr and 6 slots (3 overseas)", '7 · Auction plan')
