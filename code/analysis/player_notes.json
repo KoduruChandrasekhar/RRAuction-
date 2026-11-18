@@ -21,9 +21,9 @@
   "risk": "Value buy: unsold on a Rs 2 cr base in 2026."
  },
  "Sikandar Raza": {
-  "role": "Middle-order batter + off-spin (two-list player)",
-  "fit": "Rated in both our batting and bowling top 10s: a middle-overs chaser with the bat and a middle-overs control spinner with the ball. One overseas slot covers two needs at a low price.",
-  "risk": "Age 40; last IPL season was 2024."
+  "role": "Middle-order hitter + off-spin",
+  "fit": "Overs 12-20 hitter who also bowls tight off-spin; strong pressure record with bat (61) and ball (66), active in Nov 2026.",
+  "risk": "Short-term buy (age 40)."
  },
  "Kyle Mayers": {
   "role": "Powerplay batter / seam all-rounder",
@@ -51,9 +51,9 @@
   "risk": "No IPL history."
  },
  "Jonny Bairstow": {
-  "role": "Opener / keeper",
-  "fit": "IPL-proven powerplay batter. Keeper cover.",
-  "risk": "Age 37; fewer recent pressure innings than the list's evidence bar."
+  "role": "Top-order batter (backup opener)",
+  "fit": "Cover for Jurel and Parag, and the opener if Jaiswal is traded: 116 IPL pressure balls and attacks the powerplay.",
+  "risk": "Must register for the 3 Dec auction list."
  },
  "Mujeeb Ur Rahman": {
   "role": "Mystery off-spin (powerplay + middle)",
@@ -81,9 +81,9 @@
   "risk": "No IPL history."
  },
  "FazalHaq Farooqi": {
-  "role": "Left-arm swing (powerplay + death)",
-  "fit": "A powerplay swing bowler, ex-RR (2025).",
-  "risk": "His IPL pressure sample is below par."
+  "role": "Left-arm fast bowler (new ball)",
+  "fit": "Left-arm swing with the new ball: adds a different angle to the RR attack; IPL experience.",
+  "risk": "-"
  },
  "Gudakesh Motie": {
   "role": "Left-arm spin (middle overs)",
@@ -126,9 +126,9 @@
   "risk": "Rs 25.2 cr. If released, a KKR buy-back is likely and beyond RR's purse."
  },
  "Blessing Muzarabani": {
-  "role": "Tall seamer (powerplay + death)",
-  "fit": "Above-par pressure seamer, released by KKR: a value overseas pace option.",
-  "risk": "Little IPL game time."
+  "role": "Tall fast bowler (new ball + death)",
+  "fit": "Steep bounce from a 6ft 8in frame: wickets in the powerplay and hard-to-hit lengths at the death; pace cover for Archer and Shami.",
+  "risk": "-"
  },
  "M Shahrukh Khan": {
   "role": "Power finisher (Indian, uncapped)",
@@ -284,5 +284,10 @@
   "role": "Middle-order finisher (Indian, uncapped)",
   "fit": "Uncapped Indian finisher with IPL experience: boundary power for overs 15-20 against pace and spin.",
   "risk": "-"
+ },
+ "Zakary Foulkes": {
+  "role": "Young pace all-rounder",
+  "fit": "Pace all-rounder (24) who hits hard lengths and bats in the lower order: value buy and long-term depth.",
+  "risk": "Smaller T20 sample."
  }
 }

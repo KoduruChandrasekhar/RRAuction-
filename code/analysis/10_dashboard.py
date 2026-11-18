@@ -60,6 +60,16 @@ data = dict(version=VERSION, players=players, calc=calc, plan_core=PR.get("plan_
             weights=SUM['bat']['weights'], grid=GRID, envs=I['env_table'], wkcost=I['wkt_cost_phase'])
 tpl = open(os.path.join(HERE, 'dashboard_template.html'), encoding='utf-8').read()
 tpl = tpl.replace('__IDX__', IDX)
+import html as _h
+_fl = PR.get('final_lists', {})
+_li = lambda xs: ''.join(f'<li>{_h.escape(x)}</li>' for x in xs)
+_plan = ''.join(f'<li><b>{_h.escape(x["name"])}</b> ({_h.escape(x["slot"])}, max ₹{x["max"]:g} cr)</li>' for x in PR.get('plan', []))
+static = (f'<h2>{IDX}: picks at a glance</h2><p class="small muted">This summary is shown when the interactive view cannot run '
+          '(for example in a file preview with JavaScript turned off). Open the file in Chrome or Edge, or use the live link, for the full dashboard.</p>'
+          f'<div class="cols"><div><h3>Top 10 batters (by {IDX})</h3><ol>{_li(_fl.get("bat", []))}</ol></div>'
+          f'<div><h3>Top 10 bowlers (by {IDX})</h3><ol>{_li(_fl.get("bowl", []))}</ol></div>'
+          f'<div><h3>Auction buy plan (₹{I["purse"]["available"]:.2f} cr, 6 slots)</h3><ul>{_plan}</ul></div></div>')
+tpl = tpl.replace('<!--__STATIC__-->', static)
 html = tpl.replace('/*__DATA__*/null', json.dumps(data, separators=(',', ':'), default=clean))
 open(OUT, 'w', encoding='utf-8').write(html)
 print('dashboard written', OUT, round(len(html) / 1e6, 2), 'MB')

@@ -9,8 +9,8 @@
  "players": {
   "Sikandar Raza": {
    "lo": 1,
-   "hi": 2,
-   "basis": "Last IPL fee Rs 0.5 cr (PBKS 2024); rich market"
+   "hi": 2.5,
+   "basis": "PBKS 2023-24; unsold since"
   },
   "Harry Brook": {
    "lo": 4.0,
@@ -23,9 +23,9 @@
    "basis": "No IPL history - associate base-price bracket"
   },
   "Jonny Bairstow": {
-   "lo": 1.0,
-   "hi": 2.0,
-   "basis": "Unsold at 2026 auction; MI replacement 2025"
+   "lo": 1.5,
+   "hi": 3,
+   "basis": "IPL 2022-25; top-order specialist"
   },
   "Towhid Hridoy": {
    "lo": 0.3,
@@ -158,9 +158,9 @@
    "basis": "No IPL history"
   },
   "FazalHaq Farooqi": {
-   "lo": 1.0,
-   "hi": 2.0,
-   "basis": "RR Rs 2 cr (2025)"
+   "lo": 2,
+   "hi": 4,
+   "basis": "SRH 2023-24, RR 2025; left-arm pace premium"
   },
   "Lockie Ferguson": {
    "lo": 8,
@@ -173,9 +173,9 @@
    "basis": "KKR Rs 18 cr (2026), released after 1 match; expect a bidding war"
   },
   "Blessing Muzarabani": {
-   "lo": 1,
-   "hi": 2.5,
-   "basis": "KKR 2026 squad; released"
+   "lo": 1.5,
+   "hi": 3.5,
+   "basis": "KKR 2026; released 17 Nov"
   },
   "M Shahrukh Khan": {
    "lo": 2.5,
@@ -351,6 +351,11 @@
    "lo": 0.5,
    "hi": 1.5,
    "basis": "Uncapped Indian finisher; IPL 2023-25"
+  },
+  "Zakary Foulkes": {
+   "lo": 0.75,
+   "hi": 2,
+   "basis": "CSK Rs 75 L (2026); released"
   }
  },
  "market": {
@@ -417,27 +422,27 @@
  "final_lists": {
   "bat": [
    "Daryl Mitchell",
+   "Jonny Bairstow",
+   "Sikandar Raza",
    "Kamindu Mendis",
    "Mitchell Owen",
    "Dian Forrester",
    "Mahipal Lomror",
    "Nehal Wadhera",
    "Dunith Wellalage",
-   "Abhinav Manohar",
-   "Prashant Veer",
-   "Matthew Breetzke"
+   "Abhinav Manohar"
   ],
   "bowl": [
    "Lockie Ferguson",
    "Gerald Coetzee",
    "Matheesha Pathirana",
+   "Blessing Muzarabani",
+   "Zakary Foulkes",
    "Wanindu Hasaranga",
    "Allah Ghazanfar",
    "Mayank Markande",
    "Avesh Khan",
-   "Deepak Chahar",
-   "Trent Boult",
-   "Matt Henry"
+   "Trent Boult"
   ],
   "exclude": [
    "Abishek Porel",
@@ -508,7 +513,7 @@
    "Deepak Chahar (max \u20b94.5 cr)",
    "Mitchell Owen (max \u20b93.5 cr)",
    "Zak Foulkes (max \u20b91.5 cr)",
-   "Avesh Khan (max \u20b94.5 cr)"
+   "Sikandar Raza (max \u20b92.5 cr)"
   ],
   "Pace ladder (if Coetzee goes past \u20b98.5 cr)": [
    "Matt Henry (max \u20b97.5 cr)",
@@ -520,7 +525,7 @@
    "Abhinav Manohar (max \u20b91.5 cr)"
   ],
   "Backup top order / opener if Jaiswal is traded": [
-   "Matthew Breetzke (max \u20b92 cr)"
+   "Jonny Bairstow (max \u20b93 cr)"
   ],
   "Not affordable in this market": [
    "Matheesha Pathirana (\u20b910-16 cr)",
@@ -532,12 +537,12 @@
   [
    "1-2",
    "Openers",
-   "Sooryavanshi, Jaiswal (fixed); if Jaiswal is traded: Matthew Breetzke"
+   "Sooryavanshi, Jaiswal (fixed); if Jaiswal is traded: Jonny Bairstow"
   ],
   [
    "3-4",
    "Top order",
-   "Jurel, Parag (fixed); backup: Matthew Breetzke"
+   "Jurel, Parag (fixed); backup: Jonny Bairstow"
   ],
   [
    "5",
@@ -575,24 +580,24 @@
    "Nehal Wadhera",
    "Daryl Mitchell",
    "Mahipal Lomror",
+   "Sikandar Raza",
    "Kamindu Mendis",
    "Mitchell Owen",
    "Dian Forrester",
    "Abhinav Manohar",
-   "Dunith Wellalage",
-   "Prashant Veer"
+   "Dunith Wellalage"
   ],
   "Top-order backup": [
-   "Matthew Breetzke"
+   "Jonny Bairstow"
   ],
   "Pace": [
    "Gerald Coetzee",
    "Lockie Ferguson",
    "Matheesha Pathirana",
+   "Blessing Muzarabani",
+   "Zakary Foulkes",
    "Avesh Khan",
-   "Deepak Chahar",
-   "Trent Boult",
-   "Matt Henry"
+   "Trent Boult"
   ],
   "Spin": [
    "Wanindu Hasaranga",
@@ -660,7 +665,7 @@
     9,
     4,
     "Top and middle order, overseas pace (released Starc, Rana)",
-    "Breetzke, Boult, Ferguson"
+    "Bairstow, Boult, Ferguson"
    ],
    [
     "Mumbai Indians",
@@ -776,13 +781,6 @@
    "evidence": "India U19 World Cup 2024; new ball plus lower-order runs",
    "status": "Unsold 2026 (base \u20b930 L)",
    "fit": "Indian pace depth"
-  },
-  {
-   "name": "Zak Foulkes",
-   "profile": "New Zealand, 24 \u00b7 pace all-rounder",
-   "evidence": "Starred on Test debut in NZ record win v Zimbabwe (2025); NZ white-ball squads 2026",
-   "status": "Released by CSK",
-   "fit": "Overseas pace-all-rounder depth"
   },
   {
    "name": "Mohit Ulva",
