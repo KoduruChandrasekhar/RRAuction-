@@ -1,0 +1,28 @@
+{
+  "_source": "ESPNcricinfo, 'Starc, Head, Bethell released by DC, SRH, RCB ahead of IPL 2027 player auction', 17 Nov 2026 (official retention deadline). Purses reconcile with the IPL release note (combined Rs 297.95 cr).",
+  "teams": {
+    "Chennai Super Kings": {"purse": 28.05, "slots": 6, "overseas": 2,
+      "released": ["MS Dhoni", "Aman Khan", "Dian Forrester", "Kuldip Yadav", "Macneil Noronha", "Matthew Short", "Matt Henry", "Akash Madhwal", "Prashant Veer", "Spencer Johnson", "Zak Foulkes"]},
+    "Mumbai Indians": {"purse": 32.6, "slots": 9, "overseas": 2,
+      "released": ["Trent Boult", "Deepak Chahar", "AM Ghazanfar", "Atharva Ankolekar", "Keshav Maharaj", "Mohammed Izhar", "Danish Malewar", "Mayank Markande", "Mayank Rawat", "Mahipal Lomror", "Robin Minz", "Ruchit Ahir", "Krish Bhagat"]},
+    "Delhi Capitals": {"purse": 39.5, "slots": 9, "overseas": 4,
+      "released": ["Mitchell Starc", "Nitish Rana", "Abishek Porel", "Pathum Nissanka", "Ben Duckett", "Karun Nair", "Sahil Parakh", "Dushmantha Chameera", "Rehan Ahmed", "Ajay Mandal"]},
+    "Lucknow Super Giants": {"purse": 47.45, "slots": 7, "overseas": 3,
+      "released": ["Avesh Khan", "Matthew Breetzke", "Anrich Nortje", "George Linde", "Wanindu Hasaranga", "Naman Tiwari", "Himmat Singh"]},
+    "Punjab Kings": {"purse": 18.6, "slots": 6, "overseas": 2,
+      "released": ["Nehal Wadhera", "Lockie Ferguson", "Mitchell Owen", "Pyla Avinash", "Praveen Dubey", "Vishal Nishad"]},
+    "Rajasthan Royals": {"purse": 27.05, "slots": 6, "overseas": 3,
+      "released": ["Shimron Hetmyer", "Adam Milne", "Kwena Maphaka", "Tushar Deshpande", "Kuldeep Sen", "Yudhvir Singh", "Vignesh Puthur", "Ravi Singh", "Emanjot Chahal"]},
+    "Sunrisers Hyderabad": {"purse": 40.15, "slots": 7, "overseas": 3,
+      "released": ["Travis Head", "Kamindu Mendis", "Jaydev Unadkat", "Dilshan Madushanka", "Onkar Tarmale", "Amit Kumar", "Shivam Mavi", "Gerald Coetzee", "David Payne", "RS Ambrish"]},
+    "Royal Challengers Bengaluru": {"purse": 14.15, "slots": 5, "overseas": 1,
+      "released": ["Jacob Bethell", "Richard Gleeson", "Mangesh Yadav", "Satvik Deswal", "Vihaan Malhotra", "Swapnil Singh"]},
+    "Gujarat Titans": {"purse": 8.75, "slots": 3, "overseas": 2,
+      "released": ["Ishant Sharma", "Luke Wood", "Kulwant Khejroliya", "Shahrukh Khan", "Connor Esterhuizen", "Prithviraj Yarra"]},
+    "Kolkata Knight Riders": {"purse": 41.65, "slots": 8, "overseas": 3,
+      "released": ["Ajinkya Rahane", "Akash Deep", "Blessing Muzarabani", "Daksh Kamra", "Luvnith Sisodia", "Matheesha Pathirana", "Mustafizur Rahman", "Navdeep Saini", "Rachin Ravindra", "Rahul Tripathi", "Tejasvi Singh", "Umran Malik"]}
+  },
+  "confirmed_trades": {"Mohammed Shami": "Rajasthan Royals", "M Siddharth": "Rajasthan Royals", "Sam Curran": "Lucknow Super Giants", "Harshal Patel": "Gujarat Titans"},
+  "not_playing_2027": {"Mitchell Starc": "Released by DC; will not take part in IPL 2027 (workload)", "Travis Head": "Released by SRH; will not take part in IPL 2027 (workload)",
+                       "Jacob Bethell": "Released by RCB; out of IPL 2027 (knee)", "MS Dhoni": "Ended IPL career - CSK mentor"}
+}

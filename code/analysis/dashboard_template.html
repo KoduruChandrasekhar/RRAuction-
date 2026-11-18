@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__IDX__ War Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FB;--surface:#FFFFFF;--surface2:#F1F2F7;--ink:#14172B;--ink2:#41465E;--muted:#6B7085;--line:#E4E6EE;--grid:#EEF0F5;
+--pink:#E2077E;--pinkSoft:#FDE7F2;--navy:#1B2A6B;--blue:#2A45B8;--gold:#C98500;--gray:#B9BCC8;--good:#0A8A4A;--bad:#C21D5E;--shadow:0 1px 2px rgba(20,23,43,.06),0 6px 20px rgba(20,23,43,.05)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0E1F;--surface:#141936;--surface2:#1C2245;--ink:#EEF0FA;--ink2:#C7CBE0;--muted:#9097B8;--line:#2A3058;--grid:#222850;
+--pink:#F03D95;--pinkSoft:#3A1430;--navy:#C9D1FF;--blue:#6F8CFF;--gold:#E0A526;--gray:#59608A;--good:#3BC57F;--bad:#FF6B9E;--shadow:none}}
+:root[data-theme="dark"]{--bg:#0B0E1F;--surface:#141936;--surface2:#1C2245;--ink:#EEF0FA;--ink2:#C7CBE0;--muted:#9097B8;--line:#2A3058;--grid:#222850;
+--pink:#F03D95;--pinkSoft:#3A1430;--navy:#C9D1FF;--blue:#6F8CFF;--gold:#E0A526;--gray:#59608A;--good:#3BC57F;--bad:#FF6B9E;--shadow:none}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,'Segoe UI',system-ui,sans-serif}
+h1,h2,h3{font-family:Poppins,'Segoe UI',sans-serif;margin:0;color:var(--navy)}h2{font-size:20px}h3{font-size:14.5px;margin-bottom:8px}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(110deg,#0F1747,#1B2A6B 60%,#3A1C6B);color:#fff;padding:12px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px}.brand b{font:800 22px Poppins;letter-spacing:-.5px}.brand span{color:#FF8CC6;font-size:12px;font-weight:600}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav button{background:transparent;border:1px solid rgba(255,255,255,.18);color:#DDE1F5;border-radius:20px;padding:6px 13px;font:600 12.5px Inter;cursor:pointer}
+nav button.on{background:#fff;color:#1B2A6B;border-color:#fff}nav button:hover:not(.on){background:rgba(255,255,255,.1)}
+.hdr-r{margin-left:auto;display:flex;gap:10px;align-items:center;font-size:11.5px;color:#AEB4D8}
+.tbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:16px;padding:4px 10px;cursor:pointer;font-size:12px}
+main{max-width:1380px;margin:0 auto;padding:18px 20px 60px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g12{grid-template-columns:1.25fr 1fr}.g21{grid-template-columns:1fr 1.4fr}
+@media(max-width:980px){.g2,.g3,.g4,.g12,.g21{grid-template-columns:1fr}}
+.kpi .v{font:800 26px Poppins;color:var(--pink);line-height:1.1}.kpi .l{color:var(--ink2);font-size:12.5px}.kpi .n{color:var(--muted);font-size:11.5px}
+.muted{color:var(--muted)}.small{font-size:12px}.tiny{font-size:11px}.num{text-align:right;font-variant-numeric:tabular-nums}
+.sec-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:4px 0 12px;flex-wrap:wrap}.sec-title p{margin:2px 0 0;color:var(--muted)}
+.toggle{display:inline-flex;background:var(--surface2);border-radius:20px;padding:3px}.toggle button{border:0;background:transparent;color:var(--ink2);padding:5px 12px;border-radius:16px;cursor:pointer;font:600 12.5px Inter}
+.toggle button.on{background:var(--surface);color:var(--pink);box-shadow:var(--shadow)}
+.chip{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--surface2);color:var(--ink2);white-space:nowrap}
+.chip.pool{background:#E3F6EC;color:#08683A}.chip.watch,.chip.doubtful{background:#FFF3D6;color:#8A5A00}.chip.rr{background:#FDE3F0;color:#A1005A}.chip.out,.chip.unlikely{background:#FDE6E6;color:#A42424}
+[data-theme="dark"] .chip.pool{background:#123a27;color:#7FE0AE}[data-theme="dark"] .chip.watch,[data-theme="dark"] .chip.doubtful{background:#3d300c;color:#F5C76A}[data-theme="dark"] .chip.rr{background:#3d1430;color:#FF9CCB}[data-theme="dark"] .chip.out{background:#3d1717;color:#FF9C9C}
+.list{list-style:none;margin:0;padding:0}.list li{display:grid;grid-template-columns:30px 1fr 90px 110px 30px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid var(--grid)}
+.list .rk{font:800 13px Poppins;color:#fff;background:var(--pink);border-radius:7px;text-align:center;padding:2px 0}.list .rk.w{background:var(--gold)}
+.list .nm b{display:block}.list .nm span{font-size:11.5px;color:var(--muted)}
+.meter{height:8px;background:var(--surface2);border-radius:4px;position:relative}.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--pink)}
+.addb{border:1px solid var(--line);background:var(--surface);color:var(--pink);border-radius:8px;cursor:pointer;font-weight:700;height:24px}
+.addb.on{background:var(--pink);color:#fff;border-color:var(--pink)}
+table{border-collapse:collapse;width:100%}th{font-size:11.5px;color:var(--muted);font-weight:600;text-align:left;padding:7px 6px;border-bottom:2px solid var(--navy);cursor:pointer;white-space:nowrap;user-select:none}
+td{padding:6px;border-bottom:1px solid var(--grid);font-size:12.8px}tr.click{cursor:pointer}tr.click:hover td{background:var(--surface2)}
+th.num,td.num{text-align:right}.tbl-wrap{max-height:620px;overflow:auto}
+.ctrl{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.slider{display:grid;grid-template-columns:110px 1fr 40px;gap:8px;align-items:center;font-size:12.5px}
+input[type=range]{accent-color:var(--pink);width:100%}input[type=search],select{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 10px;font:13px Inter}
+.find{margin:0;padding-left:18px}.find li{margin-bottom:7px}
+#tip{position:fixed;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.15);border-radius:10px;padding:8px 10px;font-size:12px;z-index:50;display:none;max-width:280px}
+svg text{font-family:Inter,'Segoe UI',sans-serif}
+.pillars{display:grid;grid-template-columns:110px 1fr 46px;gap:6px 10px;align-items:center;font-size:12.5px}
+.zb{position:relative;height:10px;background:var(--surface2);border-radius:5px}.zb .mid{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--gray)}.zb i{position:absolute;top:0;bottom:0;border-radius:5px}
+.big{font:800 40px Poppins;color:var(--navy);line-height:1}.bigp{font:800 40px Poppins;color:var(--pink);line-height:1}
+.pcard{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface)}
+.badge{display:inline-block;padding:3px 10px;border-radius:14px;font-weight:700;font-size:12px}
+.calc-out{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.note{border-left:3px solid var(--pink);background:var(--surface2);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12.5px;color:var(--ink2)}
+.basket td{font-size:12.5px}.total{font:800 22px Poppins}
+.hidden{display:none!important}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--ink2);flex-wrap:wrap}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.rkc{font:800 18px Poppins;text-align:center}.rkc.good{color:var(--good)}.rkc.bad{color:var(--bad)}.rkc.mid{color:var(--navy)}
+@media(max-width:600px){.list li{grid-template-columns:26px 1fr 30px}.list li .meter,.list li>span.tiny{display:none}header{gap:8px}}
+footer{color:var(--muted);font-size:11.5px;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><b>__IDX__</b><span>Reliability Under Pressure · RR auction war room</span></div>
+  <nav id="tabs"></nav>
+  <div class="hdr-r"><span id="ver"></span><button class="tbtn" id="theme">◐ Theme</button></div>
+</header>
+<main>
+  <section id="t-war"></section>
+  <section id="t-board" class="hidden"></section>
+  <section id="t-player" class="hidden"></section>
+  <section id="t-pressure" class="hidden"></section>
+  <section id="t-rr" class="hidden"></section>
+  <section id="t-method" class="hidden"></section>
+</main>
+<div id="tip"></div>
+<footer>Built from the SupeRR Selector S2 data pack (IPL + T20I, 2022–Nov 2026). Availability from the official IPL 2027 retention lists (17 Nov 2026); price bands are estimates. Ratings are model estimates with uncertainty shown.</footer>
+<script>
+const DATA=/*__DATA__*/null;
+const $=s=>document.querySelector(s);
+const S={tab:'war',role:'bat',w:{...DATA.weights},status:new Set(['Auction pool']),minB:0,q:'',watch:false,cmp:[null,null],basket:[],sort:{k:'score',d:-1},hover:null};
+const TABS=[['war','War Room'],['board','Leaderboard'],['player','Player Lab'],['pressure','Pressure Lab'],['rr','RR Lens & Auction'],['method','Method']];
+const fmt=(v,d=1,p=false)=>v==null||isNaN(v)?'–':((p&&v>0?'+':'')+Number(v).toFixed(d)).replace('-','−');
+const pc=(v,d=0)=>v==null||isNaN(v)?'–':(100*v).toFixed(d)+'%';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const chipCls=a=>({'Auction pool':'pool','Watch list':'watch','RR squad':'rr','Unavailable':'out','Doubtful':'doubtful','Unlikely':'unlikely'}[a]||'');
+const chip=a=>`<span class="chip ${chipCls(a)}">${esc(a)}</span>`;
+const unit=r=>r==='bat'?'per 100 balls':'per 4 overs';
+const tip=$('#tip');
+function showTip(e,h){tip.innerHTML=h;tip.style.display='block';const x=Math.min(e.clientX+14,innerWidth-300),y=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-10);tip.style.left=x+'px';tip.style.top=y+'px'}
+function hideTip(){tip.style.display='none'}
+document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-tip]');if(t)showTip(e,t.dataset.tip)});
+document.addEventListener('mousemove',e=>{const t=e.target.closest('[data-tip]');if(t)showTip(e,t.dataset.tip);else hideTip()});
+
+// ---------- scoring (live re-weighting) ----------
+function scored(role){
+  const P=DATA.players[role],w=S.w,tot=Object.values(w).reduce((a,b)=>a+b,0)||1;
+  P.forEach(p=>p.score=(w.PV*p.zPV+w.CON*p.zCON+w.RES*p.zRES+w.WIN*p.zWIN)/tot);
+  const el=P.filter(p=>p.elig),m=el.reduce((a,p)=>a+p.score,0)/el.length,sd=Math.sqrt(el.reduce((a,p)=>a+(p.score-m)**2,0)/el.length)||1;
+  P.forEach(p=>p.rupi=50+15*(p.score-m)/sd);
+  const lg=[...el].sort((a,b)=>b.score-a.score);lg.forEach((p,i)=>p.lrank=i+1);
+  return P;
+}
+function shortlist(role,watch){
+  const P=scored(role);
+  return P.filter(p=>p.pool!=null&&(p.avail==='Auction pool'||(watch&&(p.avail==='Watch list'||p.avail==='Doubtful')))).sort((a,b)=>(a.pool??999)-(b.pool??999));
+}
+function byId(role,id){return DATA.players[role].find(p=>p.id===id)}
+
+// ---------- tabs ----------
+function tabs(){
+  $('#tabs').innerHTML=TABS.map(([k,l])=>`<button class="${S.tab===k?'on':''}" data-t="${k}">${l}</button>`).join('');
+  $('#tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{S.tab=b.dataset.t;render()});
+}
+function render(){
+  tabs();TABS.forEach(([k])=>$('#t-'+k).classList.toggle('hidden',S.tab!==k));
+  ({war:rWar,board:rBoard,player:rPlayer,pressure:rPressure,rr:rRR,method:rMethod})[S.tab]();
+}
+$('#ver').textContent=DATA.version;
+$('#theme').onclick=()=>{const r=document.documentElement,cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark';try{localStorage.setItem('rupi-theme',r.dataset.theme)}catch(e){};render()};
+try{const t=localStorage.getItem('rupi-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+
+function inBasket(role,id){return S.basket.some(b=>b.role===role&&b.id===id)}
+function toggleBasket(role,id){const i=S.basket.findIndex(b=>b.role===role&&b.id===id);if(i>=0)S.basket.splice(i,1);else S.basket.push({role,id});render()}
+window.tb=toggleBasket;
+window.openP=(role,id)=>{S.role=role;S.cmp=[id,S.cmp[0]===id?S.cmp[1]:S.cmp[0]];S.tab='player';render();scrollTo(0,0)};
+
+function listHTML(role,L){
+  const mx=Math.max(...L.map(p=>p.rupi),80);
+  return `<ul class="list">${L.map((p,i)=>`<li><span class="rk ${p.avail!=='Auction pool'?'w':''}">${i+1}</span>
+  <span class="nm" style="cursor:pointer" onclick="openP('${role}',${p.id})"><b>${esc(p.name)}</b><span>${esc(p.country)} · ${p.avail==='Auction pool'?'auction pool':esc(p.avail)+' ('+esc(p.team||'')+')'}${p.price?` · ₹${p.price[0]}–${p.price[1]} cr`:''}</span></span>
+  <span class="meter" data-tip="P(top-10) in bootstrap: ${pc(p.p10)}"><i style="width:${Math.max(4,(p.rupi-30)/(mx-30)*100)}%"></i></span>
+  <span class="tiny muted" style="text-align:right">${esc((p.role_note||'').split(' (')[0])}</span><button class="addb ${inBasket(role,p.id)?'on':''}" title="Add to auction basket" onclick="tb('${role}',${p.id})">${inBasket(role,p.id)?'✓':'+'}</button></li>`).join('')}</ul>`;
+}
+
+// ---------- data-driven narrative helpers ----------
+const ORD=n=>n+(n%100>=11&&n%100<=13?'th':({1:'st',2:'nd',3:'rd'}[n%10]||'th'));
+const use=(role,p)=>((DATA.deep[role]||{})[p?.id]||{}).usage||{};
+function roles(Lb,Lw){
+  const death=Lw.find(p=>(use('bowl',p).Death||0)>=.45)||Lw[0];
+  const ctrl=Lw.find(p=>p!==death&&(use('bowl',p).Death||0)<.45)||Lw[1];
+  const fin=Lb.find(p=>(use('bat',p).Death||0)>=.4)||Lb[0];
+  const ind=[...Lb.map(p=>({p,role:'bat'})),...Lw.map(p=>({p,role:'bowl'}))].filter(x=>String(x.p.country).startsWith('India')).sort((a,b)=>b.p.rupi-a.p.rupi)[0]||null;
+  return {death,ctrl,fin,ind};
+}
+function rrStory(){
+  const r=DATA.rrRanks,P={Powerplay:'powerplay',Middle:'middle-overs',Death:'death'},S2={bat:'batting',bowl:'bowling'};
+  const all=[];for(const s of ['bat','bowl'])for(const p of ['Powerplay','Middle','Death'])all.push({s,p,k:r[s][p]});
+  const st=all.filter(x=>x.k<=3).map(x=>`${P[x.p]} ${S2[x.s]} (${ORD(x.k)})`),gp=all.filter(x=>x.k>=6).sort((a,b)=>b.k-a.k).map(x=>`<b>${P[x.p]} ${S2[x.s]}</b> (${ORD(x.k)})`);
+  return `strengths are ${st.join(', ')||'none in the top 3'}; gaps are ${gp.join(', ')||'none'} of 10 franchises.`;
+}
+
+// ---------- War Room ----------
+function rWar(){
+  const d=DATA.data,w=DATA.wpa,rr=DATA.close.find(x=>x.team==='Rajasthan Royals');
+  const Lb=shortlist('bat',S.watch).slice(0,10),Lw=shortlist('bowl',S.watch).slice(0,10);
+  $('#t-war').innerHTML=`
+  <div class="sec-title"><div><h2>The answer: who RR should back in Goa</h2><p>Players on the official 17 Nov release lists (no Bangladeshis), IPL-proven first, ranked by __IDX__. Click a name for the full profile and + to add them to your auction basket.</p></div>
+  <label class="small" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="wt" ${S.watch?'checked':''}> Include doubtful players (opted out in 2026; only if they register by the 3 Dec list)</label></div>
+  <div class="grid g4" style="margin-bottom:16px">
+   <div class="panel kpi"><div class="v">${d.balls.toLocaleString()}</div><div class="l">deliveries modelled</div><div class="n">${d.matches} matches · ${d.first.slice(0,4)}–${d.last.slice(0,4)}</div></div>
+   <div class="panel kpi"><div class="v">${pc(w.pressure_wpa_share)}</div><div class="l">of all win-probability movement sits in the ${pc(w.pressure_balls_share)} of balls we call pressure</div></div>
+   <div class="panel kpi"><div class="v">${rr.close_won}/${rr.close}</div><div class="l">close IPL games won by RR in 2025–26, the lowest conversion in the league</div></div>
+   <div class="panel kpi"><div class="v">₹${DATA.purse.available.toFixed(2)} cr</div><div class="l">RR's official purse · ${DATA.purse.slots} slots (${DATA.purse.overseas} overseas) after the 17 Nov retentions</div></div></div>
+  <div class="grid g3">
+   <div class="panel"><h3>Top 10 batters to back</h3>${listHTML('bat',Lb)}</div>
+   <div class="panel"><h3>Top 10 bowlers to back</h3>${listHTML('bowl',Lw)}</div>
+   <div class="panel"><h3>Why these players</h3><ul class="find small">
+    <li><b>Priorities:</b> strengthen the middle order, add fast bowlers and a trusted spinner.</li>
+    <li><b>Buy plan:</b> ${(DATA.plan||[]).map(x=>esc(x.name)).join(', ')}.</li>
+    <li>Contracted cornerstones (Bumrah, Kohli and others) are excluded: teams do not release them before a mini-auction. The lists reflect the official 17 Nov releases.</li></ul>
+    <div class="note" style="margin-top:10px">Pink = in the auction pool (official 17 Nov lists). Gold = doubtful (needs to register).</div>
+    <button class="tbtn" id="copyp" style="margin-top:12px;color:var(--pink);background:var(--surface2);border-color:var(--line)">Copy dropdown picks (Batsman 1–10, Bowler 1–10)</button>
+    ${(DATA.news||[]).length?`<h3 style="margin-top:14px">Pending news (not yet applied)</h3>${DATA.news.map(n=>`<div class="note" style="margin-bottom:6px"><b>${esc(n.headline)}</b><br><span class="tiny">${esc(n.date)} · ${esc(n.source)} · ${esc(n.status)}</span><br><span class="tiny">${esc(n.impact)}</span></div>`).join('')}`:''}</div></div>`;
+  $('#wt').onchange=e=>{S.watch=e.target.checked;render()};
+  $('#copyp').onclick=()=>{const t=[...Lb.map((p,i)=>`Batsman ${i+1}: ${p.name}`),...Lw.map((p,i)=>`Bowler ${i+1}: ${p.name}`)].join(String.fromCharCode(10));
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{$('#copyp').textContent='Copied ✓'}).catch(()=>{prompt('Copy the picks:',t)})};
+}
+
+// ---------- Leaderboard ----------
+function rBoard(){
+  const P=scored(S.role).filter(p=>(S.status.has('All')||S.status.has(p.avail))&&p.pn>=S.minB&&(!S.q||p.name.toLowerCase().includes(S.q.toLowerCase())));
+  const k=S.sort.k,dir=S.sort.d;P.sort((a,b)=>((a[k]??-1e9)>(b[k]??-1e9)?1:-1)*dir);
+  const STAT=['Auction pool','Watch list','RR squad','Contracted','Doubtful','Unavailable','All'];
+  const cols=[['lrank','League #'],['name','Player'],['avail','Status'],['rupi','__IDX__'],['PV','Pressure value'],['NV','Normal value'],['RES','Resilience'],['CON','Consistency'],['WIN','Win impact'],['pn','Press. balls'],['b10','P(top-10)']];
+  $('#t-board').innerHTML=`<div class="sec-title"><div><h2>Leaderboard: re-weight the pillars live</h2><p>Every rated player. Values are runs above expectation ${unit(S.role)}, after shrinkage, opposition and recency adjustment.</p></div>
+   <div class="toggle"><button class="${S.role==='bat'?'on':''}" data-r="bat">Batters</button><button class="${S.role==='bowl'?'on':''}" data-r="bowl">Bowlers</button></div></div>
+  <div class="grid g21"><div class="panel"><h3>Pillar weights</h3>${['PV','CON','RES','WIN'].map(k=>`<div class="slider"><span>${{PV:'Pressure value',CON:'Consistency',RES:'Resilience',WIN:'Win impact'}[k]}</span><input type="range" min="0" max="100" value="${Math.round(S.w[k]*100)}" data-w="${k}"><b class="num">${Math.round(S.w[k]*100)}</b></div>`).join('')}
+   <div class="ctrl" style="margin-top:8px"><button class="tbtn" style="color:var(--pink);background:var(--surface2);border-color:var(--line)" id="rw">Reset weights</button></div>
+   <h3 style="margin-top:14px">Filters</h3><div class="ctrl">${STAT.map(s=>`<label class="small"><input type="checkbox" data-s="${s}" ${S.status.has(s)?'checked':''}> ${s}</label>`).join('')}</div>
+   <div class="slider" style="margin-top:10px"><span>Min. pressure balls</span><input type="range" min="0" max="500" step="10" value="${S.minB}" id="mb"><b class="num">${S.minB}</b></div>
+   <input type="search" id="q" placeholder="Search a player…" value="${esc(S.q)}" style="margin-top:10px;width:100%">
+   <div class="note" style="margin-top:12px">Pillars are Empirical-Bayes posteriors on a talent scale, so a pillar with weak signal moves rankings only as far as its evidence allows. Bootstrap P(top-10) is shown for the baseline weights.</div></div>
+  <div class="panel"><h3>Pressure vs normal value</h3><div class="legend"><span><i style="background:var(--pink)"></i>Shown in table</span><span><i style="background:var(--blue)"></i>RR squad</span><span><i style="background:var(--gray)"></i>Other rated</span></div><div id="sc"></div></div></div>
+  <div class="panel" style="margin-top:16px"><div class="tbl-wrap"><table><thead><tr>${cols.map(([c,l])=>`<th class="${['name','avail'].includes(c)?'':'num'}" data-k="${c}">${l}${S.sort.k===c?(S.sort.d<0?' ▾':' ▴'):''}</th>`).join('')}<th></th></tr></thead>
+  <tbody>${P.slice(0,250).map(p=>`<tr class="click" onclick="openP('${S.role}',${p.id})"><td class="num">${p.elig?p.lrank:'–'}</td><td><b>${esc(p.name)}</b> <span class="muted small">${esc(p.country)}${p.emg?' · emerging':''}</span></td><td>${chip(p.avail)}</td>
+  <td class="num"><b>${fmt(p.rupi,0)}</b></td><td class="num">${fmt(p.PV,1,true)}</td><td class="num muted">${fmt(p.NV,1,true)}</td><td class="num">${fmt(p.RES,1,true)}</td><td class="num">${pc(p.CON)}</td><td class="num">${fmt(p.WIN,1,true)}</td><td class="num">${p.pn}</td><td class="num">${pc(p.b10)}</td>
+  <td><button class="addb ${inBasket(S.role,p.id)?'on':''}" onclick="event.stopPropagation();tb('${S.role}',${p.id})">${inBasket(S.role,p.id)?'✓':'+'}</button></td></tr>`).join('')}</tbody></table></div></div>`;
+  document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{S.role=b.dataset.r;render()});
+  document.querySelectorAll('[data-w]').forEach(i=>i.oninput=()=>{S.w[i.dataset.w]=i.value/100;render()});
+  $('#rw').onclick=()=>{S.w={...DATA.weights};render()};
+  document.querySelectorAll('[data-s]').forEach(i=>i.onchange=()=>{i.checked?S.status.add(i.dataset.s):S.status.delete(i.dataset.s);render()});
+  $('#mb').oninput=e=>{S.minB=+e.target.value;render()};
+  const q=$('#q');q.oninput=e=>{S.q=e.target.value;render();const n=$('#q');n.focus();n.setSelectionRange(n.value.length,n.value.length)};
+  document.querySelectorAll('th[data-k]').forEach(t=>t.onclick=()=>{const k=t.dataset.k;S.sort={k,d:S.sort.k===k?-S.sort.d:-1};render()});
+  scatter('#sc',scored(S.role).filter(p=>p.elig),new Set(P.map(p=>p.id)));
+}
+function niceStep(r){const raw=r/6,p=Math.pow(10,Math.floor(Math.log10(raw))),f=raw/p;return (f<1.5?1:f<3?2:f<7?5:10)*p}
+function scatter(sel,P,hi){
+  const W=560,H=360,m={l:46,r:12,t:10,b:38};const xs=P.map(p=>p.NV),ys=P.map(p=>p.PV);
+  const x0=Math.min(...xs,...ys)-2,x1=Math.max(...xs,...ys)+2;const X=v=>m.l+(v-x0)/(x1-x0)*(W-m.l-m.r),Y=v=>H-m.b-(v-x0)/(x1-x0)*(H-m.t-m.b);
+  const ticks=[];const stp=niceStep(x1-x0);for(let t=Math.ceil(x0/stp)*stp;t<=x1;t+=stp)ticks.push(+t.toFixed(2));
+  let g=ticks.map(t=>`<line x1="${X(t)}" x2="${X(t)}" y1="${m.t}" y2="${H-m.b}" stroke="${css('--grid')}"/><line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${css('--grid')}"/><text x="${X(t)}" y="${H-m.b+14}" font-size="10" fill="${css('--muted')}" text-anchor="middle">${t}</text><text x="${m.l-6}" y="${Y(t)+3}" font-size="10" fill="${css('--muted')}" text-anchor="end">${t}</text>`).join('');
+  g+=`<line x1="${X(x0)}" y1="${Y(x0)}" x2="${X(x1)}" y2="${Y(x1)}" stroke="${css('--gray')}" stroke-dasharray="3 4"/>`;
+  const order=[...P].sort((a,b)=>(hi.has(a.id)?1:0)-(hi.has(b.id)?1:0)||(a.avail==='RR squad'?1:0)-(b.avail==='RR squad'?1:0));
+  g+=order.map(p=>{const c=hi.has(p.id)?css('--pink'):p.avail==='RR squad'?css('--blue'):css('--gray');const r=hi.has(p.id)?5:4;
+    return `<circle cx="${X(p.NV)}" cy="${Y(p.PV)}" r="${r}" fill="${c}" stroke="${css('--surface')}" stroke-width="2" style="cursor:pointer" onclick="openP('${S.role}',${p.id})" data-tip="<b>${esc(p.name)}</b><br>Pressure ${fmt(p.PV,1,true)} · Normal ${fmt(p.NV,1,true)}<br>__IDX__ ${fmt(p.rupi,0)} · ${esc(p.avail)}"/>`}).join('');
+  g+=`<text x="${(W+m.l)/2}" y="${H-4}" font-size="11" fill="${css('--muted')}" text-anchor="middle">Normal-situation value (${unit(S.role)})</text><text transform="translate(12 ${(H-m.b)/2}) rotate(-90)" font-size="11" fill="${css('--muted')}" text-anchor="middle">Pressure value</text>`;
+  $(sel).innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">${g}</svg>`;
+}
+
+// ---------- Player Lab ----------
+function rPlayer(){
+  const P=scored(S.role).filter(p=>p.pn>0).sort((a,b)=>a.name.localeCompare(b.name));
+  if(!S.cmp[0]){S.cmp[0]=shortlist(S.role,false)[0]?.id}
+  const opts=v=>`<option value="">— none —</option>`+P.map(p=>`<option value="${p.id}" ${p.id===v?'selected':''}>${esc(p.name)} (${esc(p.country)})</option>`).join('');
+  const A=S.cmp.map(id=>id?byId(S.role,id):null);
+  $('#t-player').innerHTML=`<div class="sec-title"><div><h2>Player Lab: compare two players</h2><p>Pillars, pressure vs normal value, season trend, pressure splits and biggest moments.</p></div>
+  <div class="toggle"><button class="${S.role==='bat'?'on':''}" data-r="bat">Batters</button><button class="${S.role==='bowl'?'on':''}" data-r="bowl">Bowlers</button></div></div>
+  <div class="grid g2" style="margin-bottom:14px"><select id="pa">${opts(S.cmp[0])}</select><select id="pb">${opts(S.cmp[1])}</select></div>
+  <div class="grid g2">${A.map((p,i)=>p?pCard(p,i):'<div class="panel muted">Pick a second player to compare.</div>').join('')}</div>
+  <div class="grid g2" style="margin-top:16px"><div class="panel"><h3>Pressure value by season <span class="muted small">(raw, ${unit(S.role)})</span></h3><div id="trend"></div></div>
+  <div class="panel"><h3>Where they deliver under pressure <span class="muted small">(raw splits, ≥15 balls)</span></h3><div id="splits"></div></div></div>`;
+  document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{S.role=b.dataset.r;S.cmp=[null,null];render()});
+  $('#pa').onchange=e=>{S.cmp[0]=+e.target.value||null;render()};$('#pb').onchange=e=>{S.cmp[1]=+e.target.value||null;render()};
+  trendChart(A);splitChart(A);
+}
+function zbar(v){v=Math.max(-2.5,Math.min(2.5,v||0));const w=Math.abs(v)/5*100,l=v>=0?50:50-w;return `<span class="zb"><span class="mid"></span><i style="left:${l}%;width:${w}%;background:${v>=0?css('--pink'):css('--gray')}"></i></span>`}
+function pCard(p,i){
+  const d=DATA.deep[S.role][p.id]||{},st=p.st||{},col=i===0?css('--pink'):css('--blue');
+  const stats=S.role==='bat'?[['SR under pressure',fmt(st.p_SR,0),'expected '+fmt(st.p_xSR,0)],['SR normal',fmt(st.n_SR,0),''],['Balls per dismissal (pressure)',fmt(st.p_bpd,0),'expected '+fmt(st.p_xbpd,0)],['Boundary % / dot % (pressure)',fmt(st.p_bndpct,1)+' / '+fmt(st.p_dotpct,1),'']]
+    :[['Economy under pressure',fmt(st.p_econ,2),'expected '+fmt(st.p_xecon,2)],['Economy normal',fmt(st.n_econ,2),''],['Balls per wicket (pressure)',fmt(st.p_sr,0),'expected '+fmt(st.p_xsr,0)],['Dot % (pressure)',fmt(st.p_dotpct,1),'']];
+  const ASSOC=new Set(['Hong Kong','United Arab Emirates','Nepal','Oman','Netherlands','Scotland','Canada','Singapore','Kuwait','United States Of America','Japan']);const mom=(d.moments||[]).filter(m=>!ASSOC.has(m.opp)).slice(0,3).map(m=>`<li>${S.role==='bat'?`${m.runs} off ${m.balls}`:`${m.wk}/${m.runs} (${Math.floor(m.balls/6)}.${m.balls%6} ov)`} vs ${esc(m.opp)}, ${esc(m.comp)} · ${m.date} · <b>+${(m.wpa*100).toFixed(0)}%</b> win prob</li>`).join('');
+  return `<div class="pcard" style="border-top:4px solid ${col}"><div style="display:flex;justify-content:space-between;gap:10px"><div><h3 style="font-size:18px;margin:0">${esc(p.name)}</h3>
+  <div class="muted small">${esc(p.role_note||'')} ${p.role_note?'·':''} ${esc(p.country)} · ${chip(p.avail)} ${p.team?esc(p.team):''}</div></div><div style="text-align:right"><div class="big">${fmt(p.rupi,0)}</div><div class="tiny muted">__IDX__ · league #${p.elig?p.lrank:'n/e'}</div></div></div>
+  <div class="grid g2" style="margin-top:12px;gap:14px"><div><div class="pillars">${[['zPV','Pressure value'],['zCON','Consistency'],['zRES','Resilience'],['zWIN','Win impact']].map(([k,l])=>`<span>${l}</span>${zbar(p[k])}<b class="num small">${fmt(p[k],2,true)}</b>`).join('')}</div>
+   <div class="grid g2" style="gap:8px;margin-top:12px"><div><div class="bigp" style="font-size:26px">${fmt(p.PV,1,true)}</div><div class="tiny muted">pressure value ${unit(S.role)}</div></div><div><div class="big" style="font-size:26px">${fmt(p.NV,1,true)}</div><div class="tiny muted">normal value</div></div></div></div>
+   <div><table>${stats.map(s=>`<tr><td class="small">${s[0]}</td><td class="num"><b>${s[1]}</b> <span class="muted tiny">${s[2]}</span></td></tr>`).join('')}
+   <tr><td class="small">Pressure balls / innings</td><td class="num">${p.pn} / ${p.pm}</td></tr><tr><td class="small">Bootstrap P(top-10)</td><td class="num">${pc(p.elig?p.b10:null)}${p.p10!=null?' · pool '+pc(p.p10):''}</td></tr>
+   <tr><td class="small">Price band</td><td class="num">${p.price?`₹${p.price[0]}–${p.price[1]} cr`:'–'}</td></tr></table></div></div>
+  ${p.fit?`<p class="small" style="margin:10px 0 4px"><b>RR fit.</b> ${esc(p.fit)}</p>`:''}${p.risk?`<p class="small muted" style="margin:0 0 6px"><b>Risk.</b> ${esc(p.risk)}</p>`:''}
+  <p class="tiny muted" style="margin:4px 0">${esc(p.note||'')}</p>
+  ${mom?`<h3 style="margin-top:8px">Biggest pressure moments</h3><ul class="find small">${mom}</ul>`:''}
+  <button class="addb ${inBasket(S.role,p.id)?'on':''}" style="padding:0 12px" onclick="tb('${S.role}',${p.id})">${inBasket(S.role,p.id)?'✓ In auction basket':'+ Add to auction basket'}</button></div>`;
+}
+function trendChart(A){
+  const W=560,H=240,m={l:40,r:12,t:12,b:28};const ser=A.filter(Boolean).map((p,i)=>({p,c:i===0?css('--pink'):css('--blue'),pts:((DATA.deep[S.role][p.id]||{}).trend||[]).filter(t=>t.pv!=null)}));
+  const all=ser.flatMap(s=>s.pts.map(t=>t.pv));if(!all.length){$('#trend').innerHTML='<p class="muted">No season data.</p>';return}
+  const lo=Math.min(0,...all)-3,hi=Math.max(0,...all)+3;const X=y=>m.l+(y-2022)/4*(W-m.l-m.r),Y=v=>H-m.b-(v-lo)/(hi-lo)*(H-m.t-m.b);
+  let g=[2022,2023,2024,2025,2026].map(y=>`<text x="${X(y)}" y="${H-8}" font-size="11" fill="${css('--muted')}" text-anchor="middle">${y}</text>`).join('');
+  g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="${css('--gray')}"/>`;
+  const st=niceStep(hi-lo);for(let v=Math.ceil(lo/st)*st;v<=hi;v+=st){g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css('--grid')}"/><text x="${m.l-6}" y="${Y(v)+3}" font-size="10" fill="${css('--muted')}" text-anchor="end">${+v.toFixed(1)}</text>`}
+  ser.forEach(s=>{g+=`<path d="${s.pts.map((t,i)=>(i?'L':'M')+X(t.year)+','+Y(t.pv)).join(' ')}" fill="none" stroke="${s.c}" stroke-width="2"/>`;
+    g+=s.pts.map(t=>`<circle cx="${X(t.year)}" cy="${Y(t.pv)}" r="5" fill="${s.c}" stroke="${css('--surface')}" stroke-width="2" data-tip="<b>${esc(s.p.name)}</b> ${t.year}<br>pressure ${fmt(t.pv,1,true)} · normal ${fmt(t.nv,1,true)}<br>${t.pballs} pressure balls"/>`).join('')});
+  $('#trend').innerHTML=`<div class="legend">${ser.map(s=>`<span><i style="background:${s.c}"></i>${esc(s.p.name)}</span>`).join('')}</div><svg viewBox="0 0 ${W} ${H}" width="100%">${g}</svg>`;
+}
+function splitChart(A){
+  const ser=A.filter(Boolean).map((p,i)=>({p,c:i===0?css('--pink'):css('--blue'),s:(DATA.deep[S.role][p.id]||{}).splits||{},n:(DATA.deep[S.role][p.id]||{}).split_n||{}}));
+  const keys=[...new Set(ser.flatMap(s=>Object.keys(s.s)))];const vals=ser.flatMap(s=>Object.values(s.s).filter(v=>v!=null));if(!vals.length){$('#splits').innerHTML='<p class="muted">No split data.</p>';return}
+  const mx=Math.max(...vals.map(Math.abs),5);const W=560,rowH=ser.length*12+10,H=keys.length*rowH+10,l=190,X=v=>l+(W-l-50)/2+(v/mx)*(W-l-50)/2;
+  let g=`<line x1="${X(0)}" x2="${X(0)}" y1="0" y2="${H}" stroke="${css('--gray')}"/>`;
+  keys.forEach((k,i)=>{const y=i*rowH+6;g+=`<text x="0" y="${y+rowH/2+2}" font-size="11" fill="${css('--ink2')}">${esc(k)}</text>`;
+   ser.forEach((s,j)=>{const v=s.s[k];if(v==null)return;const x0=Math.min(X(0),X(v)),w=Math.abs(X(v)-X(0));g+=`<rect x="${x0}" y="${y+j*12}" width="${Math.max(w,1)}" height="9" rx="3" fill="${s.c}" data-tip="<b>${esc(s.p.name)}</b> · ${esc(k)}<br>${fmt(v,1,true)} ${unit(S.role)} (${s.n[k]??'?'} balls)"/><text x="${v>=0?X(v)+4:X(v)-4}" y="${y+j*12+8}" font-size="9.5" fill="${css('--muted')}" text-anchor="${v>=0?'start':'end'}">${fmt(v,1,true)}</text>`})});
+  $('#splits').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">${g}</svg><p class="tiny muted">Raw (unshrunk) splits are noisy on small samples. Hover to see ball counts.</p>`;
+}
+
+// ---------- Pressure Lab ----------
+const G=(()=>{const dec=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));return{wp:dec(DATA.grid.wp),li:dec(DATA.grid.li)}})();
+const CS={r:24,b:12,w:5};
+function calc(r,b,w){const i=((r-1)*120+(b-1))*10+(w-1);const wp=G.wp[i]/200,li=G.li[i]/20;const rrr=r*6/b;
+  const B=Math.min(3,Math.max(.25,rrr/DATA.calc.envRate));const exp=DATA.calc.expwk[Math.max(0,Math.min(119,120-b))];const K=Math.min(2,Math.max(.6,1+.15*((10-w)-exp)));
+  const PI=Math.pow(Math.max(li,.01),.5)*Math.pow(B,.3)*Math.pow(K,.2);const q=DATA.calc.piq;let k=0;while(k<q.length-1&&q[k]<PI)k++;return{wp,li,rrr,B,K,PI,pct:k/(q.length-1)}}
+function rPressure(){
+  const h=DATA.heat,ax=DATA.heatAxes;const o=calc(CS.r,CS.b,CS.w);
+  const lab=o.pct>=.9?['Extreme pressure','var(--pink)']:o.pct>=.75?['Pressure zone','var(--pink)']:o.pct>=.5?['Elevated','var(--gold)']:['Low pressure','var(--muted)'];
+  $('#t-pressure').innerHTML=`<div class="sec-title"><div><h2>Pressure Lab: what makes a ball "pressure"?</h2><p>Live calculator on our win-probability model (IPL 2026 scoring environment, second innings).</p></div></div>
+  <div class="grid g12"><div class="panel"><h3>Chase pressure calculator</h3>
+   ${[['r','Runs needed',1,150],['b','Balls left',1,120],['w','Wickets in hand',1,10]].map(([k,l,a,z])=>`<div class="slider"><span>${l}</span><input type="range" min="${a}" max="${z}" value="${CS[k]}" data-c="${k}"><b class="num">${CS[k]}</b></div>`).join('')}
+   <div class="calc-out"><div class="pcard"><div class="bigp">${(o.wp*100).toFixed(0)}%</div><div class="small muted">chase win probability</div></div>
+   <div class="pcard"><div class="big">${pc(o.pct)}</div><div class="small muted">Pressure Index percentile</div><span class="badge" style="background:var(--surface2);color:${lab[1]}">${lab[0]}</span></div>
+   <div class="pcard"><div class="big" style="font-size:28px">${o.rrr.toFixed(2)}</div><div class="small muted">required rate (normal ≈ ${DATA.calc.envRate.toFixed(1)})</div></div></div>
+   <table style="margin-top:12px"><tr><td>Leverage (stakes)</td><td class="num"><b>${o.li.toFixed(2)}×</b> <span class="muted small">an average ball</span></td></tr>
+   <tr><td>Scoreboard squeeze</td><td class="num"><b>${o.B.toFixed(2)}</b></td></tr><tr><td>Wicket squeeze</td><td class="num"><b>${o.K.toFixed(2)}</b></td></tr>
+   <tr><td>Pressure Index = L<sup>0.5</sup>·S<sup>0.3</sup>·W<sup>0.2</sup></td><td class="num"><b>${o.PI.toFixed(2)}</b></td></tr></table>
+   <div class="note" style="margin-top:10px">Try 30 off 18 with 5 wickets: high stakes but the chasing side is a big favourite. Then try 12 off 6: a coin-flip, so the Pressure Index jumps.</div></div>
+  <div class="panel"><h3>Where chase pressure lives <span class="muted small">(share of balls in the pressure zone, all data)</span></h3><div id="hm"></div></div></div>
+  <div class="grid g3" style="margin-top:16px">${[['Pressure zone share of all win-prob movement',pc(DATA.wpa.pressure_wpa_share),`from ${pc(DATA.wpa.pressure_balls_share)} of balls`],
+   ['Pressure balls in close vs one-sided games',pc(DATA.closeShare.close)+' vs '+pc(DATA.closeShare.one_sided),'close = chase won with ≤6 balls left or defended by ≤12 runs'],
+   ['Pressure balls in knockouts vs league games',pc(DATA.ko.knockout)+' vs '+pc(DATA.ko.league),'knockout balls weighted ×1.25']].map(t=>`<div class="panel kpi"><div class="v" style="font-size:22px">${t[1]}</div><div class="l">${t[0]}</div><div class="n">${t[2]}</div></div>`).join('')}</div>`;
+  document.querySelectorAll('[data-c]').forEach(i=>i.oninput=()=>{CS[i.dataset.c]=+i.value;rPressure()});
+  const runs=ax.runs,balls=[...ax.balls].reverse(),cw=46,ch=26,l=58,t=8;let g='';
+  const pink=css('--pink');
+  h.forEach(c=>{const i=runs.indexOf(c.rb),j=balls.indexOf(c.bb);if(i<0||j<0)return;const y=t+(runs.length-1-i)*ch,x=l+j*cw;
+   g+=`<rect x="${x}" y="${y}" width="${cw-2}" height="${ch-2}" rx="4" fill="${pink}" fill-opacity="${.06+.94*c.share}" data-tip="<b>${c.rb} needed, ${c.bb} balls left</b><br>${pc(c.share)} of balls in pressure zone<br>avg chase win prob ${pc(c.wp)} · ${c.n} balls"/>`});
+  g+=runs.map((r,i)=>`<text x="${l-6}" y="${t+(runs.length-1-i)*ch+ch/2+3}" font-size="10" text-anchor="end" fill="${css('--muted')}">${r}</text>`).join('');
+  g+=balls.map((b,j)=>`<text x="${l+j*cw+cw/2}" y="${t+runs.length*ch+12}" font-size="10" text-anchor="middle" fill="${css('--muted')}">${b}</text>`).join('');
+  g+=`<text x="${l+balls.length*cw/2}" y="${t+runs.length*ch+28}" font-size="11" text-anchor="middle" fill="${css('--muted')}">Balls left → end of chase</text><text transform="translate(12 ${t+runs.length*ch/2}) rotate(-90)" font-size="11" text-anchor="middle" fill="${css('--muted')}">Runs needed</text>`;
+  $('#hm').innerHTML=`<svg viewBox="0 0 ${l+balls.length*cw+6} ${t+runs.length*ch+34}" width="100%">${g}</svg>`;
+}
+
+// ---------- RR Lens & Auction ----------
+function planPicks(){
+  return (DATA.plan||[]).map(x=>{const w=DATA.players.bowl.find(p=>p.name===x.name),bt=DATA.players.bat.find(p=>p.name===x.name);return w?[w,'bowl']:bt?[bt,'bat']:null}).filter(Boolean);
+}
+function rRR(){
+  const rk=DATA.rrRanks,cls=v=>v<=3?'good':v>=7?'bad':'mid',PU=DATA.purse;
+  const slots=PU.overseas,purse=PU.available,tot=PU.slots;
+  const items=S.basket.map(b=>({...b,p:byId(b.role,b.id)})).filter(x=>x.p);
+  const lo=items.reduce((a,x)=>a+(x.p.price?x.p.price[0]:0.3),0),hi=items.reduce((a,x)=>a+(x.p.price?x.p.price[1]:0.75),0),ovs=items.filter(x=>x.p.ovs).length;
+  const mid=(lo+hi)/2,ok=hi<=purse&&ovs<=slots&&items.length<=tot,warn=!ok&&lo<=purse&&ovs<=slots&&items.length<=tot;
+  const SC=DATA.scorecard||{},scr=(SC.rows||[]).filter(x=>x.predicted!=='Low'||x.actual!=='Retained').sort((a,b)=>({High:0,Medium:1,Low:2}[a.predicted]-{High:0,Medium:1,Low:2}[b.predicted])||b.RUPI-a.RUPI).slice(0,14);
+  const close=[...DATA.close].map(x=>({...x,r:x.close_won/x.close})).sort((a,b)=>b.r-a.r);
+  const mx=Math.max(...PU.market.map(m=>m.purse));
+  $('#t-rr').innerHTML=`<div class="sec-title"><div><h2>RR Lens: diagnose the gaps, then build the auction basket</h2><p>Official position after the 17 Nov retentions: <b>₹${purse.toFixed(2)} cr</b>, <b>${tot} slots</b>, <b>${slots} overseas</b>. Auction on 16 Dec, Goa.</p></div></div>
+  <div class="grid g3"><div class="panel"><h3>RR's pressure rank among 10 franchises</h3><table><tr><th></th><th class="num">PP</th><th class="num">Middle</th><th class="num">Death</th><th class="num">Overall</th></tr>
+   ${[['Batting','bat'],['Bowling','bowl']].map(([l,k])=>`<tr><td>${l}</td>${['Powerplay','Middle','Death','Overall'].map(c=>`<td class="rkc ${cls(rk[k][c])}">${rk[k][c]}</td>`).join('')}</tr>`).join('')}</table>
+   <p class="small">RR's ${rrStory()}</p>
+   <h3 style="margin-top:10px">Close IPL games won, 2025–26</h3>${close.map(x=>`<div class="slider" style="grid-template-columns:150px 1fr 44px"><span class="small" style="${x.team==='Rajasthan Royals'?'font-weight:700;color:var(--pink)':''}">${esc(x.team)}</span><span class="meter"><i style="width:${x.r*100}%;background:${x.team==='Rajasthan Royals'?css('--pink'):css('--gray')}"></i></span><span class="num small">${x.close_won}/${x.close}</span></div>`).join('')}</div>
+   <div class="panel"><h3>Who to buy: 6 slots, 3 overseas</h3><table><tr><th>#</th><th>Player</th><th>Slot</th><th>Why</th></tr>
+   ${(DATA.plan||[]).map((x,i)=>`<tr><td class="num"><b>${i+1}</b></td><td><b>${esc(x.name)}</b></td><td class="small">${x.slot}</td><td class="small">${esc(x.why)}</td></tr>`).join('')}</table>
+   <p class="tiny muted" style="margin-top:8px"><b>Alternatives:</b> ${Object.entries(DATA.plan_alt||{}).map(([k,v])=>esc(k)+': '+esc(v.join(', '))).join(' · ')}</p></div>
+   <div class="panel"><h3>The market: who RR bid against</h3><table><tr><th>Team</th><th class="num">Purse</th><th class="num">Slots</th><th class="num">OS</th></tr>
+   ${PU.market.map(m=>`<tr><td class="small" style="${m.team==='Rajasthan Royals'?'font-weight:700;color:var(--pink)':''}">${esc(m.team)}</td><td class="num"><span class="meter" style="display:inline-block;width:70px;vertical-align:middle;margin-right:6px"><i style="width:${m.purse/mx*100}%;background:${m.team==='Rajasthan Royals'?css('--pink'):css('--gray')}"></i></span>₹${m.purse}</td><td class="num">${m.slots}</td><td class="num">${m.overseas}</td></tr>`).join('')}</table>
+   <p class="tiny muted">₹${PU.market.reduce((a,m)=>a+m.purse,0).toFixed(2)} cr chasing ${PU.market.reduce((a,m)=>a+m.slots,0)} slots (${PU.market.reduce((a,m)=>a+m.overseas,0)} overseas). LSG, KKR, SRH and DC can outbid RR on any single star.</p></div></div>
+  <div class="grid g12" style="margin-top:16px"><div class="panel"><h3>Release Radar scorecard: our 16 Nov calls vs the official 17 Nov lists</h3>
+   <div class="grid g3" style="margin-bottom:10px">${[['High',SC.high_released,SC.high_n,'released or traded'],['Low',SC.low_retained,SC.low_n,'retained, as called'],['Medium',SC.med_released,SC.med_n,'released: a coin flip']].map(t=>`<div class="pcard"><div class="big" style="font-size:24px">${t[1]}/${t[2]}</div><div class="tiny muted">"${t[0]}" calls ${t[3]}</div></div>`).join('')}</div>
+   <div class="tbl-wrap" style="max-height:360px"><table><tr><th>Player</th><th class="num">__IDX__</th><th class="num">2026 fee</th><th>Our call</th><th>Official</th></tr>
+   ${scr.map(x=>`<tr><td><b>${esc(x.name)}</b><div class="tiny muted">${esc(x.team||'')}</div></td><td class="num">${fmt(x.RUPI,0)}</td><td class="num">${x.fee?'₹'+x.fee+' cr':'–'}</td><td><span class="chip ${x.predicted==='High'?'out':x.predicted==='Medium'?'watch':''}">${x.predicted}</span></td><td><span class="chip ${x.actual!=='Retained'?'pool':''}">${x.actual}</span></td></tr>`).join('')}</table></div></div>
+  <div class="panel"><h3>Auction basket</h3><p class="small muted">Add players with + anywhere in the dashboard, or load the data-driven plan.</p>
+   <table class="basket"><tr><th>Player</th><th>Slot</th><th class="num">Price band</th><th class="num">__IDX__</th><th></th></tr>
+   ${items.map(x=>`<tr><td><b>${esc(x.p.name)}</b><div class="tiny muted">${x.role==='bat'?'Batter':'Bowler'} · ${esc(x.p.avail)}</div></td><td>${x.p.ovs?'Overseas':'Indian'}</td><td class="num">${x.p.price?`₹${x.p.price[0]}–${x.p.price[1]}`:'≈₹0.3–0.75'}</td><td class="num">${fmt(x.p.rupi??x.p.RUPI,0)}</td><td><button class="addb on" onclick="tb('${x.role}',${x.id})">×</button></td></tr>`).join('')||'<tr><td colspan="5" class="muted small">Empty. Click "Load the plan" for the 6-player buy list, or add players with +.</td></tr>'}</table>
+   <div class="grid g3" style="margin-top:12px"><div><div class="total">₹${lo.toFixed(1)}–${hi.toFixed(1)}</div><div class="tiny muted">estimated spend (cr)</div></div><div><div class="total">₹${Math.max(0,purse-mid).toFixed(1)}</div><div class="tiny muted">left at mid-estimate, of ₹${purse.toFixed(2)}</div></div>
+   <div><div class="total" style="color:${ok?css('--good'):warn?css('--gold'):css('--bad')}">${ok?'Fits':warn?'Tight':'Over'}</div><div class="tiny muted">${items.length}/${tot} slots · ${ovs}/${slots} overseas</div></div></div>
+   <div class="meter" style="margin-top:10px;height:10px"><i style="width:${Math.min(100,mid/purse*100)}%;background:${ok?css('--good'):warn?css('--gold'):css('--bad')}"></i></div>
+   <button class="tbtn" style="margin-top:10px;color:var(--pink);background:var(--surface2);border-color:var(--line)" id="planA">Load the plan</button></div></div>`;
+  $('#planA').onclick=()=>{S.basket=planPicks().map(([p,role])=>({role,id:p.id}));render()};
+}
+
+// ---------- Method ----------
+function rMethod(){
+  const sp=DATA.split,rob=DATA.rob;
+  const rrow=(k)=>`<tr><td>${esc(k)}</td><td class="num">${rob.bat.pool[k]}/10</td><td class="num">${rob.bowl.pool[k]}/10</td><td class="num">${rob.bat.league[k]}/10</td><td class="num">${rob.bowl.league[k]}/10</td></tr>`;
+  $('#t-method').innerHTML=`<div class="sec-title"><div><h2>Method in one screen</h2><p>Transparent and reproducible: <code>analysis/run_all</code> rebuilds everything from the data pack.</p></div></div>
+  <div class="grid g3"><div class="panel"><h3>1 · Pressure</h3><ul class="find small"><li>Win-probability models (monotonic gradient boosting; chase AUC ${DATA.wp.wp_inn2.auc.toFixed(2)} out-of-fold).</li>
+   <li><b>Leverage</b> = expected |Δ win prob| over all ball outcomes (average ball = 1).</li><li><b>Pressure Index</b> = Leverage<sup>0.5</sup> × Scoreboard squeeze<sup>0.3</sup> × Wicket squeeze<sup>0.2</sup> × 1.25 in knockouts.</li>
+   <li>Pressure zone = top 25% of balls on one league-wide scale; extreme = top 10%.</li></ul></div>
+  <div class="panel"><h3>2 · Performance</h3><ul class="find small"><li>Situation-only expected-runs and expected-wicket models, cross-fitted by match.</li><li>Wickets priced in runs by state (powerplay ≈ ${DATA.wkcost['1|Powerplay'].toFixed(1)}, death ≈ ${DATA.wkcost['1|Death'].toFixed(1)}).</li>
+   <li>Opposition-strength adjustment per team-season; associate opposition ×0.5; recency half-life 3 years.</li><li>Baseline = the same metric on each player's non-pressure balls.</li></ul></div>
+  <div class="panel"><h3>3 · Rating and reliability</h3><ul class="find small"><li>Empirical-Bayes shrinkage per component; pillars scored on a talent scale.</li><li>__IDX__ = PV ${DATA.weights.PV*100}% · Consistency ${DATA.weights.CON*100}% · Resilience ${DATA.weights.RES*100}% · Win impact ${DATA.weights.WIN*100}%.</li>
+   <li>300 match-bootstrap re-samples plus 9 alternative definitions.</li></ul></div></div>
+  <div class="grid g2" style="margin-top:16px"><div class="panel"><h3>Split-half repeatability (Spearman r)</h3><table><tr><th></th><th class="num">Batters</th><th class="num">Bowlers</th></tr>
+   ${[['Normal value','normal'],['Pressure value','pressure'],['Scoring / economy','scoring'],['Survival / wickets','survival'],['Resilience gap','resilience'],['Win impact','win']].map(([l,k])=>`<tr><td>${l}</td><td class="num">${sp.bat[k].toFixed(2)}</td><td class="num">${sp.bowl[k].toFixed(2)}</td></tr>`).join('')}</table>
+   <p class="small muted">Bowling under pressure is repeatable. Batting under pressure and "clutch gaps" are noisy, hence heavy shrinkage.</p></div>
+  <div class="panel"><h3>Robustness: our top 10 under alternative definitions</h3><table><tr><th>Alternative</th><th class="num">Pool bat</th><th class="num">Pool bowl</th><th class="num">League bat</th><th class="num">League bowl</th></tr>${Object.keys(rob.bat.pool).map(rrow).join('')}</table></div></div>`;
+}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+data_pack/
+outputs/work/
+*.parquet
+__pycache__/

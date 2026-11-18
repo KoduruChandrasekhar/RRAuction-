@@ -1,0 +1,18 @@
+{
+  "_note": "IPL 2026 contract fees (Rs crore) from public 2025 mega-auction / retention and 2026 mini-auction reports; trades use the reported traded fee. Captains / franchise cornerstones are flagged (never released before a mini-auction).",
+  "fees": {
+    "Suryakumar Yadav": 16.35, "Namboori Tilak Varma": 8.0, "Priyansh Arya": 3.8, "Tim David": 3.0,
+    "Shreyas Iyer": 26.75, "Ashutosh Sharma": 3.8, "Pathum Nissanka": 4.0, "Cameron Green": 25.2,
+    "Ryan Rickelton": 1.0, "Prabhsimran Singh": 4.0, "Abhishek Sharma": 14.0, "Azmatullah Omarzai": 2.4,
+    "Lokesh Rahul": 14.0, "Jasprit Bumrah": 18.0, "Krunal Pandya": 5.75, "Sunil Narine": 12.0,
+    "Rashid Khan": 18.0, "Varun Chakravarthy": 12.0, "Josh Hazlewood": 12.5, "Bhuvneshwar Kumar": 10.75,
+    "Matheesha Pathirana": 18.0, "Trent Boult": 12.5, "Lockie Ferguson": 2.0, "Kuldeep Yadav": 13.5,
+    "Jason Holder": 7.0, "Axar Patel": 16.5, "T Natarajan": 5.0, "Akeal Hosein": 2.0, "Sai Kishore": 2.0,
+    "Jamie Overton": 1.5, "Glenn Phillips": 2.0, "Abdul Samad": 4.2, "Xavier Bartlett": 0.8,
+    "Virat Kohli": 21.0, "Heinrich Klaasen": 23.0, "Nicholas Pooran": 21.0, "Marcus Stoinis": 11.0,
+    "David Miller": 7.5, "Harshal Patel": 8.0, "Jaydev Unadkat": 1.0, "Deepak Chahar": 9.25, "Yash Dayal": 5.0
+  },
+  "cornerstones": ["Suryakumar Yadav", "Jasprit Bumrah", "Shreyas Iyer", "Axar Patel", "Rashid Khan", "Virat Kohli",
+                   "Abhishek Sharma", "Sunil Narine", "Varun Chakravarthy", "Lokesh Rahul", "Namboori Tilak Varma",
+                   "Heinrich Klaasen", "Kuldeep Yadav"]
+}

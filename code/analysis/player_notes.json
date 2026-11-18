@@ -1,0 +1,263 @@
+{
+ "_note": "Qualitative scout notes (role / fit / risk). Live numbers (ranks, phase shares, values) are added automatically from the data so the notes stay correct after re-runs. Players without a note get an auto-generated profile.",
+ "Reeza Hendricks": {
+  "role": "Top-order batter (chase specialist)",
+  "fit": "The most reliable chaser in the pool: most of his pressure balls come in second innings, and he is at his best in the tightest moments. Cover for the opening pair and a stabiliser at No.3.",
+  "risk": "No IPL contract history, so his evidence comes from T20Is (opposition-adjusted)."
+ },
+ "Towhid Hridoy": {
+  "role": "Middle-order chaser / finisher",
+  "fit": "Beats expectation in most of his pressure innings, mostly in chases, and finishes strongly at the death, RR's weaker batting phase. A low-cost middle-order option.",
+  "risk": "Bangladesh player: registered for 2027, but there is political risk after the January 2026 KKR episode. No IPL sample."
+ },
+ "Mohammad Nabi": {
+  "role": "Death-overs hitter",
+  "fit": "A specialist for the last five overs when setting a total: the profile RR lacked at the death.",
+  "risk": "Age 41; his off-spin rates below par under pressure; poor when chasing."
+ },
+ "Daryl Mitchell": {
+  "role": "Middle-order batter",
+  "fit": "Strong in second-innings middle overs and against spin under pressure. Was unsold on a Rs 2 cr base in 2026, so a likely value buy.",
+  "risk": "Weaker when setting a target and at the death."
+ },
+ "Sikandar Raza": {
+  "role": "Middle-order batter + off-spin (two-list player)",
+  "fit": "Rated in both our batting and bowling top 10s: a middle-overs chaser with the bat and a middle-overs control spinner with the ball. One overseas slot covers two needs at a low price.",
+  "risk": "Age 40; last IPL season was 2024."
+ },
+ "Kyle Mayers": {
+  "role": "Powerplay batter / seam all-rounder",
+  "fit": "A powerplay pressure batter who is strong against pace.",
+  "risk": "RR's powerplay batting is already the league's best under pressure, so this is depth, not need."
+ },
+ "Harry Brook": {
+  "role": "No.4 batter",
+  "fit": "Elite in normal play and still above par under pressure. An anchor-aggressor for the middle order.",
+  "risk": "Must register (two-season ban lapsed; has said he may return). Likely Rs 4-8 cr."
+ },
+ "George Dockrell": {
+  "role": "Finisher / left-arm spin",
+  "fit": "Better under pressure than in normal play, with most of his pressure balls at the death. A near-base-price finishing option.",
+  "risk": "No IPL exposure; mostly bilateral T20I evidence."
+ },
+ "Mark Chapman": {
+  "role": "Middle-order batter",
+  "fit": "Steady middle-overs batter under pressure.",
+  "risk": "No IPL history."
+ },
+ "Roston Chase": {
+  "role": "Off-spin all-rounder (two-list player)",
+  "fit": "Makes both lists: economical middle-overs off-spin and a useful lower-middle-order bat.",
+  "risk": "No IPL history."
+ },
+ "Jonny Bairstow": {
+  "role": "Opener / keeper",
+  "fit": "IPL-proven powerplay batter. Keeper cover.",
+  "risk": "Age 37; fewer recent pressure innings than the list's evidence bar."
+ },
+ "Mujeeb Ur Rahman": {
+  "role": "Mystery off-spin (powerplay + middle)",
+  "fit": "The best available pressure bowler in our ratings. Most of his pressure overs come defending totals, and he controls the powerplay and middle overs. Young (25).",
+  "risk": "Limited IPL time since 2021; price could rise if teams see the same numbers."
+ },
+ "Mustafizur Rahman": {
+  "role": "Death-overs left-arm seamer (cutters)",
+  "fit": "The death specialist RR need: over half of his pressure overs come at the death, the phase where RR rank near the bottom under pressure. IPL-proven over 8 seasons.",
+  "risk": "Political risk: KKR had to release him in January 2026. Bid with a fallback ready (Mark Adair, Ngarava or Taskin; Ferguson or Pathirana if released)."
+ },
+ "Maheesh Theekshana": {
+  "role": "Mystery off-spin (all phases)",
+  "fit": "A large proven sample across all three phases. Played for RR in 2025.",
+  "risk": "Unsold in 2026 on a Rs 2 cr base, so expect value."
+ },
+ "Mark Adair": {
+  "role": "Seam bowler (powerplay + death)",
+  "fit": "A death-and-powerplay seamer who beats expectation under pressure: a low-cost death-bowling fallback.",
+  "risk": "No IPL history; associate-heavy evidence (opposition-adjusted)."
+ },
+ "Richard Ngarava": {
+  "role": "Left-arm seamer (powerplay + death)",
+  "fit": "Above-par powerplay and death bowling under pressure. A low-cost left-arm angle.",
+  "risk": "No IPL history."
+ },
+ "FazalHaq Farooqi": {
+  "role": "Left-arm swing (powerplay + death)",
+  "fit": "A powerplay swing bowler, ex-RR (2025).",
+  "risk": "His IPL pressure sample is below par."
+ },
+ "Gudakesh Motie": {
+  "role": "Left-arm spin (middle overs)",
+  "fit": "A middle-overs control spinner.",
+  "risk": "No IPL history."
+ },
+ "Taskin Ahmed": {
+  "role": "Pace (powerplay + death)",
+  "fit": "Above-par pace in the powerplay and at the death. A death-bowling fallback.",
+  "risk": "Bangladesh political-risk flag; no IPL history."
+ },
+ "Adil Rashid": {
+  "role": "Leg-spin (middle overs)",
+  "fit": "Experienced middle-overs wrist-spinner.",
+  "risk": "Age 38."
+ },
+ "Shoriful Islam": {
+  "role": "Left-arm pace (powerplay)",
+  "fit": "A powerplay wicket-taker.",
+  "risk": "Bangladesh political-risk flag."
+ },
+ "Mohit Sharma": {
+  "role": "Death-overs seamer (Indian)",
+  "fit": "The best Indian option in the auction pool by our ratings: a death-overs cutter specialist and IPL veteran who fills an Indian slot cheaply.",
+  "risk": "Age 38; did not play in 2026."
+ },
+ "Lockie Ferguson": {
+  "role": "Express pace (all phases)",
+  "fit": "The best pressure bowler on the release list: pace in the powerplay, middle and death.",
+  "risk": "Big purses (LSG, KKR, SRH, DC) will chase him - set a ceiling."
+ },
+ "Matheesha Pathirana": {
+  "role": "Death-overs fast bowler",
+  "fit": "Slingy death specialist and one of the best pressure bowlers on the release list.",
+  "risk": "Will be the most contested bowler - set a ceiling."
+ },
+ "Cameron Green": {
+  "role": "Pace-bowling all-rounder",
+  "fit": "Average under pressure in our ratings.",
+  "risk": "Rs 25.2 cr. If released, a KKR buy-back is likely and beyond RR's purse."
+ },
+ "Blessing Muzarabani": {
+  "role": "Tall seamer (powerplay + death)",
+  "fit": "Above-par pressure seamer, released by KKR: a value overseas pace option.",
+  "risk": "Little IPL game time."
+ },
+ "M Shahrukh Khan": {
+  "role": "Power finisher (Indian, uncapped)",
+  "fit": "Pure muscle for overs 15-20 or the impact-batter role.",
+  "risk": "-"
+ },
+ "Kamindu Mendis": {
+  "role": "Middle-order batter + two-arm spin",
+  "fit": "Overseas middle-order stability who also bowls spin with either arm.",
+  "risk": "-"
+ },
+ "Tushar Deshpande": {
+  "role": "Indian fast bowler (death)",
+  "fit": "IPL-proven Indian quick who knows RR; bowls the tough overs at the death.",
+  "risk": "Price should be sensible after release."
+ },
+ "Wanindu Hasaranga": {
+  "role": "Leg-spin, middle overs - the trusted spinner",
+  "fit": "Proven IPL wrist-spinner and ex-RR: takes wickets through the middle overs and partners the spin attack.",
+  "risk": "Will attract bids from teams with big purses."
+ },
+ "Nitish Rana": {
+  "role": "Overs 12-20 engine, left-hander (Indian)",
+  "fit": "Takes the innings from over 12 to the finish: rotates against spin, clears the ropes at the death, and partners Ferreira. Ex-RR.",
+  "risk": "Several teams will bid - set a ceiling."
+ },
+ "Shimron Hetmyer": {
+  "role": "Middle-order finisher",
+  "fit": "Explosive left-handed finisher; available well below his previous fee.",
+  "risk": "Overseas slot competition."
+ },
+ "Nehal Wadhera": {
+  "role": "Back-end hitter, left-hander (Indian, uncapped)",
+  "fit": "Left-handed power for overs 14-20, comfortable against pace and spin; an uncapped Indian, so no overseas slot used.",
+  "risk": "-"
+ },
+ "Rachin Ravindra": {
+  "role": "Top-order batter + left-arm spin",
+  "fit": "Flexible batter who adds a spin option.",
+  "risk": "-"
+ },
+ "Pathum Nissanka": {
+  "role": "Top-order batter",
+  "fit": "Consistent top-order run-scorer.",
+  "risk": "-"
+ },
+ "Ishant Sharma": {
+  "role": "Indian fast bowler (new ball)",
+  "fit": "Veteran new-ball seamer; reliable powerplay overs and experience.",
+  "risk": "Age 38."
+ },
+ "Avesh Khan": {
+  "role": "Indian fast bowler (death)",
+  "fit": "Indian backup pace for Shami and Sandeep; ex-RR (2024).",
+  "risk": "-"
+ },
+ "Gerald Coetzee": {
+  "role": "Pace all-rounder",
+  "fit": "Genuine pace plus lower-order hitting: covers the injury-prone quicks and adds muscle at No.8.",
+  "risk": "Fitness to monitor."
+ },
+ "Trent Boult": {
+  "role": "Left-arm swing, new ball + death (homecoming)",
+  "fit": "Backup new-ball and death bowler behind Archer; ex-RR (2022-24) who knows Jaipur.",
+  "risk": "Age 37 - manage workload."
+ },
+ "Allah Ghazanfar": {
+  "role": "Off-spin (young mystery spinner)",
+  "fit": "Young IPL-proven off-spinner with upside.",
+  "risk": "-"
+ },
+ "Mayank Markande": {
+  "role": "Leg-spin (Indian)",
+  "fit": "Indian wrist-spin option that keeps an overseas slot free.",
+  "risk": "-"
+ },
+ "Matthew Short": {
+  "role": "Top-order batter + off-spin",
+  "fit": "Aggressive opener with part-time off-spin.",
+  "risk": "-"
+ },
+ "Rahul Tripathi": {
+  "role": "Top/middle-order batter (Indian)",
+  "fit": "Experienced Indian batter who can float in the order.",
+  "risk": "-"
+ },
+ "Abishek Porel": {
+  "role": "Wicketkeeper-batter (Indian, uncapped)",
+  "fit": "Indian keeper-batter option.",
+  "risk": "-"
+ },
+ "Ben Duckett": {
+  "role": "Top-order batter",
+  "fit": "Aggressive left-handed top-order batter who plays spin well.",
+  "risk": "-"
+ },
+ "Spencer Johnson": {
+  "role": "Left-arm fast bowler",
+  "fit": "Tall left-arm quick for the powerplay and death.",
+  "risk": "-"
+ },
+ "Karun Nair": {
+  "role": "Backup top-order batter (Indian)",
+  "fit": "Experienced top-order cover for Jurel and Parag; plays spin well.",
+  "risk": "-"
+ },
+ "Mahipal Lomror": {
+  "role": "Left-handed finisher (Indian, uncapped)",
+  "fit": "Ex-RR finisher who knows Jaipur: muscle at No.6/7 and an extra left-hand option.",
+  "risk": "-"
+ },
+ "Prashant Veer": {
+  "role": "Back-end all-rounder (Indian, uncapped)",
+  "fit": "Uncapped Indian hitter plus left-arm spin.",
+  "risk": "Price could be high."
+ },
+ "Matthew Breetzke": {
+  "role": "Middle-order batter",
+  "fit": "South African middle-order batter who rotates strike and finishes.",
+  "risk": "-"
+ },
+ "Mitchell Owen": {
+  "role": "Back-end power hitter + part-time pace",
+  "fit": "Clean striker for overs 12-20 who also bowls pace: the extra muscle the lower middle order needs.",
+  "risk": "-"
+ },
+ "Dian Forrester": {
+  "role": "Back-end all-rounder",
+  "fit": "Lower-order hitting plus seam.",
+  "risk": "-"
+ }
+}
