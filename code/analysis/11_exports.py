@@ -16,6 +16,6 @@ for role, label in [('bat', 'Batsman'), ('bowl', 'Bowler')]:
     cols = ['name', 'country', 'avail', 'avail_note', 'team27', 'rank', 'pool_rank', 'riser_rank', 'RUPI', 'PV_u', 'NV_u', 'RES_u',
             'CON', 'WIN_u', 'p_n', 'p_matches', 'boot_top10', 'pool_top10', 'pool_lo', 'pool_hi', 'last_date']
     f.sort_values('score', ascending=False)[cols].round(3).rename(columns={'RUPI': IDX}).to_csv(f'{S}/{IDX}_ratings_{"batters" if role == "bat" else "bowlers"}.csv')
-out.append('Availability from the official IPL 2027 retention lists (17 Nov 2026). Lists = official 17 Nov release lists only, Bangladesh excluded, IPL-proven (>=40 IPL pressure balls) first. RR: Rs 27.05 cr, 6 slots (3 overseas).')
+out.append('Availability from the official IPL 2027 retention lists (17 Nov 2026). Players with >=40 IPL pressure balls are ranked first. RR: Rs 27.05 cr, 6 slots (3 overseas).')
 open(f'{S}/Dropdown_Picks.txt', 'w', encoding='utf-8').write('\n'.join(out))
 print('\n'.join(out))

@@ -13,12 +13,12 @@ Batsman 10: M Shahrukh Khan
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)
 
-Bowler 1: Trent Boult
-Bowler 2: Gerald Coetzee
-Bowler 3: Matt Henry
-Bowler 4: Avesh Khan
-Bowler 5: Deepak Chahar
-Bowler 6: Lockie Ferguson
+Bowler 1: Gerald Coetzee
+Bowler 2: Matt Henry
+Bowler 3: Trent Boult
+Bowler 4: Deepak Chahar
+Bowler 5: Lockie Ferguson
+Bowler 6: Avesh Khan
 Bowler 7: Wanindu Hasaranga
 Bowler 8: Matheesha Pathirana
 Bowler 9: Mayank Markande
@@ -26,4 +26,4 @@ Bowler 10: Allah Ghazanfar
 
 (Reference - unfiltered league-wide top 10 bowlers: Jasprit Bumrah, Krunal Pandya, Sunil Narine, Mitchell Santner, Rashid Khan, Lockie Ferguson, Kuldeep Yadav, Abrar Ahmed, Mujeeb Ur Rahman, Shaheen Afridi)
 
-Availability from the official IPL 2027 retention lists (17 Nov 2026). Lists = official 17 Nov release lists only, Bangladesh excluded, IPL-proven (>=40 IPL pressure balls) first. RR: Rs 27.05 cr, 6 slots (3 overseas).
+Availability from the official IPL 2027 retention lists (17 Nov 2026). Players with >=40 IPL pressure balls are ranked first. RR: Rs 27.05 cr, 6 slots (3 overseas).

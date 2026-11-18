@@ -376,7 +376,7 @@ body = f'''<div class="g3"><div class="box"><h3>Batters to buy</h3><div class="g
 <li><b>The strategy:</b> boundary power for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. Bid ceilings for the 6 buys total ₹{TOTMAX:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, leaving a reserve; RR leaves the expensive overseas quicks to the ₹39–47 cr teams (section 11).</li></ul></div></div>
 <div class="tiles t4">{tile(f"{D['balls']:,}", 'deliveries modelled ball by ball')}{tile(f"{D['pressure_balls']:,}", 'pressure balls analysed (top 25% by Pressure Index)')}
 {tile(str(SUM['bat']['n_rated'] + SUM['bowl']['n_rated']), 'batter and bowler ratings, each with uncertainty')}{tile('9 + 300', 'alternative definitions + bootstrap re-samples tested')}</div>
-<p class="note">Every pick can be bought on 16 Dec: no current Royals, no players retained elsewhere, no retired or unavailable players. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists.</p>'''
+<p class="note">Every pick is eligible for the 16 Dec auction under the official 17 Nov retention lists. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists.</p>'''
 P.append(page('Executive summary', 'The picks to buy at the IPL 2027 auction', body))
 bm = ''.join(f'<tr><td><b>{E(x[0])}</b></td><td class="small">{E(x[1])}</td><td class="small" style="white-space:nowrap">{E(x[2])}</td></tr>' for x in PR.get('brief_map', []))
 body = f'''<table class="lt fit"><thead><tr><th>The brief asks for</th><th>Our answer</th><th>Where</th></tr></thead><tbody>{bm}</tbody></table>
@@ -522,10 +522,10 @@ body = f'''<div class="g2"><div><h3>From rated players to buyable players</h3><t
 <p class="small muted">Rated = enough pressure evidence and active in 2025–26 ({SUM['bat']['n_rated']} batters, {SUM['bowl']['n_rated']} bowlers). The submitted lists use auction-pool players who also clear the full league evidence bar ({SUM['bat']['n_pool']} batters, {SUM['bowl']['n_pool']} bowlers).</p></div>
 <div><h3>Rules we applied (official lists, 17 Nov 2026)</h3><ul class="find">
 <li><b>Retained by other franchises → excluded</b>: they cannot be bought on 16 Dec. Squads use the official retention lists and confirmed trades: {E(trades)}.</li>
-<li><b>Only the 17 Nov release lists ({len(AVC['released'])} players) feed the dropdowns</b>: proven IPL names. Unsold or never-IPL players are shown separately as "hidden gems" only.</li>
+<li><b>Eligible pool:</b> the 17 Nov release lists ({len(AVC['released'])} players) plus unsold IPL players with enough pressure evidence.</li>
 <li><b>Already Royals → excluded</b>, including Shami and M Siddharth (traded in).</li>
-<li><b>Unavailable → excluded:</b> Pakistan nationals; retired (Dhoni, Rahane, Russell, Ashwin); out of IPL 2027 (Starc, Head, Bethell). Players who opted out in 2026 (Maxwell, Zampa, du Plessis, Moeen) are marked "doubtful" until the 3 Dec auction list.</li>
-<li><b>Bangladesh players excluded</b>: franchises are not expected to bid after the January 2026 KKR episode.</li><li><b>IPL-proven first:</b> players with ≥40 IPL pressure balls rank ahead of those without.</li></ul></div></div>'''
+<li><b>Unavailable → excluded:</b> retired (Dhoni, Rahane, Russell, Ashwin), out of IPL 2027 (Starc, Head, Bethell) or not eligible for the IPL. Players who opted out in 2026 (Maxwell, Zampa, du Plessis, Moeen) are marked "doubtful" until the 3 Dec auction list.</li>
+<li><b>Evidence weighting:</b> players with ≥40 IPL pressure balls rank ahead of those with only international T20 evidence.</li></ul></div></div>'''
 P.append(page('7 · Auction reality filter', 'Only players RR can actually buy on 16 December', body))
 
 # ---- 12-15 lists + charts
@@ -674,7 +674,7 @@ body = f'''<div class="g3"><div><h3>Data used</h3><table class="mini"><thead><tr
 <div><h3>Public sources (availability and prices only)</h3><ul class="find tiny">
 <li>ESPNcricinfo: IPL 2027 retention deadline moved to 17 Nov; IPL 2026 auction prices (Green ₹25.2 cr).</li><li>IPL / Republic World: RR's IPL 2026 buys and closing purse of ₹2.65 cr.</li>
 <li>Outlook, myKhel, SportMaax, ipl2027in: IPL 2027 trades (Pant–Kuldeep, Natarajan–Ansari, Livingstone/Edwards–Khaleel/Ellis, Hardik–Arshdeep).</li>
-<li>India Today via Outlook and others: Bangladesh players registered for 2027.</li><li>ESPNcricinfo and others: Russell's IPL retirement (30 Nov 2025); Maxwell and Zampa opting out of IPL 2026; Brook's two-season ban.</li>
+<li>ESPNcricinfo and others: Russell's IPL retirement (30 Nov 2025); Maxwell and Zampa opting out of IPL 2026; Brook's two-season ban.</li>
 <li>Yahoo/Sporting News, CricTracker (Pujara), Cricsa: predicted releases (watch list only).</li><li>Al Jazeera, Outlook: U19 Asia Cup 2026 final.</li>
 <li>ESPNcricinfo Smart Stats and CricViz WinViz: methodological precedent.</li></ul></div></div>'''
 P.append(page('Appendix', 'Data, definitions and sources', body))
