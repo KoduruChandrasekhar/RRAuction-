@@ -438,6 +438,8 @@
   "bat": [
    "Daryl Mitchell",
    "Kamindu Mendis",
+   "George Dockrell",
+   "Mark Chapman",
    "Mahipal Lomror",
     "Nehal Wadhera",
     "Abhinav Manohar",
@@ -519,7 +521,7 @@
   {
    "name": "Slot 6: probables",
    "slot": "Open",
-  "why": "Decided on the day by price: Abhinav Manohar (Indian middle-order finisher, max \u20b91.5 cr), Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (overseas power hitter, max \u20b93.5 cr) or Zak Foulkes (young overseas pace all-rounder, max \u20b91.5 cr)",
+  "why": "Decided on the day by price: Kamindu Mendis (overseas middle-order all-rounder), Dunith Wellalage (young overseas all-rounder), Abhinav Manohar (Indian finisher, max \u20b91.5 cr), Deepak Chahar (Indian new ball, max \u20b94.5 cr), Mitchell Owen (overseas power hitter, max \u20b93.5 cr) or Zak Foulkes (young overseas pace all-rounder, max \u20b91.5 cr)",
    "target": 3,
    "max": 4.5
   }
@@ -527,6 +529,8 @@
  "plan_alternatives": {
   "Slot 6 probables": [
    "Abhinav Manohar (max \u20b91.5 cr)",
+   "Kamindu Mendis (overseas middle-order all-rounder)",
+   "Dunith Wellalage (young overseas all-rounder)",
    "Deepak Chahar (max \u20b94.5 cr)",
    "Mitchell Owen (max \u20b93.5 cr)",
    "Zak Foulkes (max \u20b91.5 cr)",

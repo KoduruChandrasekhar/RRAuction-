@@ -288,9 +288,18 @@ for role in ['bat', 'bowl']:
     r['ipl_ok'] = r.p_ipl >= 40                                                     # proven under pressure IN THE IPL
     excl = set(AV.CFG.get('exclude_countries', []))
     model_exclusions = set(AV.CFG.get('model_exclusions', []))
-    pool_overrides = set(AV.CFG.get('auction_pool_override', []))
+    if role == 'bowl':
+        model_exclusions.discard('Roston Chase')
+        model_exclusions.discard('Wanindu Hasaranga')
+        pool_overrides = set()
+    else:
+        pool_overrides = set(AV.CFG.get('auction_pool_override', []))
     released = r.name.isin(AV.CFG['released'].keys())
-    base_ok = (r.avail == 'Auction pool') & ~r.country.isin(excl) & (r.p_n >= (60 if role == 'bat' else 72))
+    registered_bangladesh = set(AV.CFG.get('bangladesh_registered', []))
+    country_ok = ~r.country.isin(excl)
+    if role == 'bowl':
+        country_ok = country_ok | r.name.isin(registered_bangladesh)
+    base_ok = (r.avail == 'Auction pool') & country_ok & (r.p_n >= (60 if role == 'bat' else 72))
     pool = r.index[base_ok & (released | r.name.isin(pool_overrides)) & ~r.name.isin(model_exclusions)]
     risers = r.index[(r.avail == 'Auction pool') & ~released & ~r.name.isin(model_exclusions) & ~r.country.isin(excl) & r.eligible]
     ranked = composite(r, BASE_W, ref)

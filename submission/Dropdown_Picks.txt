@@ -3,26 +3,26 @@
 Batsman 1: M Shahrukh Khan
 Batsman 2: Daryl Mitchell
 Batsman 3: Kamindu Mendis
-Batsman 4: Roston Chase
-Batsman 5: Mahipal Lomror
-Batsman 6: Nehal Wadhera
-Batsman 7: Nitish Rana
-Batsman 8: Abhinav Manohar
-Batsman 9: Matthew Breetzke
-Batsman 10: Abishek Porel
+Batsman 4: George Dockrell
+Batsman 5: Mark Chapman
+Batsman 6: Mahipal Lomror
+Batsman 7: Nehal Wadhera
+Batsman 8: Nitish Rana
+Batsman 9: Abhinav Manohar
+Batsman 10: Matthew Breetzke
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)
 
 Bowler 1: Lockie Ferguson
 Bowler 2: Gerald Coetzee
-Bowler 3: Matheesha Pathirana
-Bowler 4: Blessing Muzarabani
-Bowler 5: Zakary Foulkes
-Bowler 6: Roston Chase
+Bowler 3: Mustafizur Rahman
+Bowler 4: Matheesha Pathirana
+Bowler 5: Blessing Muzarabani
+Bowler 6: Zakary Foulkes
 Bowler 7: Ishant Sharma
 Bowler 8: Spencer Johnson
-Bowler 9: Allah Ghazanfar
-Bowler 10: Mayank Markande
+Bowler 9: Wanindu Hasaranga
+Bowler 10: Allah Ghazanfar
 
 (Reference - unfiltered league-wide top 10 bowlers: Jasprit Bumrah, Krunal Pandya, Sunil Narine, Mitchell Santner, Rashid Khan, Lockie Ferguson, Kuldeep Yadav, Abrar Ahmed, Mujeeb Ur Rahman, Shaheen Afridi)
 
