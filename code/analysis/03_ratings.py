@@ -293,7 +293,9 @@ for role in ['bat', 'bowl']:
     risers = r.index[(r.avail == 'Auction pool') & ~released & ~r.country.isin(excl) & r.eligible]   # unsold / non-IPL gems (shown, not picked)
     ranked = composite(r, BASE_W, ref)
     ranked['pool_rank'] = np.nan
-    _key = ranked.loc[pool, 'score'] + np.where(ranked.loc[pool, 'ipl_ok'], 100, 0)   # IPL-proven first, then by score
+    # Rank the dropdown pool strictly by the final NeRRve score. Availability
+    # has already been resolved above; IPL/IPL-style bonuses must not alter rank.
+    _key = ranked.loc[pool, 'RUPI']
     ranked.loc[pool, 'pool_rank'] = _key.rank(ascending=False, method='first')
     ranked['riser_rank'] = np.nan
     ranked.loc[risers, 'riser_rank'] = ranked.loc[risers, 'score'].rank(ascending=False, method='first')

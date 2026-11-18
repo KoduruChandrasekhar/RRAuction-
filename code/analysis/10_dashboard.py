@@ -61,7 +61,15 @@ data = dict(version=VERSION, players=players, calc=calc, plan_core=PR.get("plan_
 tpl = open(os.path.join(HERE, 'dashboard_template.html'), encoding='utf-8').read()
 tpl = tpl.replace('__IDX__', IDX)
 import html as _h
-_fl = PR.get('final_lists', {})
+_fl = {
+    role: [
+        r['name'] for r in sorted(
+            (p for p in players[role] if p['pool'] is not None),
+            key=lambda p: p['pool']
+        )[:10]
+    ]
+    for role in ['bat', 'bowl']
+}
 _li = lambda xs: ''.join(f'<li>{_h.escape(x)}</li>' for x in xs)
 _plan = ''.join(f'<li><b>{_h.escape(x["name"])}</b> ({_h.escape(x["slot"])}, max ₹{x["max"]:g} cr)</li>' for x in PR.get('plan', []))
 static = (f'<h2>{IDX}: picks at a glance</h2><p class="small muted">This summary is shown when the interactive view cannot run '
