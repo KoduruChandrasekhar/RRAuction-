@@ -210,11 +210,19 @@ for R, ttl, kick in [(top_b, 'Batters to buy: middle-order power and finishing',
 # 11. plan
 s = base(f"Who to buy with ₹{I['purse']['available']:.2f} cr and 6 slots (3 overseas)", '7 · Auction plan')
 plan = PR.get('plan', [])
-table(s, 0.55, 1.55, 12.2, 3.6, ['Buy', 'Slot', 'Why', 'Price band'],
-      [[x['name'], x['slot'], x['why'], price(x['name'])] for x in plan], [2.6, 1.2, 6.8, 1.6], 12)
-lo = sum(PR['players'].get(x['name'], {'lo': 0.3})['lo'] for x in plan); hi = sum(PR['players'].get(x['name'], {'hi': 0.75})['hi'] for x in plan)
-text(s, 0.55, 5.35, 12.2, 0.5, f"Estimated spend ₹{lo:.1f}–{hi:.1f} cr of ₹{I['purse']['available']:.2f} cr: most of it on back-end muscle, the rest on pace cover. LSG, KKR, SRH and DC hold ₹39–47 cr, so set ceilings early.", 13, NAVY, True)
+table(s, 0.55, 1.55, 12.2, 3.6, ['Buy', 'Slot', 'Why', 'Target → max bid'],
+      [[x['name'], x['slot'], x['why'], f"₹{x['target']:g} → ₹{x['max']:g} cr"] for x in plan], [2.4, 1.1, 6.7, 2.0], 12)
+lo = sum(x['target'] for x in plan); hi = sum(x['max'] for x in plan)
+text(s, 0.55, 5.35, 12.2, 0.5, f"Target spend ₹{lo:.1f} cr. Even at every ceiling RR spends ₹{hi:.1f} cr and keeps ₹{I['purse']['available'] - hi:.2f} cr in reserve.", 13, NAVY, True)
 text(s, 0.55, 5.95, 12.2, 1.0, 'Alternatives: ' + ' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()), 12, MUTED)
+
+# 11b. auction dynamics
+AU = PR.get('auction', {})
+s = base('Auction dynamics: who RR bids against', '7 · Auction dynamics')
+table(s, 0.55, 1.5, 6.6, 4.9, ['Team', 'Purse', 'Slots (OS)', 'Bids against RR for'],
+      [[x[0].replace('Royal Challengers', 'RC').replace('Super Giants', 'SG').replace('Knight Riders', 'KR'), f"₹{x[1]:g} cr", f"{x[2]} ({x[3]})", x[5]] for x in AU.get('rivals', [])], [1.9, 1.1, 1.0, 2.6], 10)
+bullets(s, 7.4, 1.45, 5.4, 5.4, [(a, b) for a, b in AU.get('moves', [])], 11)
+text(s, 0.55, 6.5, 6.6, 0.5, AU.get('market_note', ''), 10, MUTED)
 
 # 12. how each pick strengthens RR
 s = base('How each pick strengthens RR', '8 · Every pick')

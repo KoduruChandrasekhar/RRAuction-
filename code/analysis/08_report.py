@@ -359,6 +359,7 @@ P.append(f'''<section class="page cover"><div class="cv-l">
 <div class="pill">Empirical-Bayes shrinkage · 300-sample bootstrap</div><div class="pill">Filtered to the real 2027 auction pool</div></div></section>''')
 
 # ---- 2 exec summary
+TOTMAX = sum(x.get('max', 0) for x in PR.get('plan', []))
 GROUPS = PR.get('groups', {})
 def glist(keys):
     return ''.join(f'<div class="gh">{E(k)}</div><div class="gn">{E(", ".join(GROUPS[k]))}</div>' for k in keys if k in GROUPS)
@@ -372,10 +373,10 @@ body = f'''<div class="g3"><div class="box"><h3>Batters to buy</h3><div class="g
 <li><b>Our pressure zone is where matches are decided.</b> It holds {pct(WS['pressure_balls_share'])} of balls but {pct(WS['pressure_wpa_share'])} of all win-probability movement.</li>
 <li><b>RR lose the close ones.</b> RR played the most close IPL games in 2025–26 ({rrc['close']}) and won only {rrc['close_won']}. Under pressure they rank {rrk['bat']['Death']}th of 10 for death batting and {rrk['bowl']['Death']}th for death bowling.</li>
 <li><b>"Clutch" is mostly skill plus sample size.</b> Pressure-minus-normal gaps barely repeat (split-half r = {I['split_half']['bat']['resilience']:.2f}), so we shrink hard and reward proven volume.</li>
-<li><b>The strategy:</b> back-end muscle for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. The plan fits RR's official ₹{I['purse']['available']:.2f} cr purse and 6 slots.</li></ul></div></div>
+<li><b>The strategy:</b> back-end muscle for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. Bid ceilings for the 6 buys total ₹{TOTMAX:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, leaving a reserve; RR leaves the expensive overseas quicks to the ₹39–47 cr teams (section 11).</li></ul></div></div>
 <div class="tiles t4">{tile(f"{D['balls']:,}", 'deliveries modelled ball by ball')}{tile(f"{D['pressure_balls']:,}", 'pressure balls analysed (top 25% by Pressure Index)')}
 {tile(str(SUM['bat']['n_rated'] + SUM['bowl']['n_rated']), 'batter and bowler ratings, each with uncertainty')}{tile('9 + 300', 'alternative definitions + bootstrap re-samples tested')}</div>
-<p class="note">Every pick can be bought on 16 Dec: no current Royals, no players retained elsewhere, no retired or unavailable players. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists; section 11 shows our release calls were right a day early.</p>'''
+<p class="note">Every pick can be bought on 16 Dec: no current Royals, no players retained elsewhere, no retired or unavailable players. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists.</p>'''
 P.append(page('Executive summary', 'The picks to buy at the IPL 2027 auction', body))
 
 # ---- 3 approach
@@ -386,7 +387,7 @@ steps = [('1', 'Ball states', f"{D['balls']:,} deliveries rebuilt into match sta
          ('5', 'Fair value', 'Runs above expectation, adjusted for opposition strength, recency and associate opposition.'),
          ('6', 'RUPI', 'Four Empirical-Bayes pillars (Pressure Value, Consistency, Resilience, Win impact) on a talent scale.'),
          ('7', 'Reliability', '300 match-bootstrap re-samples, 9 alternative definitions and split-half repeatability tests.'),
-         ('8', 'Auction lens', 'Availability rules, Release Radar, purse and price bands, and RR gap analysis.')]
+         ('8', 'Auction lens', 'Availability rules, purse, auction dynamics and RR gap analysis.')]
 flow = ''.join(f'<div class="step"><div class="sn">{n}</div><div><b>{t}</b><p>{d}</p></div></div>' for n, t, d in steps)
 P.append(page('Methodology overview', 'From 200,000 balls to an auction shortlist in eight transparent steps',
               f'<div class="flow">{flow}</div><p class="note">Everything is reproducible: <code>analysis/run_all</code> rebuilds every table, chart, this PDF and the dashboard from the raw data pack. Public information is used only for auction availability, contracts, prices and the U19 scouting radar.</p>'))
@@ -467,7 +468,7 @@ body = f'''<div class="g4">
 <div class="formula small">RUPI = 50 + 15 × standardised( Σ weight × pillar posterior ÷ talent SD ) &nbsp;·&nbsp; league-eligible mean 50, SD 15</div>
 <ul class="find two"><li><b>Why a talent scale?</b> Z-scoring shrunk numbers would re-inflate noise. Dividing each posterior by its prior SD means a pillar only moves a ranking as far as its evidence allows.</li>
 <li><b>Why these weights?</b> Pressure Value is the most repeatable signal, so it leads. Consistency and Resilience answer the brief's "compared with usual performance" and "consistently". Win impact is kept small because it barely repeats.</li>
-<li><b>Robust to the weights.</b> Equal weights, value-only, resilience-heavy and impact-heavy variants keep {min(ROB['bat']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])}–{max(ROB['bat']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])} of our 10 batters and {min(ROB['bowl']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])}–{max(ROB['bowl']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])} of our 10 bowlers (section 13).</li>
+<li><b>Robust to the weights.</b> Equal weights, value-only, resilience-heavy and impact-heavy variants keep {min(ROB['bat']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])}–{max(ROB['bat']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])} of our 10 batters and {min(ROB['bowl']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])}–{max(ROB['bowl']['pool']['overlap_top10'][k] for k in ['Equal pillar weights', 'Pressure Value only', 'Resilience-heavy', 'Win-impact-heavy'])} of our 10 bowlers (section 12).</li>
 <li><b>Uncertainty is shown, not hidden.</b> Every rank carries a bootstrap probability of making the top 10.</li></ul>'''
 P.append(page('4 · The rating', 'RUPI: four pillars, each weighted by how much real signal it carries', body))
 
@@ -548,28 +549,6 @@ body = f'''<div class="g2"><div><h3>Batters</h3><table class="mini fit"><tbody>{
 <p class="note">Young players to keep an eye on (not a priority): {E(groom)}. The U19 players must appear on the 3 Dec auction list to be eligible.</p>'''
 P.append(page('10 · How each pick strengthens RR', 'Every pick, and what it adds to the RR squad', body))
 
-# ---- 18 release radar scorecard
-SCd = I.get('radar_scorecard', {})
-scrows = [x for x in SCd.get('rows', []) if x['predicted'] in ('High', 'Medium') or x['actual'] != 'Retained']
-scrows = sorted(scrows, key=lambda x: ({'High': 0, 'Medium': 1, 'Low': 2}[x['predicted']], -x['RUPI']))[:12]
-
-
-def sc_row(x):
-    fee = ("₹" + format(x["fee"], "g") + " cr") if x["fee"] else "–"
-    pc_ = "out" if x["predicted"] == "High" else ("watch" if x["predicted"] == "Medium" else "locked")
-    ac_ = "pool" if x["actual"] != "Retained" else "locked"
-    return (f'<tr><td><b>{E(x["name"])}</b><div class="muted small">{E(str(x["team"]))}</div></td><td class="num">{f1(x["RUPI"], 0)}</td>'
-            f'<td class="num">{fee}</td><td><span class="chip {pc_}">{x["predicted"]}</span></td><td class="small">{E(x["verdict"])}</td>'
-            f'<td><span class="chip {ac_}">{x["actual"]}</span></td></tr>')
-
-
-srows = ''.join(sc_row(x) for x in scrows)
-body = f'''<div class="g21r"><div><table class="lt compact"><thead><tr><th>Player</th><th>RUPI</th><th>2026 fee</th><th>Our call<br>(16 Nov)</th><th>Read</th><th>Official<br>(17 Nov)</th></tr></thead><tbody>{srows}</tbody></table></div>
-<div><div class="tiles t1">{tile(f"{SCd.get('high_released', 0)}/{SCd.get('high_n', 0)}", '"High" release calls that were released or traded')}
-{tile(f"{SCd.get('low_retained', 0)}/{SCd.get('low_n', 0)}", '"Low" calls (retain) that were retained')}
-{tile(f"{SCd.get('med_released', 0)}/{SCd.get('med_n', 0)}", '"Medium" (toss-up) calls that were released: a genuine coin flip')}</div>
-<p class="note">Rules used on 16 Nov, before the lists: strong 2026 form → retain; good and cheap → retain; average form on a high fee → release; very expensive but good → release and buy back; barely played on a big fee → release; cornerstones always kept. The two biggest calls, Pathirana and Boult, were both released, and Pathirana is now a top-5 auction-pool bowler.</p></div></div>'''
-P.append(page('11 · Release Radar scorecard', 'We called the releases a day early: how the release logic did against the official lists', body))
 
 # ---- 19 auction plan
 pu = I['purse']
@@ -613,17 +592,29 @@ os3 = _row('Wanindu Hasaranga')
 PLAN = [x for x in PLAN if x[0] is not None]
 plo = sum(pband(x[0]['name'])[0] for x in PLAN)
 phi = sum(pband(x[0]['name'])[1] for x in PLAN)
-plan_rows = ''.join(f'<tr><td><b>{E(r["name"])}</b><div class="muted small">{E(role_of(r, ""))}</div></td><td>{sl}</td><td class="small">{why}</td><td class="num">{prices(r["name"])[0]}</td></tr>' for i, (r, sl, why) in enumerate(PLAN, 1))
+CEIL = {x['name']: (x.get('target', 0), x.get('max', 0)) for x in PR.get('plan', [])}
+plo = sum(v[0] for v in CEIL.values()); phi = sum(v[1] for v in CEIL.values())
+plan_rows = ''.join(f'<tr><td><b>{E(r["name"])}</b><div class="muted small">{E(role_of(r, ""))}</div></td><td>{sl}</td><td class="small">{why}</td><td class="num">₹{CEIL[r["name"]][0]:g} → ₹{CEIL[r["name"]][1]:g} cr</td></tr>' for i, (r, sl, why) in enumerate(PLAN, 1))
 mk = ''.join(f'<tr><td>{"<b>" if m["team"] == "Rajasthan Royals" else ""}{E(m["team"])}{"</b>" if m["team"] == "Rajasthan Royals" else ""}</td><td class="num">₹{m["purse"]:g} cr</td><td class="num">{m["slots"]}</td><td class="num">{m["overseas"]}</td></tr>' for m in pu['market'])
 fallbacks = ''
 body = f'''<div class="g3p"><div><h3>RR's auction position (official)</h3><div class="tiles t1">{tile(f"₹{pu['available']:.2f} cr", 'purse remaining after the 17 Nov retentions')}
 {tile(f"{pu['slots']} slots", f"of which {pu['overseas']} overseas")}</div>
 <h3 style="margin-top:8px">Where the buys fit in the XI</h3><table class="mini"><thead><tr><th>Bat</th><th>Role</th><th>Player</th></tr></thead><tbody>{"".join(f"<tr><td>{E(x[0])}</td><td>{E(x[1])}</td><td>{E(x[2])}</td></tr>" for x in PR.get("xi_fit", []))}</tbody></table></div>
-<div><h3>Who to buy: 6 slots, 3 overseas, ₹{plo:.1f}–{phi:.1f} cr</h3><table class="lt compact"><thead><tr><th>Target</th><th>Slot</th><th>Why</th><th>Price band</th></tr></thead><tbody>{plan_rows}</tbody></table>
-<p class="small"><b>Budget logic:</b> mid-estimate about ₹{(plo + phi) / 2:.1f} cr of ₹{pu['available']:.2f} cr. Most of the money goes on back-end muscle for overs 12–20; the rest buys pace cover for injuries. LSG, KKR, SRH and DC hold ₹39–47 cr, so set ceilings early.</p>
+<div><h3>Who to buy: 6 slots, 3 overseas (targets ₹{plo:.1f} cr, ceilings ₹{phi:.1f} cr)</h3><table class="lt compact"><thead><tr><th>Target</th><th>Slot</th><th>Why</th><th>Target → max bid</th></tr></thead><tbody>{plan_rows}</tbody></table>
+<p class="small"><b>Budget logic:</b> target spend ₹{plo:.1f} cr; even at every ceiling RR spends ₹{phi:.1f} cr and keeps ₹{pu['available'] - phi:.2f} cr in reserve. Most of the money goes on back-end muscle for overs 12–20; the rest buys pace cover for injuries.</p>
 <p class="small"><b>Alternatives:</b> {E(' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()))}.</p></div></div>
 <p class="note">Price bands are our estimates from each player's last IPL fee and base price in a rich market (₹297.95 cr chasing 66 slots, 25 overseas). They are not official; refresh after the 3 Dec auction list.</p>'''
-P.append(page('12 · Auction plan', f"Who to buy with ₹{pu['available']:.2f} cr and 6 slots", body))
+P.append(page('11 · Auction plan', f"Who to buy with ₹{pu['available']:.2f} cr and 6 slots", body))
+
+# ---- auction dynamics
+AU = PR.get('auction', {})
+rv = ''.join(f'<tr><td><b>{E(x[0])}</b></td><td class="num" style="white-space:nowrap">₹{x[1]:g} cr</td><td class="num">{x[2]} ({x[3]})</td><td class="small">{E(x[4].split(' (')[0])}</td><td class="small">{E(x[5])}</td></tr>' for x in AU.get('rivals', []))
+mv = ''.join(f'<li><b>{E(a)}</b>{E(b)}</li>' for a, b in AU.get('moves', []))
+body = f'''<div class="g2"><div><h3>The rivals: purse, slots and needs</h3><table class="mini fit"><thead><tr><th>Team</th><th>Purse</th><th>Slots (OS)</th><th>Needs</th><th>Bids against RR for</th></tr></thead><tbody>{rv}</tbody></table>
+<p class="small muted" style="margin-top:6px">{E(AU.get('market_note', ''))}</p></div>
+<div><h3>How RR plays the auction</h3><ul class="small">{mv}</ul></div></div>
+<p class="note">Needs are read from each team's 17 Nov release list and remaining slots. Ceilings are RR's walk-away prices, not predictions; refresh them once the 3 Dec auction list and set order are out.</p>'''
+P.append(page('11 · Auction dynamics', 'Who RR bids against, and where its ₹27.05 cr goes furthest', body))
 
 # ---- 20 robustness
 rb = ROB['bat']['pool']; rw = ROB['bowl']['pool']
@@ -647,7 +638,7 @@ body = f'''<div class="g2"><div><h3>Same top 10 under different definitions?</h3
 <li><b>Solid:</b> {E(top_w.iloc[0]['name'])} ({pct(top_w.iloc[0].pool_top10)}), {E(top_w.iloc[1]['name'])} ({pct(top_w.iloc[1].pool_top10)}) and {E(top_b.iloc[0]['name'])} ({pct(top_b.iloc[0].pool_top10)}) stay in the pool top 10 in almost every bootstrap re-sample.</li>
 <li><b>Less certain:</b> positions 6–10 in both lists change with the pressure-zone width. Batting under pressure is inherently noisy (section 3), so treat 6–10 as a tier, not a strict order.</li>
 <li><b>Model checks:</b> chase win-probability AUC {I['wp_metrics']['wp_inn2']['auc']:.2f} and Brier {I['wp_metrics']['wp_inn2']['brier']:.3f} (out-of-fold, grouped by match); first-innings AUC {I['wp_metrics']['wp_inn1']['auc']:.2f} (the outcome is genuinely uncertain at that stage).</li></ul></div></div>'''
-P.append(page('13 · Robustness', 'Nine alternative definitions and 300 re-samples: what holds and what is uncertain', body))
+P.append(page('12 · Robustness', 'Nine alternative definitions and 300 re-samples: what holds and what is uncertain', body))
 
 # ---- 21 limitations
 body = f'''<div class="g2"><div><h3>Limitations</h3><ul class="find">
@@ -660,10 +651,10 @@ body = f'''<div class="g2"><div><h3>Limitations</h3><ul class="find">
 <div><h3>Next steps (Round 2 ideas)</h3><ul class="find">
 <li>Matchup layer: pressure value by bowler type and batter hand, to plan RR's specific death-over combinations.</li>
 <li>Venue layer: Jaipur and Guwahati par scores and pressure profiles.</li>
-<li>Live Release Radar: re-score on 17 Nov and simulate auction bidding with all ten purses.</li>
+<li>Simulate auction bidding with all ten purses once the 3 Dec auction list and set order are out.</li>
 <li>Add SMAT 2026 and U19 ball-by-ball data to rate uncapped Indians on the same RUPI scale.</li></ul>
 <h3>Reproducibility</h3><p class="small">Python 3.13 · pandas · scikit-learn (HistGradientBoosting with monotonic constraints, GroupKFold by match) · scipy. Seeds fixed. Scripts <code>analysis/01–09</code>; outputs in <code>outputs/</code>. The interactive dashboard (<code>RUPI_Dashboard.html</code>) lets judges re-weight the pillars live and query the pressure calculator.</p></div></div>'''
-P.append(page('14 · Limitations and next steps', 'Where the model is less certain, and how we would extend it', body))
+P.append(page('13 · Limitations and next steps', 'Where the model is less certain, and how we would extend it', body))
 
 # ---- 22 appendix
 env_rows = ''.join(f"<tr><td>{e['env']}</td><td class='num'>{int(e['matches'])}</td><td class='num'>{e['rpo']:.2f}</td><td class='num'>{e['par']:.0f}</td></tr>" for e in I['env_table'])

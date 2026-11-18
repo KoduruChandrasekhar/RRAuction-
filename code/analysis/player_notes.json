@@ -16,9 +16,9 @@
   "risk": "Age 41; his off-spin rates below par under pressure; poor when chasing."
  },
  "Daryl Mitchell": {
-  "role": "Middle-order batter",
-  "fit": "Strong in second-innings middle overs and against spin under pressure. Was unsold on a Rs 2 cr base in 2026, so a likely value buy.",
-  "risk": "Weaker when setting a target and at the death."
+  "role": "Overs 12-20 engine (middle order)",
+  "fit": "Dominates spin in the middle overs, rotates the strike and clears the ropes; 435 ODI runs v India in 2026. Stability plus muscle around Ferreira.",
+  "risk": "Value buy: unsold on a Rs 2 cr base in 2026."
  },
  "Sikandar Raza": {
   "role": "Middle-order batter + off-spin (two-list player)",
@@ -153,7 +153,7 @@
  "Nitish Rana": {
   "role": "Overs 12-20 engine, left-hander (Indian)",
   "fit": "Takes the innings from over 12 to the finish: rotates against spin, clears the ropes at the death, and partners Ferreira. Ex-RR.",
-  "risk": "Several teams will bid - set a ceiling."
+  "risk": "DC, KKR and MI need Indian batters: max \u20b95.5 cr."
  },
  "Shimron Hetmyer": {
   "role": "Middle-order finisher",
@@ -161,9 +161,9 @@
   "risk": "Overseas slot competition."
  },
  "Nehal Wadhera": {
-  "role": "Back-end hitter, left-hander (Indian, uncapped)",
-  "fit": "Left-handed power for overs 14-20, comfortable against pace and spin; an uncapped Indian, so no overseas slot used.",
-  "risk": "-"
+  "role": "Overs 12-20 engine, left-hander (Indian, uncapped)",
+  "fit": "Left-handed middle-order batter who holds the innings together through overs 12-16 and then shifts gears at the death; an Indian, so no overseas slot used.",
+  "risk": "DC, KKR, MI and PBKS need Indian batters: max \u20b95 cr."
  },
  "Rachin Ravindra": {
   "role": "Top-order batter + left-arm spin",
@@ -246,8 +246,8 @@
   "risk": "Price could be high."
  },
  "Matthew Breetzke": {
-  "role": "Middle-order batter",
-  "fit": "South African middle-order batter who rotates strike and finishes.",
+  "role": "Top/middle-order batter (backup for 3-4)",
+  "fit": "Cover for Jurel and Parag at 3-4 who can also bat at No.5 or open; in strong 2026 ODI form (112 v Australia, Sep).",
   "risk": "-"
  },
  "Mitchell Owen": {
@@ -264,5 +264,15 @@
   "role": "Lower-middle-order all-rounder + left-arm spin",
   "fit": "Young all-rounder who bats in the lower middle order and bowls left-arm spin: depth and a player to develop.",
   "risk": "No IPL record yet."
+ },
+ "Deepak Chahar": {
+  "role": "Indian swing bowler (new ball)",
+  "fit": "Powerplay wicket-taker who swings the new ball and bats at No.8-9; plays domestic cricket for Rajasthan (2026-27 SMAT captain).",
+  "risk": "Fitness to manage."
+ },
+ "Matt Henry": {
+  "role": "Fast bowler (new ball + death)",
+  "fit": "In top international form (6/27 v India, 13 Nov 2026): hits the seam hard in the powerplay and covers Archer and Shami.",
+  "risk": "-"
  }
 }

@@ -322,7 +322,6 @@ function rRR(){
   const items=S.basket.map(b=>({...b,p:byId(b.role,b.id)})).filter(x=>x.p);
   const lo=items.reduce((a,x)=>a+(x.p.price?x.p.price[0]:0.3),0),hi=items.reduce((a,x)=>a+(x.p.price?x.p.price[1]:0.75),0),ovs=items.filter(x=>x.p.ovs).length;
   const mid=(lo+hi)/2,ok=hi<=purse&&ovs<=slots&&items.length<=tot,warn=!ok&&lo<=purse&&ovs<=slots&&items.length<=tot;
-  const SC=DATA.scorecard||{},scr=(SC.rows||[]).filter(x=>x.predicted!=='Low'||x.actual!=='Retained').sort((a,b)=>({High:0,Medium:1,Low:2}[a.predicted]-{High:0,Medium:1,Low:2}[b.predicted])||b.RUPI-a.RUPI).slice(0,14);
   const close=[...DATA.close].map(x=>({...x,r:x.close_won/x.close})).sort((a,b)=>b.r-a.r);
   const mx=Math.max(...PU.market.map(m=>m.purse));
   $('#t-rr').innerHTML=`<div class="sec-title"><div><h2>RR Lens: diagnose the gaps, then build the auction basket</h2><p>Official position after the 17 Nov retentions: <b>₹${purse.toFixed(2)} cr</b>, <b>${tot} slots</b>, <b>${slots} overseas</b>. Auction on 16 Dec, Goa.</p></div></div>
@@ -330,16 +329,14 @@ function rRR(){
    ${[['Batting','bat'],['Bowling','bowl']].map(([l,k])=>`<tr><td>${l}</td>${['Powerplay','Middle','Death','Overall'].map(c=>`<td class="rkc ${cls(rk[k][c])}">${rk[k][c]}</td>`).join('')}</tr>`).join('')}</table>
    <p class="small">RR's ${rrStory()}</p>
    <h3 style="margin-top:10px">Close IPL games won, 2025–26</h3>${close.map(x=>`<div class="slider" style="grid-template-columns:150px 1fr 44px"><span class="small" style="${x.team==='Rajasthan Royals'?'font-weight:700;color:var(--pink)':''}">${esc(x.team)}</span><span class="meter"><i style="width:${x.r*100}%;background:${x.team==='Rajasthan Royals'?css('--pink'):css('--gray')}"></i></span><span class="num small">${x.close_won}/${x.close}</span></div>`).join('')}</div>
-   <div class="panel"><h3>Who to buy: 6 slots, 3 overseas</h3><table><tr><th>#</th><th>Player</th><th>Slot</th><th>Why</th></tr>
-   ${(DATA.plan||[]).map((x,i)=>`<tr><td class="num"><b>${i+1}</b></td><td><b>${esc(x.name)}</b></td><td class="small">${x.slot}</td><td class="small">${esc(x.why)}</td></tr>`).join('')}</table>
+   <div class="panel"><h3>Who to buy: 6 slots, 3 overseas</h3><table><tr><th>Player</th><th>Slot</th><th>Why</th><th class="num">Target → max</th></tr>
+   ${(DATA.plan||[]).map((x,i)=>`<tr><td><b>${esc(x.name)}</b></td><td class="small">${x.slot}</td><td class="small">${esc(x.why)}</td><td class="num small">₹${x.target} → ₹${x.max} cr</td></tr>`).join('')}</table>
+   <h3 style="margin-top:10px">How RR plays the auction</h3><ul class="small">${((DATA.auction||{}).moves||[]).map(([a,b])=>`<li><b>${esc(a)}</b>${esc(b)}</li>`).join('')}</ul>
    <p class="tiny muted" style="margin-top:8px"><b>Alternatives:</b> ${Object.entries(DATA.plan_alt||{}).map(([k,v])=>esc(k)+': '+esc(v.join(', '))).join(' · ')}</p></div>
    <div class="panel"><h3>The market: who RR bid against</h3><table><tr><th>Team</th><th class="num">Purse</th><th class="num">Slots</th><th class="num">OS</th></tr>
    ${PU.market.map(m=>`<tr><td class="small" style="${m.team==='Rajasthan Royals'?'font-weight:700;color:var(--pink)':''}">${esc(m.team)}</td><td class="num"><span class="meter" style="display:inline-block;width:70px;vertical-align:middle;margin-right:6px"><i style="width:${m.purse/mx*100}%;background:${m.team==='Rajasthan Royals'?css('--pink'):css('--gray')}"></i></span>₹${m.purse}</td><td class="num">${m.slots}</td><td class="num">${m.overseas}</td></tr>`).join('')}</table>
    <p class="tiny muted">₹${PU.market.reduce((a,m)=>a+m.purse,0).toFixed(2)} cr chasing ${PU.market.reduce((a,m)=>a+m.slots,0)} slots (${PU.market.reduce((a,m)=>a+m.overseas,0)} overseas). LSG, KKR, SRH and DC can outbid RR on any single star.</p></div></div>
-  <div class="grid g12" style="margin-top:16px"><div class="panel"><h3>Release Radar scorecard: our 16 Nov calls vs the official 17 Nov lists</h3>
-   <div class="grid g3" style="margin-bottom:10px">${[['High',SC.high_released,SC.high_n,'released or traded'],['Low',SC.low_retained,SC.low_n,'retained, as called'],['Medium',SC.med_released,SC.med_n,'released: a coin flip']].map(t=>`<div class="pcard"><div class="big" style="font-size:24px">${t[1]}/${t[2]}</div><div class="tiny muted">"${t[0]}" calls ${t[3]}</div></div>`).join('')}</div>
-   <div class="tbl-wrap" style="max-height:360px"><table><tr><th>Player</th><th class="num">__IDX__</th><th class="num">2026 fee</th><th>Our call</th><th>Official</th></tr>
-   ${scr.map(x=>`<tr><td><b>${esc(x.name)}</b><div class="tiny muted">${esc(x.team||'')}</div></td><td class="num">${fmt(x.RUPI,0)}</td><td class="num">${x.fee?'₹'+x.fee+' cr':'–'}</td><td><span class="chip ${x.predicted==='High'?'out':x.predicted==='Medium'?'watch':''}">${x.predicted}</span></td><td><span class="chip ${x.actual!=='Retained'?'pool':''}">${x.actual}</span></td></tr>`).join('')}</table></div></div>
+  <div class="grid" style="margin-top:16px">
   <div class="panel"><h3>Auction basket</h3><p class="small muted">Add players with + anywhere in the dashboard, or load the data-driven plan.</p>
    <table class="basket"><tr><th>Player</th><th>Slot</th><th class="num">Price band</th><th class="num">__IDX__</th><th></th></tr>
    ${items.map(x=>`<tr><td><b>${esc(x.p.name)}</b><div class="tiny muted">${x.role==='bat'?'Batter':'Bowler'} · ${esc(x.p.avail)}</div></td><td>${x.p.ovs?'Overseas':'Indian'}</td><td class="num">${x.p.price?`₹${x.p.price[0]}–${x.p.price[1]}`:'≈₹0.3–0.75'}</td><td class="num">${fmt(x.p.rupi??x.p.RUPI,0)}</td><td><button class="addb on" onclick="tb('${x.role}',${x.id})">×</button></td></tr>`).join('')||'<tr><td colspan="5" class="muted small">Empty. Click "Load the plan" for the 6-player buy list, or add players with +.</td></tr>'}</table>

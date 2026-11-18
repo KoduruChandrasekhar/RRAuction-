@@ -43,9 +43,9 @@
    "basis": "No IPL contract history"
   },
   "Daryl Mitchell": {
-   "lo": 2.0,
-   "hi": 3.0,
-   "basis": "Unsold at 2026 auction on Rs 2 cr base (CSK Rs 14 cr in 2024)"
+   "lo": 2,
+   "hi": 4,
+   "basis": "Unsold at 2026 auction on Rs 2 cr base (CSK 2024); strong 2026 form"
   },
   "Paul Stirling": {
    "lo": 0.3,
@@ -253,8 +253,8 @@
    "basis": "MI 2025-26"
   },
   "Nehal Wadhera": {
-   "lo": 1.5,
-   "hi": 3.5,
+   "lo": 2,
+   "hi": 5,
    "basis": "PBKS 2025-26"
   },
   "Shimron Hetmyer": {
@@ -331,6 +331,11 @@
    "lo": 0.5,
    "hi": 1.5,
    "basis": "No IPL contract history; young Sri Lankan all-rounder"
+  },
+  "Matt Henry": {
+   "lo": 1.5,
+   "hi": 4,
+   "basis": "CSK 2026; released"
   }
  },
  "market": {
@@ -396,26 +401,26 @@
  },
  "final_lists": {
   "bat": [
-   "Nitish Rana",
    "Nehal Wadhera",
    "Mahipal Lomror",
-   "M Shahrukh Khan",
+   "Daryl Mitchell",
    "Mitchell Owen",
-   "Prashant Veer",
-   "Dian Forrester",
    "Kamindu Mendis",
+   "Matthew Breetzke",
+   "Dian Forrester",
    "Dunith Wellalage",
-   "Karun Nair"
+   "Prashant Veer",
+   "M Shahrukh Khan"
   ],
   "bowl": [
    "Trent Boult",
    "Gerald Coetzee",
-   "Lockie Ferguson",
+   "Matt Henry",
    "Avesh Khan",
-   "Matheesha Pathirana",
-   "Ishant Sharma",
-   "Spencer Johnson",
+   "Deepak Chahar",
+   "Lockie Ferguson",
    "Wanindu Hasaranga",
+   "Matheesha Pathirana",
    "Mayank Markande",
    "Allah Ghazanfar"
   ],
@@ -434,81 +439,92 @@
    "Shimron Hetmyer",
    "Tushar Deshpande",
    "Vignesh Puthur",
-   "Yudhvir Singh"
+   "Yudhvir Singh",
+   "Nitish Rana"
   ]
  },
  "plan": [
   {
-   "name": "Nitish Rana",
-   "slot": "Indian",
-   "why": "Main target: overs 12-20 engine at No.5 - stability plus muscle alongside Ferreira"
-  },
-  {
    "name": "Nehal Wadhera",
    "slot": "Indian",
-   "why": "Main target: left-handed back-end hitter for overs 14-20"
+   "why": "Main target: left-handed overs 12-20 engine at No.5 - stability plus muscle alongside Ferreira",
+   "target": 3,
+   "max": 5
   },
   {
    "name": "Mahipal Lomror",
    "slot": "Indian",
-   "why": "Main target: left-handed finisher, ex-RR, extra muscle at No.6/7"
+   "why": "Main target: left-handed finisher, ex-RR, extra muscle at No.6/7",
+   "target": 1,
+   "max": 2
+  },
+  {
+   "name": "Deepak Chahar",
+   "slot": "Indian",
+   "why": "Indian new-ball backup for Shami and Archer; Rajasthan domestic captain",
+   "target": 2.5,
+   "max": 3.5
+  },
+  {
+   "name": "Daryl Mitchell",
+   "slot": "Overseas",
+   "why": "Overs 12-20 engine: dominates spin, rotates and clears the ropes; in top 2026 form",
+   "target": 2,
+   "max": 4
   },
   {
    "name": "Gerald Coetzee",
    "slot": "Overseas",
-   "why": "Pace all-rounder: fast-bowling cover plus lower-order hitting"
-  },
-  {
-   "name": "Mitchell Owen",
-   "slot": "Overseas",
-   "why": "Power hitter for the back end; part-time pace"
+   "why": "Pace all-rounder: fast-bowling cover plus lower-order hitting",
+   "target": 3.5,
+   "max": 5
   },
   {
    "name": "Trent Boult",
    "slot": "Overseas",
-   "why": "Backup new-ball and death pace (homecoming)"
+   "why": "Backup new-ball and death pace (homecoming)",
+   "target": 3,
+   "max": 4.5
   }
  ],
  "plan_alternatives": {
   "Finisher muscle": [
-   "M Shahrukh Khan",
-   "Prashant Veer",
-   "Dian Forrester"
-  ],
-  "Backup top order": [
-   "Karun Nair"
+   "Mitchell Owen (max \u20b93.5 cr)",
+   "Dian Forrester (max \u20b91.5 cr)",
+   "M Shahrukh Khan (max \u20b92 cr)"
   ],
   "Backup pace": [
-   "Avesh Khan",
-   "Lockie Ferguson",
-   "Ishant Sharma"
+   "Matt Henry (max \u20b94 cr)",
+   "Avesh Khan (max \u20b94 cr)"
   ],
   "Backup spin": [
-   "Wanindu Hasaranga",
-   "Mayank Markande"
+   "Wanindu Hasaranga (max \u20b94 cr)",
+   "Mayank Markande (max \u20b91.5 cr)"
   ],
-  "If Jaiswal is traded (opener)": [
-   "Rachin Ravindra",
-   "Ben Duckett",
-   "Pathum Nissanka",
-   "Karun Nair"
+  "Backup top order / opener if Jaiswal is traded": [
+   "Matthew Breetzke (max \u20b92 cr)"
+  ],
+  "Only if the price falls": [
+   "Lockie Ferguson (max \u20b96 cr)",
+   "Matheesha Pathirana (max \u20b97 cr)",
+   "Prashant Veer (max \u20b93 cr)"
   ]
  },
  "xi_fit": [
   [
    "1-2",
    "Openers",
-   "Sooryavanshi, Jaiswal (fixed); if Jaiswal is traded: Rachin Ravindra / Ben Duckett"
+   "Sooryavanshi, Jaiswal (fixed); if Jaiswal is traded: Matthew Breetzke"
   ],
   [
    "3-4",
    "Top order",
-   "Jurel, Parag (fixed); backup: Karun Nair"
+   "Jurel, Parag (fixed); backup: Matthew Breetzke"
   ],
   [
    "5",
    "Overs 12-20 engine",
-   "Nitish Rana (buy)"
+   "Nehal Wadhera / Daryl Mitchell (buy)"
   ],
   [
    "6",
@@ -518,7 +534,7 @@
   [
    "7",
    "Back-end muscle",
-   "Nehal Wadhera / Mahipal Lomror (buy)"
+   "Mahipal Lomror (buy)"
   ],
   [
    "8",
@@ -528,28 +544,28 @@
   [
    "Impact",
    "Muscle / pace all-rounder",
-   "Mitchell Owen or Gerald Coetzee (buy)"
+   "Gerald Coetzee (buy) or Daryl Mitchell"
   ],
   [
    "9-11",
    "Attack",
-   "Archer, Shami, Bishnoi, Burger/Shanaka; backups Boult, Coetzee (buy)"
+   "Archer, Shami, Bishnoi, Burger/Shanaka; backups Boult, Coetzee, Chahar (buy)"
   ]
  ],
  "groups": {
   "Middle-order power and finishers (main need)": [
-   "Nitish Rana",
    "Nehal Wadhera",
    "Mahipal Lomror",
-   "M Shahrukh Khan",
+   "Daryl Mitchell",
    "Mitchell Owen",
    "Kamindu Mendis",
-   "Prashant Veer",
    "Dian Forrester",
-   "Dunith Wellalage"
+   "Dunith Wellalage",
+   "Prashant Veer",
+   "M Shahrukh Khan"
   ],
   "Top-order backup": [
-   "Karun Nair"
+   "Matthew Breetzke"
   ],
   "Pace": [
    "Trent Boult",
@@ -557,8 +573,8 @@
    "Lockie Ferguson",
    "Avesh Khan",
    "Matheesha Pathirana",
-   "Ishant Sharma",
-   "Spencer Johnson"
+   "Deepak Chahar",
+   "Matt Henry"
   ],
   "Spin": [
    "Wanindu Hasaranga",
@@ -592,5 +608,112 @@
    "U19 India lower-order hitter (47 off 32 in the final)",
    "Only if on the 3 Dec auction list"
   ]
- ]
+ ],
+ "auction": {
+  "market_note": "\u20b9297.95 cr is chasing 66 slots (25 overseas): about \u20b94.5 cr a slot. RR has \u20b927.05 cr for 6 slots, also about \u20b94.5 cr a slot, but is only 7th of 10 on total purse.",
+  "rivals": [
+   [
+    "Lucknow Super Giants",
+    47.45,
+    7,
+    3,
+    "Pace and spin (released Avesh, Nortje, Hasaranga)",
+    "Pathirana, Ferguson, Avesh, Hasaranga"
+   ],
+   [
+    "Kolkata Knight Riders",
+    41.65,
+    8,
+    3,
+    "Top order and pace (released Pathirana, Akash Deep)",
+    "Pathirana, Ferguson, Coetzee, Wadhera"
+   ],
+   [
+    "Sunrisers Hyderabad",
+    40.15,
+    7,
+    3,
+    "Opener and pace (released Head, Coetzee, Unadkat)",
+    "Coetzee, Boult, Henry"
+   ],
+   [
+    "Delhi Capitals",
+    39.5,
+    9,
+    4,
+    "Top and middle order, overseas pace (released Starc, Rana)",
+    "Breetzke, Boult, Ferguson"
+   ],
+   [
+    "Mumbai Indians",
+    32.6,
+    9,
+    2,
+    "Indian pace and spin (released Boult, Chahar, Markande)",
+    "Chahar, Avesh, Markande"
+   ],
+   [
+    "Chennai Super Kings",
+    28.05,
+    6,
+    2,
+    "Pace and an Indian all-rounder (released Henry, Veer)",
+    "Prashant Veer, Henry, Daryl Mitchell"
+   ],
+   [
+    "Punjab Kings",
+    18.6,
+    6,
+    2,
+    "Finisher and pace (released Wadhera, Ferguson, Owen)",
+    "Wadhera, Owen"
+   ],
+   [
+    "Royal Challengers Bengaluru",
+    14.15,
+    5,
+    1,
+    "Squad depth",
+    "Low threat"
+   ],
+   [
+    "Gujarat Titans",
+    8.75,
+    3,
+    2,
+    "Squad depth",
+    "Low threat"
+   ]
+  ],
+  "moves": [
+   [
+    "Win the Indian middle-order battle. ",
+    "Quality Indian batters for overs 12-20 are scarce and DC, KKR, MI and PBKS all need them, so Nehal Wadhera is the one buy to push hard for (max \u20b95 cr)."
+   ],
+   [
+    "Daryl Mitchell is the value buy. ",
+    "He went unsold on a \u20b92 cr base last year and has since scored 435 ODI runs against India in 2026. He is the second overs 12-20 engine, with a ceiling of \u20b94 cr."
+   ],
+   [
+    "Let the big four fight over Pathirana and Ferguson. ",
+    "LSG, KKR, SRH and DC hold \u20b939-47 cr and all need overseas pace, so expect \u20b98-12 cr each. RR bids only below its ceilings (\u20b97 cr / \u20b96 cr); every crore they spend there is a crore less against RR later."
+   ],
+   [
+    "Buy pace in the second wave. ",
+    "Once the marquee quicks are gone, Coetzee and Boult should cost \u20b92-5 cr. Deepak Chahar is the Indian new-ball cover; Matt Henry is the fallback."
+   ],
+   [
+    "Uncapped sets are where the value is. ",
+    "Lomror comes up in the uncapped sets, after the rich teams have spent."
+   ],
+   [
+    "Skip the price traps. ",
+    "CSK paid \u20b914.2 cr for Prashant Veer in 2026; RR goes only to \u20b93 cr."
+   ],
+   [
+    "Keep a reserve. ",
+    "Ceilings for the 6 buys total \u20b924 cr, so even if every target hits its max, \u20b93.05 cr is left. Any money saved moves to the fallbacks (Owen, Henry, Avesh)."
+   ]
+  ]
+ }
 }
