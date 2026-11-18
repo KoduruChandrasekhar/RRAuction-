@@ -360,6 +360,7 @@ P.append(f'''<section class="page cover"><div class="cv-l">
 
 # ---- 2 exec summary
 TOTMAX = sum(x.get('max', 0) for x in PR.get('plan', []))
+TOTTGT = sum(x.get('target', 0) for x in PR.get('plan', []))
 GROUPS = PR.get('groups', {})
 def glist(keys):
     return ''.join(f'<div class="gh">{E(k)}</div><div class="gn">{E(", ".join(GROUPS[k]))}</div>' for k in keys if k in GROUPS)
@@ -373,7 +374,7 @@ body = f'''<div class="g3"><div class="box"><h3>Batters to buy</h3><div class="g
 <li><b>Our pressure zone is where matches are decided.</b> It holds {pct(WS['pressure_balls_share'])} of balls but {pct(WS['pressure_wpa_share'])} of all win-probability movement.</li>
 <li><b>RR lose the close ones.</b> RR played the most close IPL games in 2025–26 ({rrc['close']}) and won only {rrc['close_won']}. Under pressure they rank {rrk['bat']['Death']}th of 10 for death batting and {rrk['bowl']['Death']}th for death bowling.</li>
 <li><b>"Clutch" is mostly skill plus sample size.</b> Pressure-minus-normal gaps barely repeat (split-half r = {I['split_half']['bat']['resilience']:.2f}), so we shrink hard and reward proven volume.</li>
-<li><b>The strategy:</b> boundary power for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. Bid ceilings for the 6 buys total ₹{TOTMAX:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, leaving a reserve; RR leaves the expensive overseas quicks to the ₹39–47 cr teams (section 11).</li></ul></div></div>
+<li><b>The strategy:</b> boundary power for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. The 6 buys target ₹{TOTTGT:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, with a walk-away ceiling on each: one premium overseas quick, one Indian middle-order batter, then value and young players (section 11).</li></ul></div></div>
 <div class="tiles t4">{tile(f"{D['balls']:,}", 'deliveries modelled ball by ball')}{tile(f"{D['pressure_balls']:,}", 'pressure balls analysed (top 25% by Pressure Index)')}
 {tile(str(SUM['bat']['n_rated'] + SUM['bowl']['n_rated']), 'batter and bowler ratings, each with uncertainty')}{tile('9 + 300', 'alternative definitions + bootstrap re-samples tested')}</div>
 <p class="note">Every pick is eligible for the 16 Dec auction under the official 17 Nov retention lists. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists.</p>'''
@@ -602,14 +603,14 @@ plo = sum(pband(x[0]['name'])[0] for x in PLAN)
 phi = sum(pband(x[0]['name'])[1] for x in PLAN)
 CEIL = {x['name']: (x.get('target', 0), x.get('max', 0)) for x in PR.get('plan', [])}
 plo = sum(v[0] for v in CEIL.values()); phi = sum(v[1] for v in CEIL.values())
-plan_rows = ''.join(f'<tr><td><b>{E(r["name"])}</b><div class="muted small">{E(role_of(r, ""))}</div></td><td>{sl}</td><td class="small">{why}</td><td class="num">₹{CEIL[r["name"]][0]:g} → ₹{CEIL[r["name"]][1]:g} cr</td></tr>' for i, (r, sl, why) in enumerate(PLAN, 1))
+plan_rows = ''.join(f'<tr><td><b>{E(x["name"])}</b><div class="muted small">{E(NOTES.get(x["name"], {}).get("role", ""))}</div></td><td>{x["slot"]}</td><td class="small">{E(x["why"])}</td><td class="num">₹{x["target"]:g} → ₹{x["max"]:g} cr</td></tr>' for x in PR.get('plan', []))
 mk = ''.join(f'<tr><td>{"<b>" if m["team"] == "Rajasthan Royals" else ""}{E(m["team"])}{"</b>" if m["team"] == "Rajasthan Royals" else ""}</td><td class="num">₹{m["purse"]:g} cr</td><td class="num">{m["slots"]}</td><td class="num">{m["overseas"]}</td></tr>' for m in pu['market'])
 fallbacks = ''
 body = f'''<div class="g3p"><div><h3>RR's auction position (official)</h3><div class="tiles t1">{tile(f"₹{pu['available']:.2f} cr", 'purse remaining after the 17 Nov retentions')}
 {tile(f"{pu['slots']} slots", f"of which {pu['overseas']} overseas")}</div>
 <h3 style="margin-top:8px">Where the buys fit in the XI</h3><table class="mini"><thead><tr><th>Bat</th><th>Role</th><th>Player</th></tr></thead><tbody>{"".join(f"<tr><td>{E(x[0])}</td><td>{E(x[1])}</td><td>{E(x[2])}</td></tr>" for x in PR.get("xi_fit", []))}</tbody></table></div>
-<div><h3>Who to buy: 6 slots, 3 overseas (targets ₹{plo:.1f} cr, ceilings ₹{phi:.1f} cr)</h3><table class="lt compact"><thead><tr><th>Target</th><th>Slot</th><th>Why</th><th>Target → max bid</th></tr></thead><tbody>{plan_rows}</tbody></table>
-<p class="small"><b>Budget logic:</b> target spend ₹{plo:.1f} cr; even at every ceiling RR spends ₹{phi:.1f} cr and keeps ₹{pu['available'] - phi:.2f} cr in reserve. Most of the money goes on boundary power for overs 12–20; the rest buys pace cover for injuries.</p>
+<div><h3>Who to buy: 6 slots, 3 overseas (target spend ₹{plo:.1f} cr)</h3><table class="lt compact"><thead><tr><th>Target</th><th>Slot</th><th>Why</th><th>Target → max bid</th></tr></thead><tbody>{plan_rows}</tbody></table>
+<p class="small"><b>Budget logic:</b> target spend ₹{plo:.1f} cr of ₹{pu['available']:.2f} cr. Ceilings work as a running budget: any overspend on an early buy is taken off the later ceilings, so all 6 slots can always be filled. The big money goes on one overseas quick and one Indian middle-order batter; the rest is value and youth.</p>
 <p class="small"><b>Alternatives:</b> {E(' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()))}.</p></div></div>
 <p class="note">Price bands are our estimates from each player's last IPL fee and base price in a rich market (₹297.95 cr chasing 66 slots, 25 overseas). They are not official; refresh after the 3 Dec auction list.</p>'''
 P.append(page('11 · Auction plan', f"Who to buy with ₹{pu['available']:.2f} cr and 6 slots", body))

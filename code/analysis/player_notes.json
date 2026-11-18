@@ -163,7 +163,7 @@
  "Nehal Wadhera": {
   "role": "Overs 12-20 engine, left-hander (Indian, uncapped)",
   "fit": "Left-handed middle-order batter who holds the innings together through overs 12-16 and then shifts gears at the death; an Indian, so no overseas slot used.",
-  "risk": "Expect \u20b96-8 cr in a scarce Indian middle-order market: ceiling \u20b97.5 cr."
+  "risk": "Expect \u20b96-8 cr in a scarce Indian middle-order market: ceiling \u20b98 cr."
  },
  "Rachin Ravindra": {
   "role": "Top-order batter + left-arm spin",
@@ -188,7 +188,7 @@
  "Gerald Coetzee": {
   "role": "Pace all-rounder",
   "fit": "Genuine pace plus lower-order hitting: provides workload cover for the front-line quicks and boundary power at No.8.",
-  "risk": "Fitness to monitor."
+  "risk": "Expect \u20b96-9 cr: ceiling \u20b98.5 cr, then the pace ladder."
  },
  "Trent Boult": {
   "role": "Left-arm swing, new ball + death (ex-RR 2022-24)",
@@ -274,5 +274,10 @@
   "role": "Fast bowler (new ball + death)",
   "fit": "In top international form (6/27 v India, 13 Nov 2026): hits the seam hard in the powerplay and covers Archer and Shami.",
   "risk": "-"
+ },
+ "Karan Lal": {
+  "role": "Batting all-rounder (Indian, uncapped, young)",
+  "fit": "Lower-middle-order hitter with off-spin: 113 off 50 in domestic T20; 20-ball fifty at RR trials (Sep 2026).",
+  "risk": "Not in the data pack: domestic evidence only."
  }
 }

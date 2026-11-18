@@ -217,7 +217,7 @@ plan = PR.get('plan', [])
 table(s, 0.55, 1.55, 12.2, 3.6, ['Buy', 'Slot', 'Why', 'Target → max bid'],
       [[x['name'], x['slot'], x['why'], f"₹{x['target']:g} → ₹{x['max']:g} cr"] for x in plan], [2.4, 1.1, 6.7, 2.0], 12)
 lo = sum(x['target'] for x in plan); hi = sum(x['max'] for x in plan)
-text(s, 0.55, 5.35, 12.2, 0.5, f"Target spend ₹{lo:.1f} cr. Even at every ceiling RR spends ₹{hi:.1f} cr and keeps ₹{I['purse']['available'] - hi:.2f} cr in reserve.", 13, NAVY, True)
+text(s, 0.55, 5.35, 12.2, 0.5, f"Target spend ₹{lo:.1f} cr of ₹{I['purse']['available']:.2f} cr. Ceilings are a running budget: overspend on an early buy comes off later ceilings, so all 6 slots can always be filled.", 13, NAVY, True)
 text(s, 0.55, 5.95, 12.2, 1.0, 'Alternatives: ' + ' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()), 12, MUTED)
 
 # 11b. auction dynamics
