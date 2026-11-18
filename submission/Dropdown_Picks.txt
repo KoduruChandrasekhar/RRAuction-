@@ -18,11 +18,11 @@ Bowler 2: Gerald Coetzee
 Bowler 3: Matheesha Pathirana
 Bowler 4: Blessing Muzarabani
 Bowler 5: Zakary Foulkes
-Bowler 6: Kwena Maphaka
-Bowler 7: Ishant Sharma
-Bowler 8: Spencer Johnson
-Bowler 9: Wanindu Hasaranga
-Bowler 10: Allah Ghazanfar
+Bowler 6: Ishant Sharma
+Bowler 7: Spencer Johnson
+Bowler 8: Wanindu Hasaranga
+Bowler 9: Allah Ghazanfar
+Bowler 10: Mayank Markande
 
 (Reference - unfiltered league-wide top 10 bowlers: Jasprit Bumrah, Krunal Pandya, Sunil Narine, Mitchell Santner, Rashid Khan, Lockie Ferguson, Kuldeep Yadav, Abrar Ahmed, Mujeeb Ur Rahman, Shaheen Afridi)
 
