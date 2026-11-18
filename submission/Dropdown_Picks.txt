@@ -4,26 +4,26 @@ Batsman 1: Daryl Mitchell
 Batsman 2: Jonny Bairstow
 Batsman 3: Sikandar Raza
 Batsman 4: Kamindu Mendis
-Batsman 5: Mitchell Owen
-Batsman 6: Dian Forrester
-Batsman 7: Mahipal Lomror
-Batsman 8: Nehal Wadhera
-Batsman 9: Dunith Wellalage
-Batsman 10: Abhinav Manohar
+Batsman 5: Kyle Mayers
+Batsman 6: Bhanuka Rajapaksa
+Batsman 7: Deepak Hooda
+Batsman 8: Mayank Agarwal
+Batsman 9: Mahipal Lomror
+Batsman 10: Nehal Wadhera
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)
 
 Bowler 1: Lockie Ferguson
 Bowler 2: Gerald Coetzee
-Bowler 3: Matheesha Pathirana
-Bowler 4: Blessing Muzarabani
-Bowler 5: Zakary Foulkes
-Bowler 6: Wanindu Hasaranga
-Bowler 7: Allah Ghazanfar
-Bowler 8: Mayank Markande
-Bowler 9: Avesh Khan
-Bowler 10: Trent Boult
+Bowler 3: Sikandar Raza
+Bowler 4: Matheesha Pathirana
+Bowler 5: Maheesh Theekshana
+Bowler 6: Blessing Muzarabani
+Bowler 7: FazalHaq Farooqi
+Bowler 8: Zakary Foulkes
+Bowler 9: Mohit Sharma
+Bowler 10: Wanindu Hasaranga
 
 (Reference - unfiltered league-wide top 10 bowlers: Jasprit Bumrah, Krunal Pandya, Sunil Narine, Mitchell Santner, Rashid Khan, Lockie Ferguson, Kuldeep Yadav, Abrar Ahmed, Mujeeb Ur Rahman, Shaheen Afridi)
 
-Availability from the official IPL 2027 retention lists (17 Nov 2026). Players with >=40 IPL pressure balls are ranked first. RR: Rs 27.05 cr, 6 slots (3 overseas).
+Availability from the official IPL 2027 retention lists (17 Nov 2026). Selection rule: buyable on 16 Dec, active since 2024, 60+ pressure balls, IPL-tested or on the 17 Nov release lists; ranked by NeRRve. RR: Rs 27.05 cr, 6 slots (3 overseas).

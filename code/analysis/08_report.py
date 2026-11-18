@@ -523,10 +523,10 @@ body = f'''<div class="g2"><div><h3>From rated players to buyable players</h3><t
 <p class="small muted">Rated = enough pressure evidence and active in 2025–26 ({SUM['bat']['n_rated']} batters, {SUM['bowl']['n_rated']} bowlers). The submitted lists use auction-pool players who also clear the full league evidence bar ({SUM['bat']['n_pool']} batters, {SUM['bowl']['n_pool']} bowlers).</p></div>
 <div><h3>Rules we applied (official lists, 17 Nov 2026)</h3><ul class="find">
 <li><b>Retained by other franchises → excluded</b>: they cannot be bought on 16 Dec. Squads use the official retention lists and confirmed trades: {E(trades)}.</li>
-<li><b>Eligible pool:</b> the 17 Nov release lists ({len(AVC['released'])} players) plus unsold IPL players with enough pressure evidence.</li>
+<li><b>Selection rule for the top 10s:</b> {E(PR['selection_rule'])}</li>
 <li><b>Already Royals → excluded</b>, including Shami and M Siddharth (traded in).</li>
 <li><b>Unavailable → excluded:</b> retired (Dhoni, Rahane, Russell, Ashwin), out of IPL 2027 (Starc, Head, Bethell) or not eligible for the IPL. Players who opted out in 2026 (Maxwell, Zampa, du Plessis, Moeen) are marked "doubtful" until the 3 Dec auction list.</li>
-<li><b>Evidence weighting:</b> players with ≥40 IPL pressure balls rank ahead of those with only international T20 evidence.</li></ul></div></div>'''
+</ul></div></div>'''
 P.append(page('7 · Auction reality filter', 'Only players RR can actually buy on 16 December', body))
 
 # ---- 12-15 lists + charts

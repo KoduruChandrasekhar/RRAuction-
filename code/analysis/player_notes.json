@@ -26,9 +26,9 @@
   "risk": "Short-term buy (age 40)."
  },
  "Kyle Mayers": {
-  "role": "Powerplay batter / seam all-rounder",
-  "fit": "A powerplay pressure batter who is strong against pace.",
-  "risk": "RR's powerplay batting is already the league's best under pressure, so this is depth, not need."
+  "role": "Top-order hitter + medium pace",
+  "fit": "Powerplay hitter who can also bat in the middle: 51 IPL pressure balls, adds a bowling option.",
+  "risk": "-"
  },
  "Harry Brook": {
   "role": "No.4 batter",
@@ -66,9 +66,9 @@
   "risk": "Political risk: KKR had to release him in January 2026. Bid with a fallback ready (Mark Adair, Ngarava or Taskin; Ferguson or Pathirana if released)."
  },
  "Maheesh Theekshana": {
-  "role": "Mystery off-spin (all phases)",
-  "fit": "A large proven sample across all three phases. Played for RR in 2025.",
-  "risk": "Unsold in 2026 on a Rs 2 cr base, so expect value."
+  "role": "Mystery spinner",
+  "fit": "Mystery spin for the powerplay and middle overs: 187 IPL pressure balls and knows Jaipur conditions.",
+  "risk": "-"
  },
  "Mark Adair": {
   "role": "Seam bowler (powerplay + death)",
@@ -106,9 +106,9 @@
   "risk": "Bangladesh political-risk flag."
  },
  "Mohit Sharma": {
-  "role": "Death-overs seamer (Indian)",
-  "fit": "The best Indian option in the auction pool by our ratings: a death-overs cutter specialist and IPL veteran who fills an Indian slot cheaply.",
-  "risk": "Age 38; did not play in 2026."
+  "role": "Indian death bowler (variations)",
+  "fit": "Experienced Indian death-overs bowler: 186 IPL pressure balls, slower-ball variations.",
+  "risk": "-"
  },
  "Lockie Ferguson": {
   "role": "Express pace (all phases)",
@@ -289,5 +289,20 @@
   "role": "Young pace all-rounder",
   "fit": "Pace all-rounder (24) who hits hard lengths and bats in the lower order: value buy and long-term depth.",
   "risk": "Smaller T20 sample."
+ },
+ "Bhanuka Rajapaksa": {
+  "role": "Left-handed middle-order hitter",
+  "fit": "Left-handed boundary hitter for overs 12-20 with IPL experience.",
+  "risk": "-"
+ },
+ "Deepak Hooda": {
+  "role": "Middle-order batter + off-spin (Indian)",
+  "fit": "Indian middle-order option with 136 IPL pressure balls and part-time off-spin; uses no overseas slot.",
+  "risk": "-"
+ },
+ "Mayank Agarwal": {
+  "role": "Top-order batter (Indian)",
+  "fit": "Indian top-order cover with 88 IPL pressure balls; backup opener if Jaiswal is traded.",
+  "risk": "-"
  }
 }

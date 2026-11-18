@@ -90,7 +90,7 @@
   "Maheesh Theekshana": {
    "lo": 2,
    "hi": 4,
-   "basis": "RR Rs 4.4 cr (2025); unsold on Rs 2 cr base in 2026"
+   "basis": "IPL 2022-25; unsold 2026"
   },
   "Benjamin Sears": {
    "lo": 0.5,
@@ -144,8 +144,8 @@
   },
   "Mohit Sharma": {
    "lo": 0.75,
-   "hi": 1.5,
-   "basis": "DC Rs 2.2 cr (2025)"
+   "hi": 2,
+   "basis": "GT/DC 2023-25"
   },
   "Mohammad Rishad Hossain": {
    "lo": 0.3,
@@ -208,8 +208,8 @@
    "basis": "No IPL history"
   },
   "Kyle Mayers": {
-   "lo": 0.75,
-   "hi": 1.5,
+   "lo": 1,
+   "hi": 2.5,
    "basis": "LSG 2023-24"
   },
   "Wanindu Hasaranga": {
@@ -356,6 +356,21 @@
    "lo": 0.75,
    "hi": 2,
    "basis": "CSK Rs 75 L (2026); released"
+  },
+  "Bhanuka Rajapaksa": {
+   "lo": 0.75,
+   "hi": 2,
+   "basis": "PBKS 2022-23; KKR 2024"
+  },
+  "Deepak Hooda": {
+   "lo": 0.75,
+   "hi": 2,
+   "basis": "IPL 2022-25"
+  },
+  "Mayank Agarwal": {
+   "lo": 1,
+   "hi": 2,
+   "basis": "IPL 2022-25"
   }
  },
  "market": {
@@ -425,24 +440,24 @@
    "Jonny Bairstow",
    "Sikandar Raza",
    "Kamindu Mendis",
-   "Mitchell Owen",
-   "Dian Forrester",
+   "Kyle Mayers",
+   "Bhanuka Rajapaksa",
+   "Deepak Hooda",
+   "Mayank Agarwal",
    "Mahipal Lomror",
-   "Nehal Wadhera",
-   "Dunith Wellalage",
-   "Abhinav Manohar"
+   "Nehal Wadhera"
   ],
   "bowl": [
    "Lockie Ferguson",
    "Gerald Coetzee",
+   "Sikandar Raza",
    "Matheesha Pathirana",
+   "Maheesh Theekshana",
    "Blessing Muzarabani",
+   "FazalHaq Farooqi",
    "Zakary Foulkes",
-   "Wanindu Hasaranga",
-   "Allah Ghazanfar",
-   "Mayank Markande",
-   "Avesh Khan",
-   "Trent Boult"
+   "Mohit Sharma",
+   "Wanindu Hasaranga"
   ],
   "exclude": [
    "Abishek Porel",
@@ -461,7 +476,9 @@
    "Vignesh Puthur",
    "Yudhvir Singh",
    "Nitish Rana",
-   "M Shahrukh Khan"
+   "M Shahrukh Khan",
+   "Harry Brook",
+   "Mark Wood"
   ]
  },
  "plan": [
@@ -525,7 +542,9 @@
    "Abhinav Manohar (max \u20b91.5 cr)"
   ],
   "Backup top order / opener if Jaiswal is traded": [
-   "Jonny Bairstow (max \u20b93 cr)"
+   "Jonny Bairstow (max \u20b93 cr)",
+   "Mayank Agarwal (max \u20b92 cr)",
+   "Kyle Mayers (max \u20b92.5 cr)"
   ],
   "Not affordable in this market": [
    "Matheesha Pathirana (\u20b910-16 cr)",
@@ -582,27 +601,27 @@
    "Mahipal Lomror",
    "Sikandar Raza",
    "Kamindu Mendis",
-   "Mitchell Owen",
-   "Dian Forrester",
-   "Abhinav Manohar",
-   "Dunith Wellalage"
+   "Bhanuka Rajapaksa",
+   "Deepak Hooda"
   ],
-  "Top-order backup": [
-   "Jonny Bairstow"
+  "Top order (backup and opener cover)": [
+   "Jonny Bairstow",
+   "Kyle Mayers",
+   "Mayank Agarwal"
   ],
   "Pace": [
    "Gerald Coetzee",
    "Lockie Ferguson",
    "Matheesha Pathirana",
    "Blessing Muzarabani",
+   "FazalHaq Farooqi",
    "Zakary Foulkes",
-   "Avesh Khan",
-   "Trent Boult"
+   "Mohit Sharma"
   ],
   "Spin": [
+   "Maheesh Theekshana",
    "Wanindu Hasaranga",
-   "Allah Ghazanfar",
-   "Mayank Markande"
+   "Sikandar Raza"
   ]
  },
  "groom": [
@@ -822,8 +841,8 @@
   ],
   [
    "Top 10 batters and top 10 bowlers",
-   "Ranked by NeRRve score (rank 1 = highest-rated) among players RR can buy at the 16 Dec auction and who fit RR roles.",
-   "Sections 8-9"
+   "One selection rule (buyable, active, 60+ pressure balls, IPL-tested), then ranked purely by NeRRve: rank 1 = highest-rated.",
+   "Sections 7-9"
   ],
   [
    "How each pick strengthens RR",
@@ -849,5 +868,6 @@
  "core_text": {
   "bat": "Nehal Wadhera, Daryl Mitchell, Mahipal Lomror",
   "bowl": "Gerald Coetzee, with slot 6 kept for Deepak Chahar or a value buy"
- }
+ },
+ "selection_rule": "Buyable at the 16 Dec auction; full-member nations; played since 2024; at least 60 pressure balls; IPL-tested (20+ IPL pressure balls) or on the official 17 Nov release lists. Survivors are ranked purely by NeRRve."
 }
