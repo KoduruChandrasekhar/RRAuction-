@@ -336,6 +336,9 @@ function rRR(){
    <div class="panel"><h3>The market: who RR bid against</h3><table><tr><th>Team</th><th class="num">Purse</th><th class="num">Slots</th><th class="num">OS</th></tr>
    ${PU.market.map(m=>`<tr><td class="small" style="${m.team==='Rajasthan Royals'?'font-weight:700;color:var(--pink)':''}">${esc(m.team)}</td><td class="num"><span class="meter" style="display:inline-block;width:70px;vertical-align:middle;margin-right:6px"><i style="width:${m.purse/mx*100}%;background:${m.team==='Rajasthan Royals'?css('--pink'):css('--gray')}"></i></span>₹${m.purse}</td><td class="num">${m.slots}</td><td class="num">${m.overseas}</td></tr>`).join('')}</table>
    <p class="tiny muted">₹${PU.market.reduce((a,m)=>a+m.purse,0).toFixed(2)} cr chasing ${PU.market.reduce((a,m)=>a+m.slots,0)} slots (${PU.market.reduce((a,m)=>a+m.overseas,0)} overseas). LSG, KKR, SRH and DC can outbid RR on any single star.</p></div></div>
+  <div class="panel" style="margin-top:16px"><h3>Young talent watchlist <span class="tiny muted">(not ranked)</span></h3><div class="tbl-wrap"><table><tr><th>Player</th><th>Evidence</th><th>RR fit</th><th>Status</th></tr>
+   ${(DATA.young||[]).map(y=>`<tr><td><b>${esc(y.name)}</b><div class="tiny muted">${esc(y.profile)}</div></td><td class="small">${esc(y.evidence)}</td><td class="small">${esc(y.fit)}</td><td class="tiny muted">${esc(y.status)}</td></tr>`).join('')}</table></div>
+   <p class="tiny muted" style="margin-top:6px">Evidence from public scorecards (SMAT, state T20 leagues, U19 Asia Cup). U19 players are eligible only if they appear on the 3 Dec auction list.</p></div>
   <div class="grid" style="margin-top:16px">
   <div class="panel"><h3>Auction basket</h3><p class="small muted">Add players with + anywhere in the dashboard, or load the data-driven plan.</p>
    <table class="basket"><tr><th>Player</th><th>Slot</th><th class="num">Price band</th><th class="num">__IDX__</th><th></th></tr>

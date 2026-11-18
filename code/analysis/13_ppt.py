@@ -80,7 +80,7 @@ def table(s, x, y, w, h, header, rows, widths=None, size=11):
             for p in c.text_frame.paragraphs:
                 for r in p.runs:
                     r.font.size = Pt(size); r.font.color.rgb = INK; r.font.name = 'Segoe UI'
-                    r.font.bold = (j == 1 and len(header) > 2) or (j == 0 and len(header) <= 2)
+                    r.font.bold = (j == 0)
     if widths:
         for j, wd in enumerate(widths):
             t.columns[j].width = Inches(wd)
@@ -116,7 +116,11 @@ for k, v in G.items():
     text(s, 0.55, y, 12.2, 0.35, k.upper(), 12, PINK, True)
     text(s, 0.55, y + 0.33, 12.2, 0.7, ', '.join(v), 16, NAVY, True)
     y += 1.1
-text(s, 0.55, 6.15, 12.2, 0.8, 'Strategy: power and finishing in the middle order to support Ferreira, backup pace (Coetzee as pace all-rounder), spin and top-order backups. How each pick strengthens RR is on slide 12.', 13, MUTED)
+text(s, 0.55, 6.15, 12.2, 0.8, 'Strategy: power and finishing in the middle order to support Ferreira, backup pace (Coetzee as pace all-rounder), spin and top-order backups. How each pick strengthens RR: slide 14; young talent watchlist: slide 15.', 13, MUTED)
+
+# 2b. brief map
+s = base('Brief → answer', 'How this submission answers the Round 1 brief')
+table(s, 0.55, 1.45, 12.2, 5.2, ['The brief asks for', 'Our answer', 'Where'], [list(x) for x in PR.get('brief_map', [])], [3.0, 7.6, 1.6], 11)
 
 # 3. approach
 s = base('From 200,000 balls to an auction shortlist', 'Methodology overview')
@@ -188,13 +192,13 @@ bullets(s, 7.0, 1.6, 5.9, 5, [('NeRRve Index pillars: ', f"Pressure Value {wts['
                               ('Robustness: ', 'lists re-checked under 9 alternative pressure definitions and weightings.')], 13)
 
 # 8. RR lens
-s = base("RR's auction brief: back-end muscle for overs 12-20", "4 · RR strategy")
+s = base("RR's auction brief: boundary power for overs 12-20", "4 · RR strategy")
 rk = I['rr_ranks']
 table(s, 0.55, 1.6, 6.0, 1.3, ['RR rank of 10 under pressure (IPL 2025–26)', 'Powerplay', 'Middle', 'Death'],
       [['Batting', rk['bat']['Powerplay'], rk['bat']['Middle'], rk['bat']['Death']], ['Bowling', rk['bowl']['Powerplay'], rk['bowl']['Middle'], rk['bowl']['Death']]], [2.9, 1.0, 1.0, 1.1], 12)
 rrc = next(x for x in I['close_record'] if x['team'] == 'Rajasthan Royals')
 text(s, 0.55, 3.15, 6.0, 0.8, f"RR played {rrc['close']} close games in 2025–26 and won {rrc['close_won']}: the finish is where games are lost.", 14, NAVY, True)
-bullets(s, 0.55, 4.0, 6.0, 3, [('1. Back-end muscle (overs 12–20): ', '2–3 hitters who support Ferreira and finish games.'),
+bullets(s, 0.55, 4.0, 6.0, 3, [('1. Overs 12–20 boundary power: ', '2–3 hitters who support Ferreira and finish games.'),
                                ('2. Backup pace: ', 'cover for injury-prone quicks at the new ball and the death.'),
                                ('3. Spin: ', 'only if a quality option comes cheap; quality spin is already there.'),
                                ('4. Top order is fixed: ', 'Sooryavanshi, Jaiswal, Jurel, Parag - one backup only.')], 13)
@@ -226,9 +230,15 @@ text(s, 0.55, 6.5, 6.6, 0.5, AU.get('market_note', ''), 10, MUTED)
 
 # 12. how each pick strengthens RR
 s = base('How each pick strengthens RR', '8 · Every pick')
-table(s, 0.55, 1.5, 6.0, 5.0, ['Batter', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:90]] for _, r in top_b.iterrows()], [1.7, 4.3], 9)
-table(s, 6.8, 1.5, 6.0, 5.0, ['Bowler', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:90]] for _, r in top_w.iterrows()], [1.7, 4.3], 9)
-text(s, 0.55, 6.55, 12.2, 0.4, 'Young players to keep an eye on (not a priority): ' + ', '.join(x[0] for x in PR.get('groom', [])) + '.', 11, MUTED)
+table(s, 0.55, 1.5, 6.0, 5.0, ['Batter', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:120]] for _, r in top_b.iterrows()], [1.7, 4.3], 9)
+table(s, 6.8, 1.5, 6.0, 5.0, ['Bowler', 'What he adds'], [[r['name'], NOTES.get(r['name'], {}).get('fit', '')[:120]] for _, r in top_w.iterrows()], [1.7, 4.3], 9)
+text(s, 0.55, 6.55, 12.2, 0.4, 'Young and emerging players are tracked separately in the young talent watchlist (next slide).', 11, MUTED)
+
+# 12b. young talent watchlist
+s = base('Young talent watchlist', '8 · Emerging players (not ranked)')
+table(s, 0.55, 1.45, 12.2, 5.0, ['Player', 'Profile', 'Evidence', 'RR fit', 'Status'],
+      [[y['name'], y['profile'], y['evidence'], y['fit'], y['status']] for y in PR.get('young', [])], [1.7, 2.6, 4.1, 2.1, 1.7], 9)
+text(s, 0.55, 6.55, 12.2, 0.4, 'Evidence from public scorecards (SMAT, state T20 leagues, U19 Asia Cup): the data pack does not cover domestic or U19 cricket.', 10, MUTED)
 
 # 13. limitations
 s = base('Where the model is less certain, and what comes next', '9 · Reliability and limitations')

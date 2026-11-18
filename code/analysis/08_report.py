@@ -368,16 +368,20 @@ li_w = glist(['Pace', 'Spin'])
 rrk = I['rr_ranks']
 rrc = next(x for x in I['close_record'] if x['team'] == 'Rajasthan Royals')
 body = f'''<div class="g3"><div class="box"><h3>Batters to buy</h3><div class="glist">{li_b}</div></div>
-<div class="box"><h3>Bowlers to buy</h3><div class="glist">{li_w}</div><p class="small muted" style="margin-top:10px">How each pick strengthens RR: section 10.</p></div>
+<div class="box"><h3>Bowlers to buy</h3><div class="glist">{li_w}</div><p class="small muted" style="margin-top:10px">How each pick strengthens RR and the young talent watchlist: section 10.</p></div>
 <div class="box soft"><h3>What we found</h3><ul class="find">
 <li><b>Our pressure zone is where matches are decided.</b> It holds {pct(WS['pressure_balls_share'])} of balls but {pct(WS['pressure_wpa_share'])} of all win-probability movement.</li>
 <li><b>RR lose the close ones.</b> RR played the most close IPL games in 2025–26 ({rrc['close']}) and won only {rrc['close_won']}. Under pressure they rank {rrk['bat']['Death']}th of 10 for death batting and {rrk['bowl']['Death']}th for death bowling.</li>
 <li><b>"Clutch" is mostly skill plus sample size.</b> Pressure-minus-normal gaps barely repeat (split-half r = {I['split_half']['bat']['resilience']:.2f}), so we shrink hard and reward proven volume.</li>
-<li><b>The strategy:</b> back-end muscle for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. Bid ceilings for the 6 buys total ₹{TOTMAX:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, leaving a reserve; RR leaves the expensive overseas quicks to the ₹39–47 cr teams (section 11).</li></ul></div></div>
+<li><b>The strategy:</b> boundary power for overs 12–20 to support Ferreira first ({E(', '.join(FINAL['bat'][:3]))}), backup pace for injuries ({E(', '.join(FINAL['bowl'][:3]))}), spin only if a quality option comes cheap. Bid ceilings for the 6 buys total ₹{TOTMAX:.1f} cr of the ₹{I['purse']['available']:.2f} cr purse, leaving a reserve; RR leaves the expensive overseas quicks to the ₹39–47 cr teams (section 11).</li></ul></div></div>
 <div class="tiles t4">{tile(f"{D['balls']:,}", 'deliveries modelled ball by ball')}{tile(f"{D['pressure_balls']:,}", 'pressure balls analysed (top 25% by Pressure Index)')}
 {tile(str(SUM['bat']['n_rated'] + SUM['bowl']['n_rated']), 'batter and bowler ratings, each with uncertainty')}{tile('9 + 300', 'alternative definitions + bootstrap re-samples tested')}</div>
 <p class="note">Every pick can be bought on 16 Dec: no current Royals, no players retained elsewhere, no retired or unavailable players. The pure league-wide ranking is in section 5. Availability reflects the official 17 Nov retention lists.</p>'''
 P.append(page('Executive summary', 'The picks to buy at the IPL 2027 auction', body))
+bm = ''.join(f'<tr><td><b>{E(x[0])}</b></td><td class="small">{E(x[1])}</td><td class="small" style="white-space:nowrap">{E(x[2])}</td></tr>' for x in PR.get('brief_map', []))
+body = f'''<table class="lt fit"><thead><tr><th>The brief asks for</th><th>Our answer</th><th>Where</th></tr></thead><tbody>{bm}</tbody></table>
+<p class="note">Dropdown picks: the ten batters and ten bowlers in sections 8 and 9, in the same order as the submission form.</p>'''
+P.append(page('Brief → answer', 'Every requirement of the Round 1 brief, and where this report answers it', body))
 
 # ---- 3 approach
 steps = [('1', 'Ball states', f"{D['balls']:,} deliveries rebuilt into match states: score, wickets, balls left, target, rain revisions."),
@@ -506,7 +510,7 @@ body = f'''<div class="g3"><div><h3>RR's pressure rank among 10 franchises (IPL 
 <div><h3>Close games: RR convert the fewest</h3><div class="chart">{chart_close()}</div><p class="tiny muted">Close = chase won with ≤6 balls left, or defended by ≤12 runs.</p></div>
 <div><h3>RR's auction position</h3><div class="tiles t1">{tile(f"₹{I['purse']['available']:.2f} cr", "purse after the 17 Nov retentions")}{tile(f"{I['purse']['slots']} slots", f"{I['purse']['overseas']} overseas")}</div>
 
-<p class="small"><b>Brief for the auction:</b> (1) 2–3 batters who own overs 12–20 and add muscle around Ferreira; (2) backup fast bowlers; (3) spin and top-order backups.</p></div></div>'''
+<p class="small"><b>Brief for the auction:</b> (1) 2–3 batters who own overs 12–20 and add boundary power around Ferreira; (2) backup fast bowlers; (3) spin and top-order backups.</p></div></div>'''
 P.append(page('6 · The RR lens', f"RR were in {rrc['close']} close games in 2025–26 and won {rrc['close_won']}: pressure reliability is the gap to close", body))
 
 # ---- 11 availability funnel
@@ -546,8 +550,12 @@ def fit_rows(T):
 groom = ', '.join(x[0] for x in PR.get('groom', []))
 body = f'''<div class="g2"><div><h3>Batters</h3><table class="mini fit"><tbody>{fit_rows(top_b)}</tbody></table></div>
 <div><h3>Bowlers</h3><table class="mini fit"><tbody>{fit_rows(top_w)}</tbody></table></div></div>
-<p class="note">Young players to keep an eye on (not a priority): {E(groom)}. The U19 players must appear on the 3 Dec auction list to be eligible.</p>'''
+<p class="note">Young and emerging players are tracked separately in the young talent watchlist (next page); they do not take ranked slots.</p>'''
 P.append(page('10 · How each pick strengthens RR', 'Every pick, and what it adds to the RR squad', body))
+yrows = ''.join(f'<tr><td><b>{E(y["name"])}</b><div class="tiny muted">{E(y["profile"])}</div></td><td class="small">{E(y["evidence"])}</td><td class="small">{E(y["fit"])}</td><td class="small muted">{E(y["status"])}</td></tr>' for y in PR.get('young', []))
+body = f'''<table class="lt compact fit"><thead><tr><th>Player</th><th>Evidence</th><th>RR fit</th><th>Auction status</th></tr></thead><tbody>{yrows}</tbody></table>
+<p class="note">Not ranked and not in the dropdown lists. The data pack does not cover domestic or U19 cricket, so this evidence comes from public scorecards (SMAT, state T20 leagues, U19 Asia Cup). U19 players are eligible only if they appear on the 3 Dec auction list.</p>'''
+P.append(page('10 · Young talent watchlist', 'Emerging players to track for depth and the long term', body))
 
 
 # ---- 19 auction plan
@@ -601,7 +609,7 @@ body = f'''<div class="g3p"><div><h3>RR's auction position (official)</h3><div c
 {tile(f"{pu['slots']} slots", f"of which {pu['overseas']} overseas")}</div>
 <h3 style="margin-top:8px">Where the buys fit in the XI</h3><table class="mini"><thead><tr><th>Bat</th><th>Role</th><th>Player</th></tr></thead><tbody>{"".join(f"<tr><td>{E(x[0])}</td><td>{E(x[1])}</td><td>{E(x[2])}</td></tr>" for x in PR.get("xi_fit", []))}</tbody></table></div>
 <div><h3>Who to buy: 6 slots, 3 overseas (targets ₹{plo:.1f} cr, ceilings ₹{phi:.1f} cr)</h3><table class="lt compact"><thead><tr><th>Target</th><th>Slot</th><th>Why</th><th>Target → max bid</th></tr></thead><tbody>{plan_rows}</tbody></table>
-<p class="small"><b>Budget logic:</b> target spend ₹{plo:.1f} cr; even at every ceiling RR spends ₹{phi:.1f} cr and keeps ₹{pu['available'] - phi:.2f} cr in reserve. Most of the money goes on back-end muscle for overs 12–20; the rest buys pace cover for injuries.</p>
+<p class="small"><b>Budget logic:</b> target spend ₹{plo:.1f} cr; even at every ceiling RR spends ₹{phi:.1f} cr and keeps ₹{pu['available'] - phi:.2f} cr in reserve. Most of the money goes on boundary power for overs 12–20; the rest buys pace cover for injuries.</p>
 <p class="small"><b>Alternatives:</b> {E(' · '.join(k + ': ' + ', '.join(v) for k, v in PR.get('plan_alternatives', {}).items()))}.</p></div></div>
 <p class="note">Price bands are our estimates from each player's last IPL fee and base price in a rich market (₹297.95 cr chasing 66 slots, 25 overseas). They are not official; refresh after the 3 Dec auction list.</p>'''
 P.append(page('11 · Auction plan', f"Who to buy with ₹{pu['available']:.2f} cr and 6 slots", body))

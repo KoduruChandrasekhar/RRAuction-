@@ -253,9 +253,9 @@
    "basis": "MI 2025-26"
   },
   "Nehal Wadhera": {
-   "lo": 2,
-   "hi": 5,
-   "basis": "PBKS 2025-26"
+   "lo": 5,
+   "hi": 8,
+   "basis": "PBKS Rs 4.2 cr (2026); scarce Indian middle-order supply, four teams with Rs 39-47 cr"
   },
   "Shimron Hetmyer": {
    "lo": 3,
@@ -447,14 +447,14 @@
   {
    "name": "Nehal Wadhera",
    "slot": "Indian",
-   "why": "Main target: left-handed overs 12-20 engine at No.5 - stability plus muscle alongside Ferreira",
-   "target": 3,
-   "max": 5
+   "why": "Core buy: left-handed overs 12-20 engine at No.5 - strike rotation plus boundary power alongside Ferreira",
+   "target": 5,
+   "max": 7.5
   },
   {
    "name": "Mahipal Lomror",
    "slot": "Indian",
-   "why": "Main target: left-handed finisher, ex-RR, extra muscle at No.6/7",
+   "why": "Core buy: left-handed finisher, ex-RR, additional boundary power at No.6/7",
    "target": 1,
    "max": 2
   },
@@ -462,7 +462,7 @@
    "name": "Deepak Chahar",
    "slot": "Indian",
    "why": "Indian new-ball backup for Shami and Archer; Rajasthan domestic captain",
-   "target": 2.5,
+   "target": 2,
    "max": 3.5
   },
   {
@@ -476,19 +476,19 @@
    "name": "Gerald Coetzee",
    "slot": "Overseas",
    "why": "Pace all-rounder: fast-bowling cover plus lower-order hitting",
-   "target": 3.5,
-   "max": 5
+   "target": 3,
+   "max": 4.5
   },
   {
    "name": "Trent Boult",
    "slot": "Overseas",
-   "why": "Backup new-ball and death pace (homecoming)",
-   "target": 3,
-   "max": 4.5
+   "why": "Backup new-ball and death pace (ex-RR 2022-24)",
+   "target": 2.5,
+   "max": 4
   }
  ],
  "plan_alternatives": {
-  "Finisher muscle": [
+  "Finisher (death-overs power)": [
    "Mitchell Owen (max \u20b93.5 cr)",
    "Dian Forrester (max \u20b91.5 cr)",
    "M Shahrukh Khan (max \u20b92 cr)"
@@ -533,7 +533,7 @@
   ],
   [
    "7",
-   "Back-end muscle",
+   "Death-overs boundary power",
    "Mahipal Lomror (buy)"
   ],
   [
@@ -543,7 +543,7 @@
   ],
   [
    "Impact",
-   "Muscle / pace all-rounder",
+   "Power / pace all-rounder",
    "Gerald Coetzee (buy) or Daryl Mitchell"
   ],
   [
@@ -553,7 +553,7 @@
   ]
  ],
  "groups": {
-  "Middle-order power and finishers (main need)": [
+  "Middle-order power and finishers (primary gap)": [
    "Nehal Wadhera",
    "Mahipal Lomror",
    "Daryl Mitchell",
@@ -687,15 +687,15 @@
   ],
   "moves": [
    [
-    "Win the Indian middle-order battle. ",
-    "Quality Indian batters for overs 12-20 are scarce and DC, KKR, MI and PBKS all need them, so Nehal Wadhera is the one buy to push hard for (max \u20b95 cr)."
+    "Concentrate spend where supply is scarce. ",
+    "Quality Indian batters for overs 12-20 are scarce and DC, KKR, MI and PBKS all need them. Wadhera cost PBKS \u20b94.2 cr; expect \u20b96-8 cr this time, so his ceiling is \u20b97.5 cr and the rest of the plan is priced around it."
    ],
    [
     "Daryl Mitchell is the value buy. ",
     "He went unsold on a \u20b92 cr base last year and has since scored 435 ODI runs against India in 2026. He is the second overs 12-20 engine, with a ceiling of \u20b94 cr."
    ],
    [
-    "Let the big four fight over Pathirana and Ferguson. ",
+    "Cede the premium overseas-pace market. ",
     "LSG, KKR, SRH and DC hold \u20b939-47 cr and all need overseas pace, so expect \u20b98-12 cr each. RR bids only below its ceilings (\u20b97 cr / \u20b96 cr); every crore they spend there is a crore less against RR later."
    ],
    [
@@ -707,13 +707,127 @@
     "Lomror comes up in the uncapped sets, after the rich teams have spent."
    ],
    [
-    "Skip the price traps. ",
+    "Hold price discipline. ",
     "CSK paid \u20b914.2 cr for Prashant Veer in 2026; RR goes only to \u20b93 cr."
    ],
    [
     "Keep a reserve. ",
-    "Ceilings for the 6 buys total \u20b924 cr, so even if every target hits its max, \u20b93.05 cr is left. Any money saved moves to the fallbacks (Owen, Henry, Avesh)."
+    "Ceilings for the 6 buys total \u20b925.5 cr, so even if every target hits its max, \u20b91.55 cr is left. Any money saved moves to the fallbacks (Owen, Henry, Avesh)."
    ]
   ]
- }
+ },
+ "young": [
+  {
+   "name": "Karan Lal",
+   "profile": "Bengal, 26 \u00b7 batting all-rounder (off-spin)",
+   "evidence": "113 off 50 v HP; 676 T20 runs; 14 wkts @ 16.9; 20-ball fifty at RR trials (Sep 2026)",
+   "status": "Pool (if registered)",
+   "fit": "Overs 12-20 hitter with a spin option"
+  },
+  {
+   "name": "Ayush Doseja",
+   "profile": "Delhi, 24 \u00b7 left-handed middle order",
+   "evidence": "301 runs, SR 161.8 (DPL 2026); 949 runs in debut Ranji season",
+   "status": "Unsold 2026 (base \u20b930 L)",
+   "fit": "Left-handed middle-order depth"
+  },
+  {
+   "name": "Prashant Veer",
+   "profile": "UP \u00b7 batting all-rounder (left-arm spin)",
+   "evidence": "CSK \u20b914.2 cr signing (2026)",
+   "status": "Released by CSK",
+   "fit": "Lower-middle-order hitter plus spin"
+  },
+  {
+   "name": "Ankit Kumar",
+   "profile": "Haryana captain \u00b7 top order",
+   "evidence": "448 runs @ 44.8, SR 172.3 (SMAT 2025-26, 2nd highest)",
+   "status": "Pool (if registered)",
+   "fit": "Top-order cover"
+  },
+  {
+   "name": "B Sachin",
+   "profile": "Tamil Nadu \u00b7 left-handed opener",
+   "evidence": "428 runs @ 53.5, 19 sixes (TNPL 2026, Player of the Series)",
+   "status": "Pool (if registered)",
+   "fit": "Opener option if Jaiswal is traded"
+  },
+  {
+   "name": "Raj Limbani",
+   "profile": "Baroda \u00b7 right-arm new ball",
+   "evidence": "India U19 World Cup 2024; new ball plus lower-order runs",
+   "status": "Unsold 2026 (base \u20b930 L)",
+   "fit": "Indian pace depth"
+  },
+  {
+   "name": "Zak Foulkes",
+   "profile": "New Zealand, 24 \u00b7 pace all-rounder",
+   "evidence": "Starred on Test debut in NZ record win v Zimbabwe (2025); NZ white-ball squads 2026",
+   "status": "Released by CSK",
+   "fit": "Overseas pace-all-rounder depth"
+  },
+  {
+   "name": "Mohit Ulva",
+   "profile": "India U19 \u00b7 finisher",
+   "evidence": "49* off 26 in the U19 Asia Cup final",
+   "status": "Only if on 3 Dec list",
+   "fit": "Long-term finisher"
+  },
+  {
+   "name": "Aaryavir Sehwag",
+   "profile": "India U19 \u00b7 top order",
+   "evidence": "U19 Asia Cup top scorer",
+   "status": "Only if on 3 Dec list",
+   "fit": "Long-term top order"
+  },
+  {
+   "name": "Manal Chauhan",
+   "profile": "India U19 \u00b7 lower-order hitter",
+   "evidence": "47 off 32 in the U19 Asia Cup final",
+   "status": "Only if on 3 Dec list",
+   "fit": "Long-term lower-order power"
+  }
+ ],
+ "brief_map": [
+  [
+   "Define pressure",
+   "A data-learned Pressure Index (win-probability leverage \u00d7 scoreboard squeeze \u00d7 wicket squeeze). The top 25% of balls carry 55% of all win-probability movement.",
+   "Section 1"
+  ],
+  [
+   "Measure performance under pressure",
+   "Runs and wickets judged against an expected value for the exact match situation, adjusted for opposition strength and recency.",
+   "Section 2"
+  ],
+  [
+   "Separate skill from noise",
+   "Empirical-Bayes shrinkage, 300 match bootstrap re-samples, split-half test and 9 alternative definitions.",
+   "Sections 3, 12"
+  ],
+  [
+   "Top 10 batters and top 10 bowlers",
+   "Ranked from the official 17 Nov release pool plus unsold players: only players RR can actually buy.",
+   "Sections 7-9"
+  ],
+  [
+   "How each pick strengthens RR",
+   "RR phase-by-phase pressure ranks set the gaps; every pick is mapped to a role and a slot in the XI.",
+   "Sections 6, 10"
+  ],
+  [
+   "Auction strategy (purse \u20b927.05 cr, 6 slots)",
+   "Six core buys with target and walk-away prices, rival-purse analysis and a reserve.",
+   "Section 11"
+  ],
+  [
+   "Future talent",
+   "Young talent watchlist from domestic and U19 cricket, kept separate from the ranked lists.",
+   "Section 10"
+  ],
+  [
+   "Interactive evidence",
+   "A dashboard with leaderboard weight sliders, player deep-dives, a pressure calculator and an auction basket.",
+   "Dashboard link"
+  ]
+ ]
 }

@@ -52,7 +52,7 @@ fl = pd.read_parquet(f'{W}/pressure_flags.parquet', columns=['PI'])
 calc = dict(expwk=bb[bb.innings == 2].groupby('legal_before').wkts_before.mean().reindex(range(120)).ffill().round(3).tolist(),
             piq=np.quantile(fl.PI, np.linspace(0, 1, 201)).round(4).tolist(),
             envRate=round(float(bb[bb.env == 'IPL-2026'].env_rpb.iloc[0] * 6), 3))
-data = dict(version=VERSION, players=players, calc=calc, plan_core=PR.get("plan_core", {}), plan=PR.get("plan", []), auction=PR.get("auction", {}), plan_alt=PR.get("plan_alternatives", {}), news=AVC.get('pending_news', []), deep=I['deep'], heat=I['chase_heat'], heatAxes=I['chase_heat_axes'],
+data = dict(version=VERSION, players=players, calc=calc, plan_core=PR.get("plan_core", {}), plan=PR.get("plan", []), auction=PR.get("auction", {}), young=PR.get("young", []), plan_alt=PR.get("plan_alternatives", {}), news=AVC.get('pending_news', []), deep=I['deep'], heat=I['chase_heat'], heatAxes=I['chase_heat_axes'],
             wpa=I['wpa_share'], profile=I['profile'], close=I['close_record'], closeShare=I['close_vs_onesided'],
             ko=I['knockout_press'], split=I['split_half'], rrRanks=I['rr_ranks'], rrSquad=I['rr_squad'], radar=I['release_radar'], scorecard=I.get('radar_scorecard', {}),
             purse=I['purse'], teamBat=I['team_bat'], teamBowl=I['team_bowl'], data=I['data'], wp=I['wp_metrics'],
