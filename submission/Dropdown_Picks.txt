@@ -1,15 +1,15 @@
 # SupeRR Selector S2 - Round 1 dropdown picks (released IPL players, ranked by the NeRRve Index)
 
 Batsman 1: M Shahrukh Khan
-Batsman 2: Kamindu Mendis
-Batsman 3: Ben Duckett
-Batsman 4: Rachin Ravindra
-Batsman 5: Pathum Nissanka
-Batsman 6: Shimron Hetmyer
-Batsman 7: Matthew Short
-Batsman 8: Mahipal Lomror
-Batsman 9: Nehal Wadhera
-Batsman 10: Nitish Rana
+Batsman 2: Daryl Mitchell
+Batsman 3: Kamindu Mendis
+Batsman 4: Matthew Short
+Batsman 5: Mahipal Lomror
+Batsman 6: Nehal Wadhera
+Batsman 7: Nitish Rana
+Batsman 8: Abhinav Manohar
+Batsman 9: Rahul Tripathi
+Batsman 10: Matthew Breetzke
 
 (Reference - unfiltered league-wide top 10 batsmans: Heinrich Klaasen, Vaibhav Sooryavanshi, Yashasvi Jaiswal, Abhishek Sharma, Suryakumar Yadav, Virat Kohli, Shreyas Iyer, Rovman Powell, Namboori Tilak Varma, Andre Russell)
 
@@ -19,10 +19,10 @@ Bowler 3: Matheesha Pathirana
 Bowler 4: Blessing Muzarabani
 Bowler 5: Zakary Foulkes
 Bowler 6: Kwena Maphaka
-Bowler 7: Tushar Deshpande
-Bowler 8: Ishant Sharma
-Bowler 9: Spencer Johnson
-Bowler 10: Wanindu Hasaranga
+Bowler 7: Ishant Sharma
+Bowler 8: Spencer Johnson
+Bowler 9: Wanindu Hasaranga
+Bowler 10: Allah Ghazanfar
 
 (Reference - unfiltered league-wide top 10 bowlers: Jasprit Bumrah, Krunal Pandya, Sunil Narine, Mitchell Santner, Rashid Khan, Lockie Ferguson, Kuldeep Yadav, Abrar Ahmed, Mujeeb Ur Rahman, Shaheen Afridi)
 

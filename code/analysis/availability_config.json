@@ -126,6 +126,22 @@
   "Shoriful Islam"
  ],
  "watch": {},
+ "model_exclusions": [
+  "Shimron Hetmyer",
+  "Ben Duckett",
+  "Rachin Ravindra",
+  "Pathum Nissanka",
+  "Tushar Deshpande"
+ ],
+ "auction_pool_override": [
+  "Daryl Mitchell",
+  "Mitchell Owen",
+  "Dian Forrester",
+  "Matthew Breetzke",
+  "Dunith Wellalage",
+  "Abhinav Manohar",
+  "Prashant Veer"
+ ],
  "notes": {
   "Harry Brook": "Two-season IPL ban (2025-26) has lapsed; has said he may return - confirm registration",
   "Jonny Bairstow": "Unsold at the IPL 2026 auction; active in BBL/SA20/Hundred 2026",
